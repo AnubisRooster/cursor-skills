@@ -1,0 +1,27 @@
+---
+description: Auto-sync skill and README updates to GitLab and GitHub
+alwaysApply: true
+---
+
+# Skill Sync Rule
+
+When `cursor-skills/**/SKILL.md` files or skill `README*` files are added or updated, always synchronize changes to both remotes:
+
+- `origin` = GitLab (`latc/users/mfink`)
+- `github` = GitHub (`AnubisRooster/cursor-skills`)
+
+## Required workflow
+
+1. Detect skill-related changes before finishing work.
+2. Stage only relevant skill-sync files.
+3. Commit with a clear intent-focused message.
+4. Push to `origin main`.
+5. Push the same commit to `github main`.
+6. Report commit SHA and both push results in the response.
+
+## Guardrails
+
+- Do not force-push unless explicitly requested.
+- Do not rewrite history.
+- If a push fails, explain the blocker and the exact next step.
+- Keep README as a directory index of accessible skills.
