@@ -1,29 +1,55 @@
 # mfink Cursor Skills Repository
 
-This repository shares a curated set of Cursor `SKILL.md` and related `README` files so teams can use operational tools in a programmatic and consistent way.
+This repository is a directory of shared Cursor skills used to standardize how teams programmatically operate tools and workflows.
 
-## Purpose
+## Why this exists
 
-The goal is to make operational workflows repeatable across teams by:
+These skills help teams:
 
-- Capturing approved skill definitions in version control.
-- Aligning skill behavior with our shared design patterns.
-- Reducing one-off prompt styles and ad hoc process differences.
-- Establishing a common standard for how teams automate and operate.
+- Use operational tools consistently.
+- Follow the same design patterns across projects.
+- Reduce ad hoc workflow differences.
+- Improve cross-team standardization and onboarding.
 
-## What is included
+## Skills Directory
 
-- `cursor-skills/skills/`: core local skills.
-- `cursor-skills/skills-cursor/`: Cursor-specific platform skills.
-- `cursor-skills/plugins-cache/`: plugin-provided skills and companion documentation.
+### Core Operational Skills
 
-## How teams should use this repo
+- [`gitlab-skill`](cursor-skills/skills/gitlab/SKILL.md)  
+  Standard GitLab workflow for publishing updates, branching strategy, and merge request practices.
 
-- Treat this repository as the source of truth for operational skill definitions.
-- Reuse existing patterns before introducing new skill behavior.
-- Propose changes via merge requests and document the rationale.
-- Keep skills focused on consistent execution of operational tooling.
+- [`confluence-dc-mcp`](cursor-skills/skills/confluence-dc-mcp/SKILL.md)  
+  Connect and operate self-hosted Confluence Data Center via MCP with approval-first write controls.
 
-## Expected outcome
+- [`jira-create-issues`](cursor-skills/skills/jira-create-issues/SKILL.md)  
+  Structured Jira Epic/Story/Task creation with required fields and standardized hierarchy.
 
-By centralizing these skills, teams can automate operational tasks with the same patterns, terminology, and guardrails, leading to better reliability, easier onboarding, and stronger cross-team standardization.
+### Cursor Platform Skills
+
+- [`babysit`](cursor-skills/skills-cursor/babysit/SKILL.md)
+- [`canvas`](cursor-skills/skills-cursor/canvas/SKILL.md)
+- [`create-hook`](cursor-skills/skills-cursor/create-hook/SKILL.md)
+- [`create-rule`](cursor-skills/skills-cursor/create-rule/SKILL.md)
+- [`create-skill`](cursor-skills/skills-cursor/create-skill/SKILL.md)
+- [`create-subagent`](cursor-skills/skills-cursor/create-subagent/SKILL.md)
+- [`cursor-blame`](cursor-skills/skills-cursor/cursor-blame/SKILL.md)
+- [`migrate-to-skills`](cursor-skills/skills-cursor/migrate-to-skills/SKILL.md)
+- [`sdk`](cursor-skills/skills-cursor/sdk/SKILL.md)
+- [`shell`](cursor-skills/skills-cursor/shell/SKILL.md)
+- [`split-to-prs`](cursor-skills/skills-cursor/split-to-prs/SKILL.md)
+- [`statusline`](cursor-skills/skills-cursor/statusline/SKILL.md)
+- [`update-cli-config`](cursor-skills/skills-cursor/update-cli-config/SKILL.md)
+- [`update-cursor-settings`](cursor-skills/skills-cursor/update-cursor-settings/SKILL.md)
+
+### Plugin Skill Packs
+
+- Atlassian skills and docs: `cursor-skills/plugins-cache/cursor-public/atlassian/`
+- Figma skills and docs: `cursor-skills/plugins-cache/cursor-public/figma/`
+- Notion workspace skills and docs: `cursor-skills/plugins-cache/cursor-public/notion-workspace/`
+
+## Contribution expectations
+
+- Keep skill updates focused and traceable.
+- Preserve existing directory structure when syncing.
+- Use clear commit messages describing intent.
+- Prefer merge requests for shared workflow changes.
