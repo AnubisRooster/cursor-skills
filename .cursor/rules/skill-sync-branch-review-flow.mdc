@@ -1,0 +1,26 @@
+---
+description: Require branch plus PR/MR flow for skill updates
+alwaysApply: true
+---
+
+# Skill Review Flow Rule
+
+For updates to `cursor-skills/**/SKILL.md` and related `README*` files, use a review workflow instead of direct pushes to `main`.
+
+## Required workflow
+
+1. Create a feature branch for skill changes.
+2. Commit skill updates to that branch with clear intent-focused messages.
+3. Push the branch to both remotes:
+   - `origin` (GitLab)
+   - `github` (GitHub)
+4. Open:
+   - a GitLab Merge Request into `main`
+   - a GitHub Pull Request into `main`
+5. Share both PR/MR links and test/verification notes.
+
+## Guardrails
+
+- Do not push skill changes directly to `main` unless explicitly requested.
+- Do not force-push or rewrite shared history by default.
+- If one platform blocks PR/MR creation, report blocker and next step.
