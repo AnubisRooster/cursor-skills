@@ -100,18 +100,20 @@ Labels encode **who** is doing the work and **what product** it serves. **Every 
 | Label                | Team                                  |
 | -------------------- | ------------------------------------- |
 | `team:infra-prc`     | Wang's infrastructure team (PRC)      |
-| `team:infra-na`      | Thompson's ops team (NA)              |
+| `team:infra-row`      | Thompson's ops team (ROW)             |
 | `team:ro-prc-p`      | Qiu's R&O team (PRC Personal)         |
 | `team:ro-prc-e`      | Cai's R&O team (PRC Enterprise)       |
 | `team:ro-intent`     | Miao's intent routing team            |
 | `team:ro-tools`      | Luo's tooling team                    |
 | `team:eval`          | Tuli's evaluation team                |
 | `team:models-prc`    | Zhang/Wang's model factory team (PRC) |
-| `team:models-na`     | Marthi's models team (NA)             |
+| `team:models-row`     | Marthi's models team (ROW)            |
 | `team:runtime-model` | Webb's model runtime team             |
 | `team:runtime-agent` | Zhu's agent runtime team              |
 | `team:dcm`           | Thompson/Li's data & context team     |
 | `team:hive-core`     | HiVE platform core team               |
+
+Region convention: use `PRC` and `ROW` labels (not `NA`).
 
 ### Product / BU labels (`product:*`, `bu:*`)
 
@@ -119,6 +121,7 @@ Labels encode **who** is doing the work and **what product** it serves. **Every 
 | ------------------- | --------------------------- |
 | `product:qira`      | IDG AIES - Qira             |
 | `product:tianxi`    | PRC Personal AI - Tianxi    |
+| `product:prc-e`     | PRC Enterprise              |
 | `product:hive`      | HiVE Platform               |
 | `product:atp`       | ATP + External Partnerships |
 | `bu:idg-gic`        | IDG GIC (CSW)               |
@@ -296,7 +299,8 @@ Highest conforming `Y` = `4`. Next Epic under `LATC-7` would be `0.5 <title>`. S
 | `Data, Context, & Memory` | `Data, Context & Memory` |
 | `Reasoning & Orchestration` | `Reasoning & Orchestration` |
 | `Runtime` | `Runtime` |
-| `Operations` | `Operations & Infrastructure` or `Operations (Non-Tech)` |
+| `Infrastructure` | `Operations & Infrastructure` |
+| `Operations` | `Operations (Non-Tech)` |
 | `Model Evaluation` | `Evaluation` |
 | `Model Factory` | `Models` |
 | `HiVE Platform` | `HiVE Platform` |
@@ -304,9 +308,9 @@ Highest conforming `Y` = `4`. Next Epic under `LATC-7` would be `0.5 <title>`. S
 **Resolution rules when an issue has multiple components:**
 
 1. If all components point to the same pillar → use that pillar.
-2. If components span multiple pillars → use the pillar of the **most specific / primary** component and note the assumption in the draft. Ask the user if genuinely ambiguous.
-3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → use `Operations`.
-4. If `HiVE Platform` is combined with a domain pillar → use the domain pillar's function area (the HiVE component is captured via labels and components; Function area reflects the primary domain).
+2. If components span multiple pillars → set Function area from the **first listed component** and add label `cross-pillar`.
+3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → follow the first listed component rule and still add `cross-pillar`.
+4. If `HiVE Platform` is combined with a domain pillar → follow the first listed component rule and still add `cross-pillar` when multiple components are present.
 
 **Always show the resolved pillar** in the pre-create draft so the user can override before confirmation.
 
@@ -367,8 +371,8 @@ Run only the checks relevant to what's missing or ambiguous. Skip ones already v
    WBS: 0.4.7  (existing children: 0.4.1..0.4.6; 0 un-numbered legacy)
    Summary: 0.4.7 Provision dashboard refresh job on shared VM
    Components: Operations & Infrastructure
-   Labels: team:infra-na
-   Function area: Operations  ← derived from Components
+   Labels: team:infra-row
+   Function area: Infrastructure  ← derived from Components
    Story Points: 3
    Description: ...
    Acceptance Criteria: ... [via customfield_10515]
@@ -426,7 +430,7 @@ Example payload for a Story:
   "issue_type": "Story",
   "description": "## Context\n...\n\n## Goal\n...\n\n## Approach\n...\n\n## Out of scope\n...\n\n## Links\n...\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] Dependencies confirmed\n- [ ] Effort estimated\n\n## Definition of Done\n- [ ] Code merged, CI green\n- [ ] Tests passing\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-na\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -439,7 +443,7 @@ Example payload for an Epic (under Initiative `LATC-7`):
   "issue_type": "Epic",
   "description": "## Problem / Opportunity\n...\n\n## Outcomes\n...\n\n## Scope\n...\n\n## Out of scope\n...\n\n## Stakeholders\n...\n\n## Acceptance Criteria\n- [ ] Managers can generate reports without admin help.\n\n## Definition of Ready\n- [ ] AC reviewed\n- [ ] Dependencies confirmed\n\n## Definition of Done\n- [ ] All child Stories closed\n- [ ] AC verified\n- [ ] Stakeholders notified",
   "components": "Operations (Non-Tech)",
-  "additional_fields": "{\"customfield_10005\":\"0.5 Self-service Jira Reports for Managers\",\"customfield_12913\":\"LATC-7\",\"customfield_16400\":\"Operations\",\"labels\":[\"team:infra-na\"]}"
+  "additional_fields": "{\"customfield_10005\":\"0.5 Self-service Jira Reports for Managers\",\"customfield_12913\":\"LATC-7\",\"customfield_16400\":\"Operations\",\"labels\":[\"team:infra-row\"]}"
 }
 ```
 
@@ -461,10 +465,10 @@ Before creating anything, present this table and wait for explicit approval:
 
 | WBS   | Type  | Summary                               | Est | Component(s)                | Labels                        |
 | ----- | ----- | ------------------------------------- | --- | --------------------------- | ----------------------------- |
-| 4.1   | Epic  | Kubernetes Cluster Upgrade            | —   | Operations & Infrastructure | team:infra-na                 |
-| 4.1.1 | Story | Design rolling upgrade strategy       | 5   | Operations & Infrastructure | team:infra-na                 |
-| 4.1.2 | Story | Implement node draining and migration | 8   | Operations & Infrastructure | team:infra-na                 |
-| 4.1.3 | Story | Update monitoring dashboards          | 5   | Operations & Infrastructure, Evaluation | team:infra-na, team:eval |
+| 4.1   | Epic  | Kubernetes Cluster Upgrade            | —   | Operations & Infrastructure | team:infra-row                 |
+| 4.1.1 | Story | Design rolling upgrade strategy       | 5   | Operations & Infrastructure | team:infra-row                 |
+| 4.1.2 | Story | Implement node draining and migration | 8   | Operations & Infrastructure | team:infra-row                 |
+| 4.1.3 | Story | Update monitoring dashboards          | 5   | Operations & Infrastructure, Evaluation | team:infra-row, team:eval |
 
 Ask explicitly: **"Does this look good? I'll create these tickets once you approve, or let me know what you'd like to change."**
 
@@ -586,7 +590,7 @@ WBS work:
 - `LATC-1304` summary is `0.4 Data and Infra Ops Tasks` → parent prefix `0.4`.
 - Scan: `project = LATC AND "Epic Link" = LATC-1304 AND issuetype in (Story, Task)`. Suppose existing children `0.4.1..0.4.6`.
 - Next slot: `0.4.7`.
-- Component: `Operations & Infrastructure`. Label: `team:infra-na`. Function area: `Operations`.
+- Component: `Operations & Infrastructure`. Label: `team:infra-row`. Function area: `Infrastructure`.
 
 ```json
 {
@@ -595,7 +599,7 @@ WBS work:
   "issue_type": "Story",
   "description": "## Context\nThe JIRAFlow dashboard currently refreshes manually. A scheduled job would reduce operator toil and ensure stakeholders always see current data.\n\n## Goal\nA systemd timer on the shared VM refreshes the JIRAFlow dataset hourly with monitoring alerts on failure.\n\n## Approach\n- Provision systemd timer for the refresh script\n- Push status to operational dashboard\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] VM access and credentials confirmed\n- [ ] Effort estimated; risks captured\n\n## Definition of Done\n- [ ] Timer deployed and green for 24 h\n- [ ] Runbook updated\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-na\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -678,3 +682,4 @@ If a future project surfaces different IDs for AC/DoR/DoD, confirm with `jira_se
 
 - MCP tools used: `jira_create_issue`, `jira_batch_create_issues`, `jira_create_issue_link`, `jira_link_to_epic`, `jira_get_project_components`, `jira_search`, `jira_search_fields`, `jira_get_issue`, `jira_get_sprints_from_board`.
 - Server: `user-mcp-atlassian` (sooperset / SharkyND mcp-atlassian, stdio over `uvx`).
+

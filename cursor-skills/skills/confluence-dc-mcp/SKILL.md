@@ -51,6 +51,37 @@ Rule: for migration tasks, do not run write calls until plan and batch scope are
 
 ---
 
+## LATC migration alignment (strict source pages)
+
+For LATC restructuring work, treat these Confluence pages as canonical:
+
+- `https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=616878478` (LATC Jira & Confluence Structure)
+- `https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=618785746` (LATC - Find Your Work in Jira)
+
+When those pages and this skill conflict, follow the page content and update this skill accordingly.
+
+### Required LATC Confluence tree shape
+
+During migration planning and verification, enforce this high-level tree from the structure page:
+
+- `Vertical Pillars/` with pillar subtrees (Data, Context & Memory; Reasoning & Orchestration; Runtime; Operations & Infrastructure; Evaluation; Models; HiVE Platform)
+- `Horizontal BU Projects/` with BU project pages
+- `Strategic Projects/`
+- `Process & Templates/`
+
+### Required migration phase checks (May 2026 plan)
+
+Validate and report progress against the 4-phase plan defined on the structure page:
+
+1. **Phase 1: Baseline** (components/labels/mapping baseline complete)
+2. **Phase 2: Bulk migration** (mapping updates + issue triage)
+3. **Phase 3: Publish & validate** (dashboards, tree publishing, communications)
+4. **Phase 4: Ongoing governance** (monthly/sprint/quarterly audits)
+
+For LATC migration requests, include phase status in the final summary.
+
+---
+
 ## MANDATORY: Approval before write operations
 
 **NEVER create, update, or delete Confluence pages without the user's explicit approval.**
