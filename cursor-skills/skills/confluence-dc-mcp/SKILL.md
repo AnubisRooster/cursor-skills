@@ -35,6 +35,22 @@ to Confluence DC via its REST API using a Personal Access Token (PAT).
 
 ---
 
+## MCP migration workflow (Confluence)
+
+Use this workflow when migrating Confluence work from ad hoc/manual updates to MCP-driven operations:
+
+1. **Inventory first**: identify source spaces/pages and target destination space tree.
+2. **Read-only baseline**: use read tools first (`confluence_search`, `confluence_get_page`, history/children calls) to confirm current state.
+3. **Draft migration plan**: present page mapping (source -> destination), labels, attachment handling, and ordering to the user.
+4. **Explicit approval gate**: wait for user sign-off before any create/update/move/delete call.
+5. **Execute in batches**: migrate in small sets, then verify each batch with read calls.
+6. **Post-migration verification**: confirm hierarchy, labels, attachments, and key page links.
+7. **Report + rollback notes**: summarize exactly what changed and how to revert high-risk edits.
+
+Rule: for migration tasks, do not run write calls until plan and batch scope are explicitly approved.
+
+---
+
 ## MANDATORY: Approval before write operations
 
 **NEVER create, update, or delete Confluence pages without the user's explicit approval.**

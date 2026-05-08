@@ -9,6 +9,22 @@ This skill governs how the agent creates Jira issues through the `user-mcp-atlas
 
 ---
 
+## MCP migration workflow (Jira)
+
+Use this workflow when migrating Jira planning/tracking from manual ticket authoring to MCP-driven issue creation:
+
+1. **Baseline discovery**: read current Initiative/Epic/Story state with `jira_get_issue` and `jira_search`.
+2. **Structure reconciliation**: map legacy work into Initiative -> Epic -> Story hierarchy and identify non-conforming items.
+3. **WBS pre-allocation**: compute next slots from sibling scans before drafting payloads.
+4. **Draft-first gate**: present all required fields (including components, labels, AC, DoR, DoD) and wait for approval.
+5. **Validated creation**: use `jira_batch_create_issues` with `validate_only: true` for batches before live creation.
+6. **Link completion**: ensure Parent Link / Epic Link and required GANTT links are applied.
+7. **Verification report**: return created keys, numbering decisions, and any follow-up cleanup (for legacy non-WBS issues).
+
+Rule: never migrate by raw REST or direct Jira UI-first edits when MCP tools are available.
+
+---
+
 ## Initiative → Epic → Story Hierarchy
 
 This project uses a three-level hierarchy:
