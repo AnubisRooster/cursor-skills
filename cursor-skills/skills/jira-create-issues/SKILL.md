@@ -9,22 +9,6 @@ This skill governs how the agent creates Jira issues through the `user-mcp-atlas
 
 ---
 
-## MCP migration workflow (Jira)
-
-Use this workflow when migrating Jira planning/tracking from manual ticket authoring to MCP-driven issue creation:
-
-1. **Baseline discovery**: read current Initiative/Epic/Story state with `jira_get_issue` and `jira_search`.
-2. **Structure reconciliation**: map legacy work into Initiative -> Epic -> Story hierarchy and identify non-conforming items.
-3. **WBS pre-allocation**: compute next slots from sibling scans before drafting payloads.
-4. **Draft-first gate**: present all required fields (including components, labels, AC, DoR, DoD) and wait for approval.
-5. **Validated creation**: use `jira_batch_create_issues` with `validate_only: true` for batches before live creation.
-6. **Link completion**: ensure Parent Link / Epic Link and required GANTT links are applied.
-7. **Verification report**: return created keys, numbering decisions, and any follow-up cleanup (for legacy non-WBS issues).
-
-Rule: never migrate by raw REST or direct Jira UI-first edits when MCP tools are available.
-
----
-
 ## Initiative → Epic → Story Hierarchy
 
 This project uses a three-level hierarchy:
@@ -100,20 +84,22 @@ Labels encode **who** is doing the work and **what product** it serves. **Every 
 | Label                | Team                                  |
 | -------------------- | ------------------------------------- |
 | `team:infra-prc`     | Wang's infrastructure team (PRC)      |
-| `team:infra-row`      | Thompson's ops team (ROW)             |
+| `team:infra-row`     | Thompson's ops team (ROW)             |
 | `team:ro-prc-p`      | Qiu's R&O team (PRC Personal)         |
 | `team:ro-prc-e`      | Cai's R&O team (PRC Enterprise)       |
 | `team:ro-intent`     | Miao's intent routing team            |
 | `team:ro-tools`      | Luo's tooling team                    |
 | `team:eval`          | Tuli's evaluation team                |
 | `team:models-prc`    | Zhang/Wang's model factory team (PRC) |
-| `team:models-row`     | Marthi's models team (ROW)            |
+| `team:models-na`     | Marthi's models team (NA)             |
 | `team:runtime-model` | Webb's model runtime team             |
 | `team:runtime-agent` | Zhu's agent runtime team              |
 | `team:dcm`           | Thompson/Li's data & context team     |
 | `team:hive-core`     | HiVE platform core team               |
 
-Region convention: use `PRC` and `ROW` labels (not `NA`).
+Team inference rule notes:
+- If work is for **Tianxi**, default to `team:ro-prc-p` unless the user explicitly specifies another Tianxi team.
+- For **Reasoning & Orchestration** component work, pick an `team:ro-*` label (do not map to non-RO teams).
 
 ### Product / BU labels (`product:*`, `bu:*`)
 
@@ -121,7 +107,6 @@ Region convention: use `PRC` and `ROW` labels (not `NA`).
 | ------------------- | --------------------------- |
 | `product:qira`      | IDG AIES - Qira             |
 | `product:tianxi`    | PRC Personal AI - Tianxi    |
-| `product:prc-e`     | PRC Enterprise              |
 | `product:hive`      | HiVE Platform               |
 | `product:atp`       | ATP + External Partnerships |
 | `bu:idg-gic`        | IDG GIC (CSW)               |
@@ -168,30 +153,84 @@ BU projects that span multiple pillars by design:
 
 ## Mandatory fields (always)
 
-Every Story/Task created under an Epic MUST have all of these populated. Never skip them; draft sensible placeholders from context and present them to the user if values are missing.
+**Every issue created by this skill MUST include ALL of the following fields, regardless of whether Jira marks them as required.** Never skip these. If the user hasn't provided content for one of them, generate sensible defaults or ask the user — do NOT create issues with blank mandatory fields.
 
-| Field | Type | Tool parameter / Custom field |
-|---|---|---|
-| Summary | string | `summary` (system) |
-| Description | markdown | `description` (system) — also carries DoR and DoD (see below) |
-| Epic Link | issue key | `customfield_10006` via `additional_fields.epic_link` |
-| Estimate (Story Points) | number | `customfield_10816` via `additional_fields` |
-| Component/s | comma-separated string | `components` (dedicated tool param) |
-| Labels | array | `labels` in `additional_fields` — at least one `team:*` label |
-| Function area | string (pillar name) | `customfield_16400` via `additional_fields` — auto-derived from Components (see [Function area mapping](#function-area-mapping)) |
-| Acceptance Criteria | markdown | `customfield_10515` via `additional_fields` (Story screen only — see below) |
-| Definition of Ready | markdown | **Description body only** — not on any screen |
-| Definition of Done | markdown | **Description body only** — not on any screen |
+### For Stories/Tasks
 
-For an **Epic** itself, Epic Link is **not** applicable. Instead, an Epic requires:
+| Field | Type | Tool parameter / Custom field | Notes |
+|---|---|---|---|
+| Summary | string | `summary` (system) | Must start with WBS number |
+| Description | markdown | `description` (system) | Also carries DoR and DoD (see below) |
+| Epic Link | issue key | `customfield_10006` via `additional_fields.epic_link` | Links story to epic |
+| Estimate (Story Points) | number | `customfield_10816` via `additional_fields` | e.g. "3", "5", "8" |
+| Component/s | comma-separated string | `components` (dedicated tool param) | One or more from 8-pillar list |
+| Labels | array | `labels` in `additional_fields` | At least one `team:*` label required |
+| Function area | string (pillar name) | `customfield_16400` via `additional_fields` | Auto-derived from Components (see [Function area mapping](#function-area-mapping)) |
+| Acceptance Criteria | markdown | `customfield_10515` via `additional_fields` | Story screen only — use bullet list |
+| Definition of Ready | markdown | **Description body only** | Not on any screen — always embed |
+| Definition of Done | markdown | **Description body only** | Not on any screen — always embed |
 
-| Field | Type | Custom field |
-|---|---|---|
-| Epic Name | string | `customfield_10005` (required by Jira for Epics) |
+### For Epics
 
-The other mandatory fields (Description, Components, Labels, AC, DoR, DoD) still apply to Epics. Estimate is optional on Epics (points usually live on children).
+Epics do NOT get an Epic Link field (they are the epic). Instead, Epics require:
+
+| Field | Type | Custom field | Notes |
+|---|---|---|---|
+| Epic Name | string | `customfield_10005` | Required by Jira for Epics — same as summary |
+| Summary | string | `summary` (system) | Must start with WBS number |
+| Description | markdown | `description` (system) | Also carries AC, DoR, and DoD |
+| Component/s | comma-separated string | `components` | One or more from 8-pillar list |
+| Labels | array | `labels` in `additional_fields` | At least one `team:*` label required |
+| Function area | string | `customfield_16400` via `additional_fields` | Auto-derived from Components |
+| Acceptance Criteria | markdown | **Description body only** | Not on Epic screen — embed in description |
+| Definition of Ready | markdown | **Description body only** | Not on any screen — always embed |
+| Definition of Done | markdown | **Description body only** | Not on any screen — always embed |
+
+**Note:** Estimate is optional on Epics (story points usually live on child Stories).
+
+### Field Guidelines
+
+**Summary**: Every summary MUST begin with a **WBS (Work Breakdown Structure) number** that reflects the issue's position in the hierarchy. The WBS number is followed by a space and the title text. Stories should use the format "[WBS] [verb] [object] [context]".
+
+**Description**: Markdown body explaining what the issue is about, why it matters, and any relevant context. For stories, include a brief user-story format ("As a [role], I want [goal], so that [benefit]") when appropriate. **DoR and DoD must always be embedded in the description body** under `## Definition of Ready` and `## Definition of Done` headings.
+
+**Epic Link** (`epicKey` or `customfield_10006`): Only on stories/tasks — set to the epic key. Not used on the epic itself.
+
+**Estimate** (`customfield_10816`): A string or numeric value representing story points (e.g. "1", "2", "3", "5", "8", "13"). If the user doesn't provide estimates, ask or make reasonable suggestions based on apparent complexity.
+
+**Component/s**: The Jira component(s) this issue belongs to — must be from the 8-pillar list. Use `jira_get_project_components` to verify valid component names if needed.
+
+**Labels**: Must include at least one `team:*` label. Add `product:*` / `bu:*` labels for BU-specific work. See [Labels — Teams and Products](#labels--teams-and-products).
+
+**Function area** (`customfield_16400`): Auto-derived from Components — see [Function area mapping](#function-area-mapping). Always include this field.
+
+**Acceptance Criteria** (`customfield_10515`): A bullet list of testable conditions that must be true for the story to be considered accepted. Write these in "Given/When/Then" or simple checkbox format. Example:
+```
+- [ ] User can authenticate via OAuth2
+- [ ] Existing sessions are migrated without data loss
+- [ ] Error responses follow the standard API format
+```
+
+**Definition of Ready** (embedded in Description): Conditions that must be met before work can begin. Generate sensible defaults if not provided:
+```
+- [ ] Requirements are clearly defined
+- [ ] Acceptance criteria are documented
+- [ ] Dependencies are identified
+- [ ] Design/technical approach is agreed upon
+```
+
+**Definition of Done** (embedded in Description): Conditions that must be met for the work to be considered complete. Generate sensible defaults if not provided:
+```
+- [ ] Code is written and peer-reviewed
+- [ ] Unit tests are passing
+- [ ] Documentation is updated
+- [ ] QA testing is complete
+- [ ] Deployed to staging and verified
+```
 
 ### Screen availability — where fields are accepted by Jira
+
+Not all mandatory fields are on all screen schemes. Based on testing:
 
 | Field               | Epic screen | Story screen | Fallback                                    |
 | ------------------- | ----------- | ------------ | ------------------------------------------- |
@@ -206,7 +245,7 @@ The other mandatory fields (Description, Components, Labels, AC, DoR, DoD) still
 | Definition of Ready | ❌           | ❌            | **Always** embed under `## Definition of Ready` in Description |
 | Definition of Done  | ❌           | ❌            | **Always** embed under `## Definition of Done` in Description |
 
-**Rule:** DoR and DoD are **never** sent via `additional_fields` — they do not appear on any Jira screen and will be silently rejected. Always embed them in the `description` body. AC may be sent via `customfield_10515` on Stories, but must also appear in the Description body for Epics.
+**Rule:** DoR and DoD are **never** sent via `additional_fields` — they do not appear on any Jira screen and will be silently rejected. Always embed them in the `description` body under clearly labeled headings. AC may be sent via `customfield_10515` on Stories, but must also appear in the Description body for Epics.
 
 ---
 
@@ -233,20 +272,43 @@ Every issue carries a Work Breakdown Structure prefix at the front of both the *
 
 | Level | Issue type | Prefix shape | Example |
 |---|---|---|---|
-| 1 | Initiative | `X.0` | `0.0 Operational Tasks & General Work` |
+| 1 | Initiative | `X.0` | `0.0 OPS: Operational Tasks & General Work` |
 | 2 | Epic | `X.Y` | `0.4 Data and Infra Ops Tasks` |
 | 3 | Story / Task | `X.Y.Z` | `0.4.7 Provision dashboard refresh job on shared VM` |
 | 4 | Subtask | `X.Y.Z.N` | `0.4.7.1 Add pre-drain health check script` |
 
-Format rules:
+### Format rules
+
 - Single space between the WBS number and the title text.
 - Zero-padding is **not** used (`0.10`, never `0.010`).
 - Initiatives are not created by this skill; their prefix is read, not assigned. If an Initiative has no prefix, stop and ask the user to add one.
 - The same WBS string goes into both `summary` and (for Epics) `customfield_10005` (Epic Name).
 
-### Computing the next number
+### WBS Number Derivation (CRITICAL — Always Required)
 
-Before creating an Epic or a Story/Task, scan existing siblings and pick the **lowest unused integer** for the new level. Always show the user the scan result and the chosen number before creating.
+**NEVER invent or guess WBS numbers.** Before assigning a WBS number to any new issue, you MUST:
+
+1. **Fetch the parent** using `jira_get_issue` to get its summary and extract the WBS prefix.
+   - For an Epic under an Initiative: extract the root number (e.g., `0` from `"0.0 OPS: Operational Tasks"`)
+   - For a Story under an Epic: extract the Epic's full prefix (e.g., `0.4` from `"0.4 Data and Infra Ops Tasks"`)
+
+2. **Scan existing children** to find all existing WBS numbers at that level:
+   - For Epics: run `project = <PROJ> AND "Parent Link" = <INIT> AND issuetype = Epic`
+   - For Stories/Tasks: run `project = <PROJ> AND "Epic Link" = <EPIC> AND issuetype in (Story, Task)`
+
+3. **Parse WBS prefixes** from each child's summary and collect the numbers at the relevant level.
+
+4. **Determine the next available number** — find the highest existing number and increment by 1. 
+   - For example, if children are `0.1`, `0.2`, `0.4`, the next available is `0.5`
+   - **DO NOT fill gaps** (like `0.3` in this example) — gaps may be intentional
+
+5. **For batch creates**, allocate consecutive numbers starting at the next free slot: `0.5`, `0.6`, `0.7`, etc.
+
+6. **Report to the user** before creating: "Initiative `<INIT>` is `X.0`. Existing Epics: `<list>`. Next Epic will be `X.<nextY>`. Confirm?"
+
+7. **Flag non-conforming siblings** (e.g., issues without WBS prefixes) for the user to review later.
+
+### Computing the next number
 
 **Creating an Epic under Initiative `<INIT>`:**
 
@@ -299,8 +361,7 @@ Highest conforming `Y` = `4`. Next Epic under `LATC-7` would be `0.5 <title>`. S
 | `Data, Context, & Memory` | `Data, Context & Memory` |
 | `Reasoning & Orchestration` | `Reasoning & Orchestration` |
 | `Runtime` | `Runtime` |
-| `Infrastructure` | `Operations & Infrastructure` |
-| `Operations` | `Operations (Non-Tech)` |
+| `Operations` | `Operations & Infrastructure` or `Operations (Non-Tech)` |
 | `Model Evaluation` | `Evaluation` |
 | `Model Factory` | `Models` |
 | `HiVE Platform` | `HiVE Platform` |
@@ -308,9 +369,9 @@ Highest conforming `Y` = `4`. Next Epic under `LATC-7` would be `0.5 <title>`. S
 **Resolution rules when an issue has multiple components:**
 
 1. If all components point to the same pillar → use that pillar.
-2. If components span multiple pillars → set Function area from the **first listed component** and add label `cross-pillar`.
-3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → follow the first listed component rule and still add `cross-pillar`.
-4. If `HiVE Platform` is combined with a domain pillar → follow the first listed component rule and still add `cross-pillar` when multiple components are present.
+2. If components span multiple pillars → use the pillar of the **most specific / primary** component and note the assumption in the draft. Ask the user if genuinely ambiguous.
+3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → use `Operations`.
+4. If `HiVE Platform` is combined with a domain pillar → use the domain pillar's function area (the HiVE component is captured via labels and components; Function area reflects the primary domain).
 
 **Always show the resolved pillar** in the pre-create draft so the user can override before confirmation.
 
@@ -346,74 +407,115 @@ Run only the checks relevant to what's missing or ambiguous. Skip ones already v
 
 ## Workflow
 
-### A. Creating a single Story/Task under an existing Epic
+### Step 1 — Gather Information
 
-1. **Gather inputs.** Required:
-   - `project_key` (e.g. `LATC`)
-   - `epic_key` (e.g. `LATC-1304`)
-   - `summary` (title text only; WBS prefix is computed)
-   - `components` (one or more from the 8-pillar list)
-   - `labels` (at least one `team:*` label)
-   - Optional but encouraged: `assignee`, `priority`, `sprint`
+Before creating anything, confirm or collect:
 
-2. **Compute WBS.** Read `<epic_key>` prefix `X.Y`; scan child Stories/Tasks; pick next `Z`. Final summary = `"X.Y.Z <title>"`.
+1. **Project key** — e.g. `LATC`. Ask if unknown.
+2. **Parent Initiative or Epic** — the parent issue key that these issues will live under. Ask if unknown.
+3. **Issue summaries** — the titles/names for each issue (without WBS prefix — that will be computed).
+4. **Issue descriptions** — what the work is about and why it matters.
+5. **Component(s)** — which pillar component(s) from the 8-pillar list. Ask if unknown.
+6. **Labels** — which team(s) and product(s). At least one `team:*` label is required.
+7. **Estimates** — story point estimates for each issue.
+8. **Assignee** (optional) — who should own the issues.
+9. **Priority** (optional) — any extra metadata.
 
-3. **Draft all mandatory fields.** Use the templates in [Templates](#templates). Mark uncertain content as `TBD:`.
+If the user gives you a high-level feature description and asks you to break it down, generate 3–8 stories that decompose the work into concrete, actionable tasks. Each story should be small enough for one sprint and have a clear definition of done. Generate all mandatory field content for each story (acceptance criteria, DoR, DoD, estimate).
 
-4. **Pre-flight** as needed (Epic key valid? Components valid? Labels valid? WBS scan complete?).
+### Step 2 — Present Proposal for Approval (MANDATORY)
 
-5. **Show the full draft** to the user:
+**NEVER create tickets directly. ALWAYS present a proposal first and wait for the user to approve it before creating anything in Jira.**
 
-   ```
-   Project: LATC
-   Issue type: Story
-   Epic Link: LATC-1304 (0.4 Data and Infra Ops Tasks)
-   WBS: 0.4.7  (existing children: 0.4.1..0.4.6; 0 un-numbered legacy)
-   Summary: 0.4.7 Provision dashboard refresh job on shared VM
-   Components: Operations & Infrastructure
-   Labels: team:infra-row
-   Function area: Infrastructure  ← derived from Components
-   Story Points: 3
-   Description: ...
-   Acceptance Criteria: ... [via customfield_10515]
-   Definition of Ready: ... [embedded in Description — not on Jira screen]
-   Definition of Done: ...  [embedded in Description — not on Jira screen]
-   ```
+After gathering information and computing WBS numbers, present the full plan as a formatted table showing all issues you intend to create. Include:
 
-6. **Confirm** ("Create this Story now? Reply with edits or 'go'.").
+- WBS number (computed from parent scan)
+- Issue type (Epic / Story / Task / Subtask)
+- Summary title (with WBS prefix)
+- Estimate (story points)
+- Component(s)
+- Label(s)
 
-7. **Create** via `jira_create_issue` (see [Tool call shape](#tool-call-shape)).
+Example proposal format:
 
-8. **Report result.** Show the created issue key and a one-line summary; offer to add a worklog, comments, or transitions.
+| WBS   | Type    | Summary                                    | Est | Component(s)                | Labels                        |
+|-------|---------|--------------------------------------------|-----|---------------------------|----------------------------|
+| 0.5   | Epic    | 0.5 Data Ingestion & Entity Extraction     | 34  | Data, Context & Memory    | team:dcm                   |
+| 0.5.1 | Story   | 0.5.1 Design document ingestion architecture | 5   | Data, Context & Memory    | team:dcm                   |
+| 0.5.2 | Story   | 0.5.2 Implement preprocessing and chunking | 8   | Data, Context & Memory    | team:dcm                   |
+| 0.5.3 | Story   | 0.5.3 Develop entity extraction prompts    | 8   | Data, Context & Memory    | team:dcm                   |
+| 0.6   | Epic    | 0.6 Knowledge Graph Infrastructure         | 26  | Data, Context & Memory    | team:dcm                   |
+| 0.6.1 | Story   | 0.6.1 Evaluate and deploy graph database   | 5   | Data, Context & Memory    | team:dcm                   |
 
-### B. Creating a new Epic under an Initiative
+After presenting the proposal, explicitly ask the user:
 
-1. Gather: `project_key`, `initiative_key` (e.g. `LATC-7`), `summary` (title text only), `components`, `labels`.
-2. **Compute WBS.** Read `<initiative_key>` prefix `X.0`; scan child Epics; pick next `Y`. Final summary and Epic Name = `"X.Y <title>"`.
-3. Set `customfield_10005` (Epic Name) to the same `"X.Y <title>"` string.
-4. Set `customfield_12913` (Parent Link) to `<initiative_key>` in `additional_fields`.
-5. Draft Description, AC, DoR, DoD (Estimate optional on Epics).
-6. **Show the draft**, confirm, then create with `issue_type: "Epic"`.
-7. **After creation**, call `jira_create_issue_link` to add the GANTT hierarchy link:
-   ```
-   type_name: "multi-level hierarchy [GANTT]"
-   inward_issue_key:  "<NEW-EPIC-KEY>"
-   outward_issue_key: "<INITIATIVE-KEY>"
-   ```
+**"Does this look good? I'll create these tickets once you approve, or let me know what you'd like to change."**
 
-### C. Scaffolding multiple Stories under one Epic
+Wait for explicit approval. The user may:
+- Approve as-is → proceed to creation
+- Request additions, removals, or modifications → update the proposal and present it again
+- Change estimates, components, or story wording → update and re-present
 
-1. Gather the Epic key and a list of work items (titles or short descriptions).
-2. **Compute consecutive WBS.** Scan child Stories/Tasks; allocate `X.Y.<nextZ>`, `X.Y.<nextZ+1>`, ... in input order.
-3. For each item, draft all mandatory fields (Epic Link and Labels are the same for all).
-4. **Validate first**: call `jira_batch_create_issues` with `validate_only: true` and the full payload. Fix any reported errors.
-5. Show a compact numbered table of all drafts (one row per issue, including WBS, component, labels, and estimate) and ask for batch confirmation.
-6. Create with `jira_batch_create_issues` (`validate_only: false`).
-7. Report the resulting keys with their WBS numbers.
+**Only proceed to ticket creation after the user confirms the proposal.**
 
-### D. Creating an Epic and its Stories together
+### Step 3 — Compute WBS Numbers
 
-Two-pass: run workflow B for the Epic, capture its key and `X.Y` prefix, then run workflow C against that Epic. Do not pre-allocate Story numbers until the Epic exists, because batch validation can fail and you don't want orphan numbers.
+Before creating, compute WBS numbers by scanning existing children (see [WBS Number Derivation](#wbs-number-derivation-critical--always-required)):
+
+1. Fetch the parent issue and extract its WBS prefix
+2. Scan existing children with appropriate JQL
+3. Parse WBS numbers from summaries
+4. Determine next available number(s)
+5. Show the scan results to the user and confirm the chosen numbers
+
+### Step 4 — Create Issues
+
+For each issue in the approved proposal:
+
+**For an Epic:**
+
+Use `jira_create_issue` with:
+- `issue_type: "Epic"`
+- `summary` with WBS prefix
+- `customfield_10005` (Epic Name) set to same value as summary
+- `customfield_12913` (Parent Link) set to Initiative key in `additional_fields`
+- All mandatory fields (components, labels, description with AC/DoR/DoD embedded)
+
+After creation, call `jira_create_issue_link` to establish the GANTT hierarchy:
+```
+type_name: "multi-level hierarchy [GANTT]"
+inward_issue_key:  "<EPIC-KEY>"        # the new epic (child)
+outward_issue_key: "<INITIATIVE-KEY>"  # the parent initiative
+```
+
+**For a Story/Task:**
+
+Use `jira_create_issue` with:
+- `issue_type: "Story"` (or `"Task"`)
+- `summary` with WBS prefix
+- `epic_link` in `additional_fields` set to the Epic key
+- All mandatory fields (estimate, components, labels, AC, DoR, DoD)
+- DoR and DoD embedded in description body, AC in `customfield_10515`
+
+**For batch creates:**
+
+Use `jira_batch_create_issues`:
+1. Call with `validate_only: true` first to catch errors
+2. Fix any reported errors
+3. Call with `validate_only: false` to create
+4. Report the resulting keys with their WBS numbers
+
+### Step 5 — Report Results
+
+After all issues are created, present a summary table:
+
+| WBS   | Key        | Type  | Summary                                  | Estimate | Components | Status  |
+|-------|------------|-------|------------------------------------------|----------|------------|---------|
+| 0.5   | LATC-1400  | Epic  | 0.5 Data Ingestion & Entity Extraction  | 34       | Data, Context & Memory | To Do   |
+| 0.5.1 | LATC-1401  | Story | 0.5.1 Design document ingestion architecture | 5    | Data, Context & Memory | To Do   |
+| 0.5.2 | LATC-1402  | Story | 0.5.2 Implement preprocessing and chunking  | 8     | Data, Context & Memory | To Do   |
+
+Also note that all issues include Acceptance Criteria, Definition of Ready, and Definition of Done.
 
 ---
 
@@ -430,7 +532,7 @@ Example payload for a Story:
   "issue_type": "Story",
   "description": "## Context\n...\n\n## Goal\n...\n\n## Approach\n...\n\n## Out of scope\n...\n\n## Links\n...\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] Dependencies confirmed\n- [ ] Effort estimated\n\n## Definition of Done\n- [ ] Code merged, CI green\n- [ ] Tests passing\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -463,12 +565,12 @@ Notes:
 
 Before creating anything, present this table and wait for explicit approval:
 
-| WBS   | Type  | Summary                               | Est | Component(s)                | Labels                        |
-| ----- | ----- | ------------------------------------- | --- | --------------------------- | ----------------------------- |
-| 4.1   | Epic  | Kubernetes Cluster Upgrade            | —   | Operations & Infrastructure | team:infra-row                 |
-| 4.1.1 | Story | Design rolling upgrade strategy       | 5   | Operations & Infrastructure | team:infra-row                 |
-| 4.1.2 | Story | Implement node draining and migration | 8   | Operations & Infrastructure | team:infra-row                 |
-| 4.1.3 | Story | Update monitoring dashboards          | 5   | Operations & Infrastructure, Evaluation | team:infra-row, team:eval |
+| WBS   | Type  | Summary                                      | Est | Component(s)                | Labels                        |
+| ----- | ----- | -------------------------------------------- | --- | --------------------------- | ----------------------------- |
+| 4.1   | Epic  | 4.1 Kubernetes Cluster Upgrade               | —   | Operations & Infrastructure | team:infra-row                |
+| 4.1.1 | Story | 4.1.1 Design rolling upgrade strategy        | 5   | Operations & Infrastructure | team:infra-row                |
+| 4.1.2 | Story | 4.1.2 Implement node draining and migration  | 8   | Operations & Infrastructure | team:infra-row                |
+| 4.1.3 | Story | 4.1.3 Update monitoring dashboards           | 5   | Operations & Infrastructure, Evaluation | team:infra-row, team:eval |
 
 Ask explicitly: **"Does this look good? I'll create these tickets once you approve, or let me know what you'd like to change."**
 
@@ -590,7 +692,7 @@ WBS work:
 - `LATC-1304` summary is `0.4 Data and Infra Ops Tasks` → parent prefix `0.4`.
 - Scan: `project = LATC AND "Epic Link" = LATC-1304 AND issuetype in (Story, Task)`. Suppose existing children `0.4.1..0.4.6`.
 - Next slot: `0.4.7`.
-- Component: `Operations & Infrastructure`. Label: `team:infra-row`. Function area: `Infrastructure`.
+- Component: `Operations & Infrastructure`. Label: `team:infra-row`. Function area: `Operations`.
 
 ```json
 {
@@ -599,7 +701,7 @@ WBS work:
   "issue_type": "Story",
   "description": "## Context\nThe JIRAFlow dashboard currently refreshes manually. A scheduled job would reduce operator toil and ensure stakeholders always see current data.\n\n## Goal\nA systemd timer on the shared VM refreshes the JIRAFlow dataset hourly with monitoring alerts on failure.\n\n## Approach\n- Provision systemd timer for the refresh script\n- Push status to operational dashboard\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] VM access and credentials confirmed\n- [ ] Effort estimated; risks captured\n\n## Definition of Done\n- [ ] Timer deployed and green for 24 h\n- [ ] Runbook updated\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -613,19 +715,46 @@ User: "Create an epic for Qira model routing work — it spans Reasoning & Orche
 - Function area: `Reasoning & Orchestration` (primary pillar; note the Runtime component in the draft).
 - Present proposal and wait for approval before creating.
 
-### Example 3: New Epic under LATC-7 + first Story
+### Example 3: Complete Interaction Flow
 
-User: "New Epic in LATC for 'Self-service Jira reports for managers' under Operational Tasks (LATC-7). Add a first Story for 'Pick reporting library and POC'."
+User: "Create an epic in LATC under initiative LATC-7 for migrating our auth service to OAuth2, with stories for the main tasks. Use the Operations (Non-Tech) component and team:infra-row label."
 
-WBS for the Epic:
-- `LATC-7` is `0.0 Operational Tasks & General Work` → root `0`.
-- Scan child Epics; highest conforming `Y` is `4` (`LATC-1304`). `LATC-1980` is non-conforming and flagged.
-- Next slot: `0.5`. Epic summary = Epic Name = `0.5 Self-service Jira reports for managers`.
-- Set `customfield_12913 = "LATC-7"` (Parent Link) + create GANTT link after creation.
+**Agent's approach:**
 
-After Epic is created (`LATC-9999`):
-- Scan stories under `LATC-9999` → none → next is `0.5.1`.
-- Story summary = `0.5.1 Pick reporting library and POC`, `epic_link = "LATC-9999"`, 5 points.
+1. Confirm project key `LATC`, component `Operations (Non-Tech)`, label `team:infra-row`
+2. **Fetch LATC-7** to get the WBS root (`0.0 OPS: Operational Tasks & General Work` → root `0`) and existing children
+3. Find existing child Epics: `0.1`, `0.2`, `0.3`, `0.4` → next available is `0.5`
+4. Generate stories from the feature description with all mandatory fields
+5. **Present proposal table to the user with WBS numbering:**
+
+   | WBS   | Type  | Summary                                          | Est | Component           | Labels        |
+   |-------|-------|--------------------------------------------------|-----|---------------------|---------------|
+   | 0.5   | Epic  | 0.5 Migrate Auth Service to OAuth2               | 34  | Operations (Non-Tech) | team:infra-row |
+   | 0.5.1 | Story | 0.5.1 Research OAuth2 providers and select one   | 3   | Operations (Non-Tech) | team:infra-row |
+   | 0.5.2 | Story | 0.5.2 Implement authorization code flow          | 8   | Operations (Non-Tech) | team:infra-row |
+   | 0.5.3 | Story | 0.5.3 Migrate existing user sessions             | 8   | Operations (Non-Tech) | team:infra-row |
+   | 0.5.4 | Story | 0.5.4 Update API gateway configuration           | 5   | Operations (Non-Tech) | team:infra-row |
+   | 0.5.5 | Story | 0.5.5 Write integration tests for OAuth2 flows   | 5   | Operations (Non-Tech) | team:infra-row |
+   | 0.5.6 | Story | 0.5.6 Update documentation and runbooks          | 5   | Operations (Non-Tech) | team:infra-row |
+
+6. **Ask:** "Does this look good? I'll create these tickets once you approve, or let me know what you'd like to change."
+7. **After approval**:
+   - Create the Epic with WBS `0.5`, set Epic Name and Parent Link fields
+   - Link Epic to Initiative LATC-7 via "multi-level hierarchy [GANTT]"
+   - Create stories sequentially with all mandatory fields (AC, DoR, DoD embedded in descriptions)
+8. Present summary table with Jira keys mapped to WBS numbers
+
+---
+
+## Optional Enhancements
+
+After the core Epic + Stories are created, offer the user these options:
+
+- **Set priority** — pass `{"priority": {"name": "High"}}` in `additional_fields`
+- **Add to a sprint** — use `jira_add_issues_to_sprint` if sprint ID is known, or set `{"customfield_10004": <sprintId>}` in `additional_fields`
+- **Link to existing issues** — use `jira_create_issue_link`
+- **Add watchers** — use `jira_add_watcher`
+- **Add additional labels** — pass `{"labels": ["label1", "label2"]}` in `additional_fields`
 
 ---
 
@@ -682,4 +811,3 @@ If a future project surfaces different IDs for AC/DoR/DoD, confirm with `jira_se
 
 - MCP tools used: `jira_create_issue`, `jira_batch_create_issues`, `jira_create_issue_link`, `jira_link_to_epic`, `jira_get_project_components`, `jira_search`, `jira_search_fields`, `jira_get_issue`, `jira_get_sprints_from_board`.
 - Server: `user-mcp-atlassian` (sooperset / SharkyND mcp-atlassian, stdio over `uvx`).
-

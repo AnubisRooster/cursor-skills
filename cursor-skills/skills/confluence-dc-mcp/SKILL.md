@@ -35,53 +35,6 @@ to Confluence DC via its REST API using a Personal Access Token (PAT).
 
 ---
 
-## MCP migration workflow (Confluence)
-
-Use this workflow when migrating Confluence work from ad hoc/manual updates to MCP-driven operations:
-
-1. **Inventory first**: identify source spaces/pages and target destination space tree.
-2. **Read-only baseline**: use read tools first (`confluence_search`, `confluence_get_page`, history/children calls) to confirm current state.
-3. **Draft migration plan**: present page mapping (source -> destination), labels, attachment handling, and ordering to the user.
-4. **Explicit approval gate**: wait for user sign-off before any create/update/move/delete call.
-5. **Execute in batches**: migrate in small sets, then verify each batch with read calls.
-6. **Post-migration verification**: confirm hierarchy, labels, attachments, and key page links.
-7. **Report + rollback notes**: summarize exactly what changed and how to revert high-risk edits.
-
-Rule: for migration tasks, do not run write calls until plan and batch scope are explicitly approved.
-
----
-
-## LATC migration alignment (strict source pages)
-
-For LATC restructuring work, treat these Confluence pages as canonical:
-
-- `https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=616878478` (LATC Jira & Confluence Structure)
-- `https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=618785746` (LATC - Find Your Work in Jira)
-
-When those pages and this skill conflict, follow the page content and update this skill accordingly.
-
-### Required LATC Confluence tree shape
-
-During migration planning and verification, enforce this high-level tree from the structure page:
-
-- `Vertical Pillars/` with pillar subtrees (Data, Context & Memory; Reasoning & Orchestration; Runtime; Operations & Infrastructure; Evaluation; Models; HiVE Platform)
-- `Horizontal BU Projects/` with BU project pages
-- `Strategic Projects/`
-- `Process & Templates/`
-
-### Required migration phase checks (May 2026 plan)
-
-Validate and report progress against the 4-phase plan defined on the structure page:
-
-1. **Phase 1: Baseline** (components/labels/mapping baseline complete)
-2. **Phase 2: Bulk migration** (mapping updates + issue triage)
-3. **Phase 3: Publish & validate** (dashboards, tree publishing, communications)
-4. **Phase 4: Ongoing governance** (monthly/sprint/quarterly audits)
-
-For LATC migration requests, include phase status in the final summary.
-
----
-
 ## MANDATORY: Approval before write operations
 
 **NEVER create, update, or delete Confluence pages without the user's explicit approval.**
@@ -217,6 +170,26 @@ Config file locations:
 > **`confluence_get_page_views` is Cloud-only.** Do not call it on Data Center — it
 > will error. Use `confluence_get_page_history` as an alternative for activity tracking.
 
+### Toolset control
+
+Restrict which toolsets load via the `TOOLSETS` env var:
+
+```bash
+# Load only core Confluence + Jira defaults
+TOOLSETS=default,confluence_labels,confluence_attachments
+
+# Load everything (72 tools)
+TOOLSETS=all
+```
+
+Or cherry-pick individual tools:
+
+```bash
+ENABLED_TOOLS="confluence_search,confluence_get_page,confluence_create_page"
+```
+
+Add `READ_ONLY_MODE=true` to disable all write operations.
+
 ---
 
 ## CQL (Confluence Query Language) reference
@@ -277,11 +250,23 @@ type = page AND space = "ENG"
 -- Full-text search
 type = page AND text ~ "Kubernetes deployment"
 
+-- Pages modified in the last week
+type = page AND lastModified > now("-7d")
+
 -- Pages modified this week
 type = page AND lastModified >= startOfWeek()
 
+-- Pages by a specific author
+type = page AND creator = "jsmith"
+
 -- Pages created by a user in the last 30 days
 type = page AND creator = "jdoe" AND created > now("-30d")
+
+-- Blog posts in a space
+type = blogpost AND space = "TEAM"
+
+-- Pages with a specific label
+type = page AND label = "architecture"
 
 -- Pages with multiple labels
 type = page AND label = "api" AND label = "v2"
@@ -301,6 +286,9 @@ type = attachment AND container = 12345678
 -- Pages NOT labelled "archived"
 type = page AND space = "ENG" AND label != "archived"
 
+-- Combined: recent architecture docs in ENG space
+type = page AND space = "ENG" AND label = "architecture" AND lastModified > now("-30d")
+
 -- Complex: recent architecture docs excluding drafts
 type = page AND space = "ENG" AND label = "architecture"
   AND label != "draft" AND lastModified > now("-90d")
@@ -313,6 +301,45 @@ type = page AND space = "ENG" AND label = "architecture"
 - `content.property` field is Cloud-only — not available on DC.
 - Full-text search uses the DC index; there may be a short delay after edits.
 - Default result limit is typically 25; adjust with the `limit` parameter.
+
+---
+
+## Common workflows
+
+### Search and summarize documentation
+
+```
+"Search Confluence for pages about CI/CD pipelines in the DEVOPS space
+ and summarize the key steps"
+```
+
+### Create a new page from a Jira epic
+
+```
+"Look at epic PROJ-100 and its child stories, then create a Confluence
+ page in the ENG space titled 'PROJ-100 Design Doc' with a summary of
+ each story as a section"
+```
+
+### Update a page with meeting notes
+
+```
+"Update the page 'Weekly Standup Notes' in space TEAM — append today's
+ date as a heading and add these bullet points: ..."
+```
+
+### Diff two versions of a page
+
+```
+"Show me what changed between version 5 and version 8 of the page
+ titled 'API Contract' in space PLATFORM"
+```
+
+### Attach a file to a page
+
+```
+"Upload the file report.pdf to the page 'Q1 Results' in the FINANCE space"
+```
 
 ---
 
@@ -346,6 +373,7 @@ parameters work for both deployment types.
 | `confluence_update_page` version conflict | Re-fetch the page to get the current version number, then retry |
 | `confluence_get_page_views` error | Cloud-only — do not use on DC |
 | Attachment upload fails | Check file size limits (admin-configurable, default ~10–25 MB); user needs "Add Attachment" permission |
+| Tools load but return errors | Check that the PAT user has required Confluence permissions (space read/write, page create, etc.) |
 
 For proxy environments, add `"HTTPS_PROXY": "http://proxy.yourcompany.com:8080"` to the env block.
 
