@@ -196,7 +196,7 @@ Epics do NOT get an Epic Link field (they are the epic). Instead, Epics require:
 
 **Epic Link** (`epicKey` or `customfield_10006`): Only on stories/tasks — set to the epic key. Not used on the epic itself.
 
-**Estimate** (`customfield_10816`): A string or numeric value representing story points (e.g. "1", "2", "3", "5", "8", "13"). If the user doesn't provide estimates, ask or make reasonable suggestions based on apparent complexity.
+**Estimate** (`customfield_10816`): Story points. **Always pass this as a string** (e.g. `"0.5"`, `"1"`, `"3"`, `"5"`, `"8"`, `"13"`) — this Jira DC rejects a numeric value at create/update time with `Operation value must be a string`. If the user doesn't provide estimates, ask or make reasonable suggestions based on apparent complexity.
 
 **Component/s**: The Jira component(s) this issue belongs to — must be from the 8-pillar list. Use `jira_get_project_components` to verify valid component names if needed.
 
@@ -532,7 +532,7 @@ Example payload for a Story:
   "issue_type": "Story",
   "description": "## Context\n...\n\n## Goal\n...\n\n## Approach\n...\n\n## Out of scope\n...\n\n## Links\n...\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] Dependencies confirmed\n- [ ] Effort estimated\n\n## Definition of Done\n- [ ] Code merged, CI green\n- [ ] Tests passing\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -556,7 +556,7 @@ Notes:
 - **DoR and DoD go in `description` only** — never in `additional_fields`. They are not on any Jira screen and will be silently dropped if sent as custom fields.
 - **AC** (`customfield_10515`) is accepted on Story screens; pass it in `additional_fields` for Stories. For Epics, embed it in `description` only.
 - After creating an Epic, always also call `jira_create_issue_link` with `type_name: "multi-level hierarchy [GANTT]"`.
-- For sprints, set `"customfield_10004": <sprintId>` (numeric ID). Resolve via `jira_get_sprints_from_board` if needed.
+- **Sprints cannot be set at create time** through this MCP — passing `customfield_10004` to `jira_create_issue` raises `Operation value must be a string`. Create the issue(s) first, then add them with `jira_add_issues_to_sprint` (`sprint_id` + comma-separated `issue_keys`). Resolve the active sprint id via `jira_get_sprints_from_board` (state `active`) if needed.
 - `labels` must be an array of strings using the `team:*`, `product:*`, or `bu:*` prefix conventions.
 
 ---
@@ -701,7 +701,7 @@ WBS work:
   "issue_type": "Story",
   "description": "## Context\nThe JIRAFlow dashboard currently refreshes manually. A scheduled job would reduce operator toil and ensure stakeholders always see current data.\n\n## Goal\nA systemd timer on the shared VM refreshes the JIRAFlow dataset hourly with monitoring alerts on failure.\n\n## Approach\n- Provision systemd timer for the refresh script\n- Push status to operational dashboard\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook\n\n## Definition of Ready\n- [ ] AC reviewed by assignee\n- [ ] VM access and credentials confirmed\n- [ ] Effort estimated; risks captured\n\n## Definition of Done\n- [ ] Timer deployed and green for 24 h\n- [ ] Runbook updated\n- [ ] AC verified by reviewer\n- [ ] Stakeholders notified",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":3,\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -751,7 +751,7 @@ User: "Create an epic in LATC under initiative LATC-7 for migrating our auth ser
 After the core Epic + Stories are created, offer the user these options:
 
 - **Set priority** — pass `{"priority": {"name": "High"}}` in `additional_fields`
-- **Add to a sprint** — use `jira_add_issues_to_sprint` if sprint ID is known, or set `{"customfield_10004": <sprintId>}` in `additional_fields`
+- **Add to a sprint** — create the issue(s) first, then call `jira_add_issues_to_sprint` (`sprint_id`, comma-separated `issue_keys`). Do **not** set `customfield_10004` in `additional_fields` at create time — this MCP rejects it with `Operation value must be a string`.
 - **Link to existing issues** — use `jira_create_issue_link`
 - **Add watchers** — use `jira_add_watcher`
 - **Add additional labels** — pass `{"labels": ["label1", "label2"]}` in `additional_fields`
@@ -761,6 +761,8 @@ After the core Epic + Stories are created, offer the user these options:
 ## Anti-patterns to avoid
 
 - **Don't pass JSON objects to `additional_fields`.** It must be a JSON **string**.
+- **Don't pass Story Points as a number.** `customfield_10816` must be a **string** (`"0.5"`, `"3"`); a numeric value is rejected with `Operation value must be a string`.
+- **Don't set the Sprint at create time.** `customfield_10004` cannot be set via `jira_create_issue` on this DC (same `Operation value must be a string` error). Add issues to the sprint afterward with `jira_add_issues_to_sprint`.
 - **Don't set Epic Link on an Epic.** Use Epic Name (`customfield_10005`) on Epics; Epic Link on children. For Epics, also set Parent Link (`customfield_12913`) and create the GANTT hierarchy link.
 - **Don't skip the WBS scan.** Never invent the next number — always re-run the JQL scan right before showing the draft.
 - **Don't reuse a number.** If the parent has gaps (e.g. `0.4.1`, `0.4.3`, `0.4.5`), still use `max+1` (`0.4.6`). Filling gaps causes confusion in roadmaps.
@@ -802,6 +804,8 @@ After the core Epic + Stories are created, offer the user these options:
 | Original story points (Portfolio) | `customfield_12916` |
 | Target start / end (Portfolio) | `customfield_12914` / `customfield_12915` |
 | Parent Link (Portfolio) | `customfield_12913` |
+
+**Field-type quirks (this DC):** pass Story Points (`customfield_10816`) as a **string** (e.g. `"0.5"`); the Sprint field (`customfield_10004`) **cannot** be set at create time — use `jira_add_issues_to_sprint` after creating. Both quirks surface as the error `Operation value must be a string`.
 
 If a future project surfaces different IDs for AC/DoR/DoD, confirm with `jira_search_fields` before creating.
 
