@@ -1,0 +1,26 @@
+---
+description: Jira issue creation — AC, DoR, and DoD must always be set as both custom fields and description sections
+alwaysApply: true
+---
+
+# Jira Mandatory Fields: AC, DoR, DoD
+
+When creating or updating any Jira issue (Epic, Story, Task, Subtask), the following three fields are **always required** and must **always be set in both places**:
+
+| Field | Custom Field ID | Description Section Heading |
+|---|---|---|
+| Acceptance Criteria | `customfield_10515` | `## Acceptance Criteria` |
+| Definition of Ready | `customfield_16516` | `## Definition of Ready` |
+| Definition of Done | `customfield_16544` | `## Definition of Done` |
+
+## Rules
+
+1. **Always set the custom field** via `additional_fields` in `jira_create_issue` or `jira_update_issue`.
+2. **Always embed the same content** in the description body under the matching `##` heading.
+3. **Never set only one or the other** — both the custom field and the description section are required every time.
+4. **Never leave them empty or placeholder-only** — generate real, task-specific content based on context if the user hasn't provided it.
+5. This applies to **all issue types**: Epic, Story, Task, Subtask — no exceptions.
+
+## Hard Stop
+
+If you are about to call `jira_create_issue` or `jira_update_issue` and any of these three fields is missing or blank, **stop and fill them first**.
