@@ -93,10 +93,8 @@ etc.) do **not** require approval.
     "command": "uvx",
     "args": ["mcp-atlassian"],
     "env": {
-      // Existing Jira config (if present)
       "JIRA_URL": "https://jira.yourcompany.com",
       "JIRA_PERSONAL_TOKEN": "your-jira-pat",
-      // Add these for Confluence DC
       "CONFLUENCE_URL": "https://confluence.yourcompany.com",
       "CONFLUENCE_PERSONAL_TOKEN": "your-confluence-pat"
     }
@@ -106,7 +104,6 @@ etc.) do **not** require approval.
 
 Config file locations:
 - **Windows (installer):** `%APPDATA%\Claude\claude_desktop_config.json`
-- **Windows (Store / MSIX):** `%LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json`
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ---
@@ -119,8 +116,7 @@ Config file locations:
 4. Copy the token immediately — it won't be shown again.
 
 > If the instance runs Confluence DC < 7.9, PATs are not available. Fall back to
-> HTTP basic auth with `CONFLUENCE_USERNAME` + `CONFLUENCE_API_TOKEN` (where the
-> token is your password). PATs are strongly preferred.
+> HTTP basic auth with `CONFLUENCE_USERNAME` + `CONFLUENCE_API_TOKEN`.
 
 ---
 
@@ -167,28 +163,7 @@ Config file locations:
 |---|---|
 | `confluence_search_user` | Search for Confluence users |
 
-> **`confluence_get_page_views` is Cloud-only.** Do not call it on Data Center — it
-> will error. Use `confluence_get_page_history` as an alternative for activity tracking.
-
-### Toolset control
-
-Restrict which toolsets load via the `TOOLSETS` env var:
-
-```bash
-# Load only core Confluence + Jira defaults
-TOOLSETS=default,confluence_labels,confluence_attachments
-
-# Load everything (72 tools)
-TOOLSETS=all
-```
-
-Or cherry-pick individual tools:
-
-```bash
-ENABLED_TOOLS="confluence_search,confluence_get_page,confluence_create_page"
-```
-
-Add `READ_ONLY_MODE=true` to disable all write operations.
+> **`confluence_get_page_views` is Cloud-only.** Do not call it on Data Center.
 
 ---
 
@@ -213,133 +188,79 @@ field operator value [AND|OR field operator value ...]
 | `contributor` | user | Any user who edited the content |
 | `lastModified` | date | When content was last updated |
 | `created` | date | When content was created |
-| `id` | number | Content ID |
-| `parent` | number | Parent page ID |
 | `ancestor` | number | Any ancestor page ID (recursive) |
-
-### Operators
-
-| Operator | Meaning | Applicable to |
-|---|---|---|
-| `=` | Exact match | keyword, number |
-| `!=` | Not equal | keyword, number |
-| `~` | Contains (full-text) | text fields |
-| `!~` | Does not contain | text fields |
-| `>` `<` `>=` `<=` | Comparison | date, number |
-| `IN` | In a list | keyword |
-| `NOT IN` | Not in a list | keyword |
-
-### Date functions
-
-```
-now()           # current time
-now("-7d")      # 7 days ago
-now("-4w")      # 4 weeks ago
-now("-3M")      # 3 months ago
-now("-1y")      # 1 year ago
-startOfDay()    startOfWeek()    startOfMonth()    startOfYear()
-endOfDay()      endOfWeek()      endOfMonth()      endOfYear()
-```
 
 ### Example CQL queries
 
 ```cql
--- All pages in a space
 type = page AND space = "ENG"
-
--- Full-text search
 type = page AND text ~ "Kubernetes deployment"
-
--- Pages modified in the last week
 type = page AND lastModified > now("-7d")
-
--- Pages modified this week
-type = page AND lastModified >= startOfWeek()
-
--- Pages by a specific author
-type = page AND creator = "jsmith"
-
--- Pages created by a user in the last 30 days
-type = page AND creator = "jdoe" AND created > now("-30d")
-
--- Blog posts in a space
-type = blogpost AND space = "TEAM"
-
--- Pages with a specific label
-type = page AND label = "architecture"
-
--- Pages with multiple labels
-type = page AND label = "api" AND label = "v2"
-
--- Pages in multiple spaces
-type = page AND space IN ("ENG", "PLATFORM", "DEVOPS")
-
--- Blog posts from this year, newest first
-type = blogpost AND created >= startOfYear() ORDER BY created DESC
-
--- All pages under a parent (recursive)
 ancestor = 12345678 AND type = page
-
--- Attachments on a specific page
-type = attachment AND container = 12345678
-
--- Pages NOT labelled "archived"
-type = page AND space = "ENG" AND label != "archived"
-
--- Combined: recent architecture docs in ENG space
 type = page AND space = "ENG" AND label = "architecture" AND lastModified > now("-30d")
-
--- Complex: recent architecture docs excluding drafts
-type = page AND space = "ENG" AND label = "architecture"
-  AND label != "draft" AND lastModified > now("-90d")
-  ORDER BY lastModified DESC
 ```
 
 **DC-specific notes:**
 - Space keys are **case-sensitive** (usually uppercase).
-- Personal spaces use `~username` and must be quoted: `space = "~jsmith"`.
-- `content.property` field is Cloud-only — not available on DC.
-- Full-text search uses the DC index; there may be a short delay after edits.
-- Default result limit is typically 25; adjust with the `limit` parameter.
+- Personal spaces use `~username` and must be quoted.
+- `content.property` field is Cloud-only.
 
 ---
 
-## Common workflows
+## LATC Space — Pillar Page Structure
 
-### Search and summarize documentation
+### LATC Jira governance reference
 
-```
-"Search Confluence for pages about CI/CD pipelines in the DEVOPS space
- and summarize the key steps"
-```
+Before proposing Jira-automation behavior for LATC workflows, cross-check against:
 
-### Create a new page from a Jira epic
+- `Jira Usage at LATC` (`pageId=551394388`)
 
-```
-"Look at epic PROJ-100 and its child stories, then create a Confluence
- page in the ENG space titled 'PROJ-100 Design Doc' with a summary of
- each story as a section"
-```
+This page defines current hierarchy semantics (including Feature usage), workflow expectations, and resolution guidance. Treat it as the source of truth when skill logic and legacy habits conflict.
 
-### Update a page with meeting notes
+### Standard section layout
 
 ```
-"Update the page 'Weekly Standup Notes' in space TEAM — append today's
- date as a heading and add these bullet points: ..."
+Pillar Homepage              ← pillar overview: vision, scope, deliverables, timeline, KPIs
+├── 00-Regular Updates       ← status/progress updates, biweekly reports
+├── 01-Resources & Working Model  ← team roster, headcount, working agreements, processes
+├── 02-Architecture          ← architecture designs, system diagrams, design decisions
+├── 03-Components            ← component-level specs, scopes, technical docs
+└── 0x-...                   ← pillar-specific extensions
 ```
 
-### Diff two versions of a page
+### Known pillar homepages in LATC (page IDs)
 
-```
-"Show me what changed between version 5 and version 8 of the page
- titled 'API Contract' in space PLATFORM"
+| Pillar | Homepage title | Page ID |
+|---|---|---|
+| Data, Context & Memory | `Data, Context & Memory` | `616882006` |
+| Operations & Infrastructure | `Operations & Infrastructure` | `616882009` |
+
+### Navigation pattern — use section-aware CQL
+
+```cql
+ancestor = <homepageId> AND title ~ "02-Architecture"
+ancestor = <homepageId> AND title ~ "00-Regular Updates"
 ```
 
-### Attach a file to a page
+**Known section page IDs for Operations & Infrastructure:**
 
-```
-"Upload the file report.pdf to the page 'Q1 Results' in the FINANCE space"
-```
+| Section | Page ID |
+|---|---|
+| `00-Regular Updates - INFRA` | `632542364` |
+| `01-Resources & Working Model - INFRA` | `632542365` |
+| `02-Architecture - INFRA` | `632542366` |
+| `03-Components - INFRA` | `632542367` |
+
+**Known section page IDs for Data, Context & Memory:**
+
+| Section | Page ID |
+|---|---|
+| `00-Regular Updates - DCM` | `622810939` |
+| `01-Resources & Working model - DCM` | `622811020` |
+| `02-Architecture - DCM` | `622811149` |
+| `03-Components - DCM` | `622811129` |
+| `04-Cross Pillar Contracts - DCM` | `622813427` |
+| `05 - Enterprise Knowledge Factory (EKF)` | `630653389` |
 
 ---
 
@@ -354,28 +275,18 @@ type = page AND space = "ENG" AND label = "architecture"
 | SSL | Managed by Atlassian | May need `CONFLUENCE_SSL_VERIFY=false` |
 | Network | Internet-accessible | Requires VPN / local network access |
 
-The mcp-atlassian server abstracts these differences — the same tool names and
-parameters work for both deployment types.
-
 ---
 
 ## Troubleshooting
 
 | Symptom | Likely cause & fix |
 |---|---|
-| No Confluence tools appear | `CONFLUENCE_URL` / `CONFLUENCE_PERSONAL_TOKEN` not set; restart Claude Desktop/Cursor after updating config |
-| SSL: CERTIFICATE_VERIFY_FAILED | Add `"CONFLUENCE_SSL_VERIFY": "false"` to env, or install enterprise CA into OS trust store |
-| 401 Unauthorized | PAT expired — generate a new one; or wrong user |
-| Connection refused / timeout | VPN not connected; test URL in browser from same machine |
-| 403 Forbidden | PAT user lacks space permissions; ask Confluence admin |
-| `confluence_search` returns empty | Check CQL syntax; space keys are case-sensitive; index may lag |
-| `confluence_create_page` "space not found" | Use the space **key** (e.g. `ENG`), not the display name |
-| `confluence_update_page` version conflict | Re-fetch the page to get the current version number, then retry |
+| No Confluence tools appear | `CONFLUENCE_URL` / `CONFLUENCE_PERSONAL_TOKEN` not set; restart after updating config |
+| SSL: CERTIFICATE_VERIFY_FAILED | Add `"CONFLUENCE_SSL_VERIFY": "false"` to env |
+| 401 Unauthorized | PAT expired — generate a new one |
+| Connection refused / timeout | VPN not connected |
+| 403 Forbidden | PAT user lacks space permissions |
 | `confluence_get_page_views` error | Cloud-only — do not use on DC |
-| Attachment upload fails | Check file size limits (admin-configurable, default ~10–25 MB); user needs "Add Attachment" permission |
-| Tools load but return errors | Check that the PAT user has required Confluence permissions (space read/write, page create, etc.) |
-
-For proxy environments, add `"HTTPS_PROXY": "http://proxy.yourcompany.com:8080"` to the env block.
 
 ---
 
@@ -384,4 +295,3 @@ For proxy environments, add `"HTTPS_PROXY": "http://proxy.yourcompany.com:8080"`
 - mcp-atlassian source: https://github.com/sooperset/mcp-atlassian
 - Confluence DC REST API: https://developer.atlassian.com/server/confluence/confluence-server-rest-api/
 - Cursor MCP docs: https://docs.cursor.com/mcp
-- Claude Desktop MCP docs: https://docs.claude.com
