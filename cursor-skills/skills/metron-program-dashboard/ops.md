@@ -137,9 +137,11 @@ Invoke-RestMethod -Method PATCH -Headers ($H + @{ "Content-Type"="application/js
 POST   /metron/api/program/findings
        body: { priority, title, description, added_date }
 PATCH  /metron/api/program/findings/{id}
-       body: { priority, title, description, added_date }
+       body: { priority, title, description, added_date, sort_order? }
 DELETE /metron/api/program/findings/{id}
 ```
+
+`sort_order` is accepted on PATCH (verified 2026-08-05) — use it to keep weekly cards at the top of Executive Summary.
 
 ### Chains — **verified**
 
@@ -305,6 +307,88 @@ Expect:
 | SSR page loads | 200 + title markers |
 | export deps/resources/roadmap | 200 + bytes > 0 |
 | ATP GET | 404/405 (expected) |
+
+---
+
+## Weekly Executive Summary refresh (Confluence → findings)
+
+**Never write findings without explicit user approval.** Curate a draft first; then POST/PATCH.
+
+### Card model
+
+Keep existing strategic findings. Maintain exactly **two** weekly cards (upsert by theme substring):
+
+| Theme substring | Title pattern | Typical priority |
+|---|---|---|
+| `Cross-pillar & BU delivery risks` | `Week of YYYY-MM-DD — Cross-pillar & BU delivery risks` | `high` (or `critical` if Off Track / hard delivery block) |
+| `Major milestones & near-term targets` | `Week of YYYY-MM-DD — Major milestones & near-term targets` | `medium` or `high` if a hard executive date |
+
+`added_date` = newest pillar week-of date in the pack. After upsert, PATCH `sort_order` so weekly cards are **0** and **1**, then shift strategic cards to 2+.
+
+Description format (plain text only — UI is `whitespace-pre-wrap`, not markdown):
+
+```text
+PILLAR · Project/epic
+Risk: …   (or Target:/Landed: for milestones)
+Impact: … (or Value: for milestones — quantify dates, %, ticket counts, slip windows)
+```
+
+Blank line between items. 5–8 items max. **No Confluence/source links and no Jira issue keys/URLs** (keep project names only). Pillar labels in CAPS (or `PILLAR · Project`) for scanability — `**bold**` will not render.
+
+### Confluence hubs (LATC)
+
+Hubs are indexes — use **latest dated child**, skip `[Template]` and “To be updated…” placeholders.
+
+| Pillar / BU | Hub pageId | Lead / notes hub |
+|---|---|---|
+| Infra | `653003208` | — |
+| Models | `636192034` | Lead updates `653003206` (prefer dated `| Models Weekly Update`) |
+| Eval | `630655592` | Lead updates `653003209` |
+| DCM | `622810939` | Lead updates `653003204` |
+| R&O | `653003205` | — |
+| Runtime | `653003207` | Also search title `Runtime Weekly` (latest may live outside hub children) |
+| Horizontal BU | `616881999` | Nested: Qira `616882011`, Tianxi `616882012`, SSG `616882014`, DTIT `616882015` → `632545983` / bi-weekly `625865518`, Enterprise AI `551397641` |
+
+### Extract fields (pillar template)
+
+From each latest page: Overall Status · Executive pulse · Stand-up “What is next” · Top risk · amber/red deps · Leadership ask (decision/escalation only) · Evidence URL + Jira keys.
+
+**Skip:** reusability checklists, ticket laundry lists, placeholder pulses, stale BU syncs (>~3 weeks).
+
+### Tooling (manual)
+
+1. Confluence MCP: `confluence_get_page_children` → `confluence_get_page` (markdown).
+2. Draft pack (example: `Downloads/metron-explore/exec_summary_weekly_draft.md`).
+3. On approval: `GET /metron/api/program/findings` → POST new or PATCH matching theme → PATCH `sort_order` for full list.
+4. Helper script (optional): `Downloads/metron-explore/apply_weekly_findings.py`.
+5. Verify UI: `/metron/dashboard/program` → Executive Summary.
+
+### Scheduled job (Windows Task Scheduler — Monday 09:00 Eastern)
+
+Installed task name: **`MetronWeeklyExecSummary`** (next run Monday 09:00 local; host timezone = Eastern).
+
+| Piece | Path |
+|---|---|
+| Job script | `Downloads/metron-explore/weekly_exec_summary_refresh.py` |
+| Wrapper | `Downloads/metron-explore/run_weekly_exec_summary.ps1` |
+| Installer | `Downloads/metron-explore/install_weekly_task.ps1` |
+| Logs | `Downloads/metron-explore/logs/` |
+
+Auth: Confluence PAT from `~/.cursor/mcp.json` (`mcp-atlassian`); Metron cookie from `~/.cursor/secrets/metron.env`.
+
+```powershell
+# Dry-run (harvest + draft only)
+python "$env:USERPROFILE\Downloads\metron-explore\weekly_exec_summary_refresh.py" --dry-run
+
+# Run once for real
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\metron-explore\run_weekly_exec_summary.ps1"
+
+# Reinstall / inspect
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\metron-explore\install_weekly_task.ps1"
+Get-ScheduledTask -TaskName MetronWeeklyExecSummary | Get-ScheduledTaskInfo
+```
+
+Keep Metron cookie fresh (re-login via `metron_login.py` if Monday runs start failing auth). PC must be on / awake at 09:00 (task has `StartWhenAvailable`).
 
 ---
 
