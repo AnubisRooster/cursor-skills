@@ -312,7 +312,7 @@ Expect:
 
 ## Weekly Executive Summary refresh (Confluence → findings)
 
-**Never write findings without explicit user approval.** Curate a draft first; then POST/PATCH.
+**Never write findings without explicit user approval** (manual path). The Monday cron may write only after automated quality gates pass — if gates fail it writes a draft and **aborts** the Metron PATCH.
 
 ### Card model
 
@@ -323,21 +323,40 @@ Keep existing strategic findings. Maintain exactly **two** weekly cards (upsert 
 | `Cross-pillar & BU delivery risks` | `Week of YYYY-MM-DD — Cross-pillar & BU delivery risks` | `high` (or `critical` if Off Track / hard delivery block) |
 | `Major milestones & near-term targets` | `Week of YYYY-MM-DD — Major milestones & near-term targets` | `medium` or `high` if a hard executive date |
 
-`added_date` = newest pillar week-of date in the pack. After upsert, PATCH `sort_order` so weekly cards are **0** and **1**, then shift strategic cards to 2+.
+`added_date` / title week = **newest non-future** pillar week-of in the pack (never a next-week empty shell). After upsert, PATCH `sort_order` so weekly cards are **0** and **1**, then shift strategic cards to 2+.
 
 Description format (plain text only — UI is `whitespace-pre-wrap`, not markdown):
 
 ```text
 PILLAR · Project/epic
 Risk: …   (or Target:/Landed: for milestones)
-Impact: … (or Value: for milestones — quantify dates, %, ticket counts, slip windows)
+Impact: … (or Value: for milestones — quantify dates, %, slip windows)
 ```
 
-Blank line between items. 5–8 items max. **No Confluence/source links and no Jira issue keys/URLs** (keep project names only). Pillar labels in CAPS (or `PILLAR · Project`) for scanability — `**bold**` will not render.
+Blank line between items. 5–8 items max. **No Confluence/source links and no Jira issue keys/URLs** (keep project names / % Done only). Pillar labels in CAPS (or `PILLAR · Project`) for scanability — `**bold**` will not render.
+
+### Quality gates (mandatory — learned 2026-08-11)
+
+These failures produced unreadable cards (empty `(, 6%)` after key-strip, template Risk/Impact, week titled `2026-08-17` from an empty Runtime shell). **Do not PATCH Metron if any gate fails** — fix the draft first (`patch_weekly_readable.py` pattern or hand-edit).
+
+| Gate | Rule |
+|---|---|
+| Skip title | `[Template]`, `to be updated`, `archive`, `copy this page` |
+| Skip body | Unfilled template markers: `One sentence: the most important outcome`, `[Risk + delivery/business impact`, `[Decision, escalation`, bracket-heavy short pages |
+| Skip future week | `week_of` more than **2 days ahead** of today (next-Monday shells) |
+| Skip stale | `week_of` older than ~24 days |
+| Runtime search | Walk CQL results until a **non-template / non-future** page parses — do not take the first hit blindly |
+| Strip hygiene | After removing Jira keys/URLs, collapse artifacts: `(, 6%)` → `(6%)`, drop empty `( )` |
+| Reject Impact | `None`, `N/A`, `TBD`, `TBD — pillar lead to confirm` — synthesize a real impact instead |
+| Reject Target | Section headers mistaken for next steps (`What is next`, `Blockers / help needed`) |
+| Reject block | Any Risk/Target still containing `[…placeholder…]` or `Impact: None/TBD` |
+| Min pack | Require ≥3 risk blocks and ≥3 milestone blocks or **abort write** |
+
+After every automated refresh: open Program → Executive Summary and spot-check the two weekly cards for placeholders or empty parens. If bad, rewrite with `Downloads/metron-explore/patch_weekly_readable.py` (or equivalent) and PATCH.
 
 ### Confluence hubs (LATC)
 
-Hubs are indexes — use **latest dated child**, skip `[Template]` and “To be updated…” placeholders.
+Hubs are indexes — use **latest dated child** that passes quality gates; skip templates and “To be updated…” placeholders.
 
 | Pillar / BU | Hub pageId | Lead / notes hub |
 |---|---|---|
@@ -346,21 +365,21 @@ Hubs are indexes — use **latest dated child**, skip `[Template]` and “To be 
 | Eval | `630655592` | Lead updates `653003209` |
 | DCM | `622810939` | Lead updates `653003204` |
 | R&O | `653003205` | — |
-| Runtime | `653003207` | Also search title `Runtime Weekly` (latest may live outside hub children) |
+| Runtime | `653003207` | Also search title `Runtime Weekly` (latest may live outside hub children; **skip empty dated shells**) |
 | Horizontal BU | `616881999` | Nested: Qira `616882011`, Tianxi `616882012`, SSG `616882014`, DTIT `616882015` → `632545983` / bi-weekly `625865518`, Enterprise AI `551397641` |
 
 ### Extract fields (pillar template)
 
-From each latest page: Overall Status · Executive pulse · Stand-up “What is next” · Top risk · amber/red deps · Leadership ask (decision/escalation only) · Evidence URL + Jira keys.
+From each latest page: Overall Status · Executive pulse · Stand-up “What is next” · Top risk · amber/red deps · Leadership ask (decision/escalation only).
 
-**Skip:** reusability checklists, ticket laundry lists, placeholder pulses, stale BU syncs (>~3 weeks).
+**Skip:** reusability checklists, ticket laundry lists, placeholder pulses, stale BU syncs (>~3 weeks), unfilled template pages even if newly created/dated.
 
 ### Tooling (manual)
 
-1. Confluence MCP: `confluence_get_page_children` → `confluence_get_page` (markdown).
+1. Confluence MCP: `confluence_get_page_children` → `confluence_get_page` (markdown); apply quality gates above.
 2. Draft pack (example: `Downloads/metron-explore/exec_summary_weekly_draft.md`).
 3. On approval: `GET /metron/api/program/findings` → POST new or PATCH matching theme → PATCH `sort_order` for full list.
-4. Helper script (optional): `Downloads/metron-explore/apply_weekly_findings.py`.
+4. Helpers: `weekly_exec_summary_refresh.py` (harvest + gated upsert), `patch_weekly_readable.py` (human rewrite + PATCH), `apply_weekly_findings.py` (legacy).
 5. Verify UI: `/metron/dashboard/program` → Executive Summary.
 
 ### Scheduled job (Windows Task Scheduler — Monday 09:00 Eastern)
@@ -369,7 +388,7 @@ Installed task name: **`MetronWeeklyExecSummary`** (next run Monday 09:00 local;
 
 | Piece | Path |
 |---|---|
-| Job script | `Downloads/metron-explore/weekly_exec_summary_refresh.py` |
+| Job script | `Downloads/metron-explore/weekly_exec_summary_refresh.py` (quality gates enforced) |
 | Wrapper | `Downloads/metron-explore/run_weekly_exec_summary.ps1` |
 | Installer | `Downloads/metron-explore/install_weekly_task.ps1` |
 | Logs | `Downloads/metron-explore/logs/` |
@@ -388,7 +407,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\Downloads\
 Get-ScheduledTask -TaskName MetronWeeklyExecSummary | Get-ScheduledTaskInfo
 ```
 
-Keep Metron cookie fresh (re-login via `metron_login.py` if Monday runs start failing auth). PC must be on / awake at 09:00 (task has `StartWhenAvailable`).
+Keep Metron cookie fresh (re-login via `metron_login.py` if Monday runs start failing auth). PC must be on / awake at 09:00 (task has `StartWhenAvailable`). If the job aborts with `insufficient curated items` or `skip template body` floods the log, fix Confluence sources or run a manual readable PATCH — do not force-write junk.
 
 ---
 

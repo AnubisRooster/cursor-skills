@@ -4,7 +4,9 @@ description: >
   Navigate and operate the live Metron Engineering Intel portal at
   https://latc.lenovo.com/metron — all sidebar pages (Overview, Team,
   Program, Jira Cadence, CTOO Partnerships, AI ROI, Contributors, Activity,
-  Sync Jobs) plus Program Roadmap / FY26 pillar dependency tabs. Use when the
+  Sync Jobs) plus Program Roadmap / FY26 pillar dependency tabs. Includes
+  Confluence→Metron weekly Exec Summary refresh with quality gates (skip
+  empty templates, fix strip artifacts, reject TBD impacts). Use when the
   user mentions Metron, LATC Engineering Intel, Program Roadmap, Team Calorie,
   Jira Cadence, CTOO/ATP partnerships, AI ROI/adoption, Contributors
   leaderboard, Activity Feed, Sync Jobs, or latc.lenovo.com/metron.
@@ -259,6 +261,7 @@ SSR-only.
 6. **PII:** Team, Contributors, Cadence, Resources, Activity embed names/emails — treat as internal.
 7. Offline twin: personal `roadmap-dashboard-html` skill ≈ Program tabs only; Metron is the live hosted system.
 8. For concrete curl/Playwright/PATCH payloads, follow [ops.md](ops.md). Re-verify with `Downloads/metron-explore/verify_ops.py` when the site changes.
+9. **Executive Summary weekly cards:** never PATCH placeholder/template text. Enforce the quality gates in [ops.md](ops.md) § Weekly Executive Summary refresh (skip empty next-week shells, fix Jira-key strip artifacts, reject `Impact: None/TBD`). Prefer `weekly_exec_summary_refresh.py` (gated) or a human rewrite via `patch_weekly_readable.py`.
 
 ## Quick verification
 
