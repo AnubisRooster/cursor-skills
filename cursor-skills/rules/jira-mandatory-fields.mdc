@@ -5,7 +5,9 @@ alwaysApply: true
 
 # Jira Mandatory Fields: AC, DoR, DoD, Business Value
 
-When creating or updating any Jira issue, the following four fields are **always required** and must **always be set as custom fields, and custom fields only.** They are never duplicated in the description body, for any issue type — this applies uniformly to Initiative, Epic, Story, Task, Test, Defect, and (where the screen allows) Sub-task.
+**Scope:** these four custom field IDs and the screen-availability exceptions are **LATC Jira Data Center** (`user-mcp-atlassian`, `https://jira.xpaas.lenovo.com`). They do **not** apply to Jira Cloud (`user-mcp-atlassian-cloud`, `https://lenovo-latc.atlassian.net`). Do not send these IDs on Cloud — they will be rejected. Cloud demo/trial tickets are out of scope for this rule unless the user explicitly asks to enforce an equivalent contract on that site.
+
+When creating or updating any **DC** Jira issue, the following four fields are **always required** and must **always be set as custom fields, and custom fields only.** They are never duplicated in the description body, for any issue type — this applies uniformly to Initiative, Epic, Story, Task, Test, Defect, and (where the screen allows) Sub-task.
 
 | Field | Custom Field ID |
 |---|---|

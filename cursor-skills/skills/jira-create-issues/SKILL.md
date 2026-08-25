@@ -1,11 +1,47 @@
 ---
 name: jira-create-issues
-description: Create Jira Epics/Features and child sprint issues via the mcp-atlassian server (self-hosted Jira Data Center), enforcing a mandatory field set (Summary, Description, Epic Link/Parent Link, Estimate, Components, Labels, Function area, Business Value, Acceptance Criteria, Definition of Ready, Definition of Done) and a hierarchical WBS numbering rule (Initiative X.0 -> Epic/Feature X.Y -> Story/Task/Test/Defect X.Y.Z) regardless of what Jira's screens require. Business Value/AC/DoR/DoD live in dedicated custom fields ONLY for every issue type (Initiative, Epic, Feature, Story, Task, Test, Defect) and are never duplicated in the description; the sole exceptions are Business Value on Task and all four on Sub-task, which have no screen slot and fall back to description headings. Enforces the three-orthogonal-dimensions model (Pillars=Components, Teams=Labels, Programs=Initiatives), 8 pillar-based components, team/product/BU labels, cross-pillar work rules, and initiative gating. Always shows the proposed payload to the user for approval before creating. Use when the user asks to create, draft, file, scaffold, or open a Jira Epic, Feature, Story, Task, Test, Defect, or sub-task under an Epic/Feature/Initiative.
+description: Create Jira Epics/Features and child sprint issues via mcp-atlassian. Default target is self-hosted Jira Data Center (`user-mcp-atlassian`) with a mandatory field set (Summary, Description, Epic Link/Parent Link, Estimate, Components, Labels, Function area, Business Value, Acceptance Criteria, Definition of Ready, Definition of Done) and hierarchical WBS numbering (Initiative X.0 -> Epic/Feature X.Y -> Story/Task/Test/Defect X.Y.Z). Business Value/AC/DoR/DoD live in dedicated custom fields ONLY for every issue type; exceptions are Business Value on Task and all four on Sub-task. Also covers Jira Cloud Premium trial (`user-mcp-atlassian-cloud`) with different field IDs and no DC WBS/governance contract unless the user asks. Enforces pillars=components, teams=labels, programs=initiatives. Always show the proposed payload for approval before creating. Use when the user asks to create, draft, file, scaffold, or open a Jira Epic, Feature, Story, Task, Test, Defect, or sub-task.
 ---
 
 # Jira: Create Epics, Features, and Sprint Issues (mcp-atlassian)
 
-This skill governs how the agent creates Jira issues through the `user-mcp-atlassian` MCP server against a **self-hosted Jira Data Center** instance. It enforces a stricter mandatory field set than Jira's screens require and the organisation's three-dimension governance model.
+This skill governs how the agent creates Jira issues. **Default is self-hosted Jira Data Center** via `user-mcp-atlassian`. Jira Cloud (Premium trial) is a second site via `user-mcp-atlassian-cloud` — pick the namespace from the instance the user named. DC WBS, 8-pillar components, and AC/DoR/DoD/BV custom-field IDs apply to DC only unless the user explicitly asks to enforce an equivalent contract on Cloud.
+
+---
+
+## Two Jira instances — pick the right MCP
+
+Never mix field IDs, parent-link mechanics, or governance rules across sites.
+
+| Site | URL | MCP namespace | When to use |
+|---|---|---|---|
+| **Jira Data Center (production LATC)** | `https://jira.xpaas.lenovo.com` | `user-mcp-atlassian` | Real LATC work. WBS, 8-pillar components, Function area, Parent Link + GANTT, and AC/DoR/DoD/BV custom fields apply **here only**. |
+| **Jira Cloud (Premium trial / demo)** | `https://lenovo-latc.atlassian.net` | `user-mcp-atlassian-cloud` | Trial, Timeline/roadmap demos, Align evaluation. Team-managed project `SCRUM` ("Lenovo AI Technology Center") as of 2026-08-24. |
+
+### Cloud-specific create rules (confirmed 2026-08-24 on `SCRUM`)
+
+Use these **instead of** the DC field IDs and WBS/governance contract when creating issues on Cloud:
+
+| Concern | Jira DC (`LATC`) | Jira Cloud (`SCRUM`, team-managed) |
+|---|---|---|
+| MCP namespace | `user-mcp-atlassian` | `user-mcp-atlassian-cloud` |
+| Story parent | `epic_link` / `customfield_10006` | `parent` = epic key |
+| Story points | `customfield_10816` as a **string** (`"3"`) | `customfield_10016` as a **number** (`3`) |
+| Start date | Portfolio `customfield_12914` | `customfield_10015` (`YYYY-MM-DD`) |
+| Due date | `duedate` | `duedate` |
+| WBS prefixes | Mandatory | Do **not** apply unless the user asks |
+| AC/DoR/DoD/BV (`11491` / `10515` / `16516` / `16544`) | Mandatory custom fields | Those IDs **do not exist** on Cloud — do not send them |
+| Components / Function area | Mandatory 8-pillar list | Not present on team-managed `SCRUM` unless configured in project settings |
+| Epic → Initiative | Parent Link `12913` + GANTT link | Not present (Epic / Story / Task / Subtask only) |
+| Batch create | `jira_batch_create_issues` | Validate-only has worked; actual create has failed with HTTPError — use `jira_create_issue` per issue |
+
+Cloud link types in use: **Blocks**, **Relates**. `SCRUM` transitions: To Do `11`, In Progress `21`, In Review `31`, Blocked `41`, Done `51`.
+
+### Fields and screens cannot be configured via MCP
+
+MCP can **read** field metadata (`jira_search_fields`, `jira_get_create_fields`, `jira_get_project_fields`, `jira_get_field_options`) and **set values** on issues (`jira_create_issue` / `jira_update_issue`). It cannot create custom fields, add fields to screens, edit screen schemes or field configurations, or change workflows (beyond transitioning an issue).
+
+On team-managed Cloud, field layout is **Project settings → Issue types → [type] → Fields**. On company-managed Cloud or DC, screens are admin UI. If a field is missing from the issue type, configure it in Jira first, then backfill values with MCP.
 
 ---
 
@@ -34,7 +70,7 @@ Initiatives are numbered and prefixed by pillar:
 | `DCM-`   | Data, Context & Memory      | `1.x`     | `1.0 DCM: Knowledge Graph Platform`           |
 | `RO-`    | Reasoning & Orchestration   | `2.x`     | `2.0 RO: Multi-Agent Routing`                 |
 | `RT-`    | Runtime                     | `3.x`     | `3.0 RT: On-Device Inference`                 |
-| `INFRA-` | Operations & Infrastructure | `4.x–5.x` | `4.0 INFRA: GPU Cluster Operations`           |
+| `INFRA-` | Operations & Infrastructure | `24.x–29.x` (live LATC); legacy `5.x` / `8.x` | `24.0 INFRA: [Platform Foundations]`          |
 | `EVAL-`  | Evaluation                  | `6.x`     | `6.0 EVAL: Model Eval Framework`              |
 | `MF-`    | Models                      | `7.x–8.x` | `7.0 MF: Model Factory Platform`              |
 | `HIVE-`  | HiVE Platform               | `9.x`     | `9.0 HIVE: Platform Integration`              |
@@ -115,6 +151,7 @@ Team inference rule notes:
 | `product:qira`      | IDG AIES - Qira             |
 | `product:tianxi`    | PRC Personal AI - Tianxi    |
 | `product:hive`      | HiVE Platform               |
+| `product:infrastructure` | Shared / platform infrastructure (landing zone, GPU ops, infra tooling) |
 | `product:atp`       | ATP + External Partnerships |
 | `bu:idg-gic`        | IDG GIC (CSW)               |
 | `bu:idg-cpc`        | IDG CPC&SMB (Commercial)    |
@@ -408,16 +445,24 @@ Highest conforming `Y` = `4`. Next Epic under `LATC-7` would be `0.5 <title>`. S
 | `Data, Context, & Memory` | `Data, Context & Memory` |
 | `Reasoning & Orchestration` | `Reasoning & Orchestration` |
 | `Runtime` | `Runtime` |
-| `Operations` | `Operations & Infrastructure` or `Operations (Non-Tech)` |
+| `Infrastructure` | `Operations & Infrastructure` — when the work is infrastructure/platform engineering |
+| `Operations` | `Operations (Non-Tech)`, or `Operations & Infrastructure` work that is genuinely operational rather than technical |
 | `Model Evaluation` | `Evaluation` |
 | `Model Factory` | `Models` |
 | `HiVE Platform` | `HiVE Platform` |
+
+**`Infrastructure` vs `Operations` (corrected 2026-08-07 — supersedes the 2026-07-24 "always use Operations" note, which was wrong):** the `Operations & Infrastructure` component maps to **two** distinct Function area values, and you must choose based on the nature of the work rather than defaulting:
+
+- **`Infrastructure`** — the default for this component, and the dominant value in LATC (581 issues vs 309 for `Operations`). Use it whenever the work builds, changes, or hardens technical infrastructure: cloud accounts and landing zones, GPU clusters and compute enablement, Kubernetes, networking, IaC/Terraform, CI/CD pipelines and runners, registries, deployment and GitOps, storage/buckets, security tooling and scanning, observability plumbing.
+- **`Operations`** — reserve for work that is legitimately *operational* rather than technical: process definition, governance, intake and triage, licensing/procurement and vendor administration, access-review and audit cadences, reporting/dashboard upkeep, runbook and on-call *process* (as opposed to the tooling that implements it), hiring, and anything on the `Operations (Non-Tech)` component.
+
+If a ticket sits on the boundary, ask which side it belongs to rather than guessing — and never relabel an existing `Infrastructure` ticket to `Operations` as a normalization pass.
 
 **Resolution rules when an issue has multiple components:**
 
 1. If all components point to the same pillar → use that pillar.
 2. If components span multiple pillars → use the pillar of the **most specific / primary** component and note the assumption in the draft. Ask the user if genuinely ambiguous.
-3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → use `Operations`.
+3. If both `Operations & Infrastructure` and `Operations (Non-Tech)` are set → decide by the nature of the work per the `Infrastructure` vs `Operations` rule above; `Operations (Non-Tech)` being present is a strong signal for `Operations`, but technical platform work still takes `Infrastructure`.
 4. If `HiVE Platform` is combined with a domain pillar → use the domain pillar's function area (the HiVE component is captured via labels and components; Function area reflects the primary domain).
 
 **Always show the resolved pillar** in the pre-create draft so the user can override before confirmation.
@@ -432,12 +477,12 @@ The value is a **free-text string** — use the exact pillar names from the tabl
 
 1. **Never silently omit a mandatory field.** If a value is missing, draft a placeholder from conversation context and present the full draft to the user for confirmation before calling `jira_create_issue`. Mark uncertain content as `TBD: <what's needed>`.
 2. **Always show the proposed payload before creating.** Single create AND batch create. Show every mandatory field filled, then explicitly ask "Create this now?" Wait for an affirmative reply. No exceptions.
-3. **Always inherit a WBS prefix from the parent.** Every Epic and Story summary MUST start with the WBS number computed from its parent's prefix and the next free sibling slot. If the parent has no WBS prefix, stop and tell the user — do not invent one.
+3. **On DC, always inherit a WBS prefix from the parent.** Every Epic and Story summary MUST start with the WBS number computed from its parent's prefix and the next free sibling slot. If the parent has no WBS prefix, stop and tell the user — do not invent one. Skip WBS on Cloud unless the user asks.
 4. **Never assume the project key.** Ask if not stated. The MCP tool's regex enforces `^[A-Z][A-Z0-9_]+$`.
 5. **Never assume Epic Link.** If the user says "create stories under Epic X" without a key, search first and ask which one.
-6. **Use the MCP server, not raw REST.** All operations go through `user-mcp-atlassian` tools.
+6. **Use the matching MCP namespace, not raw REST.** DC → `user-mcp-atlassian`. Cloud → `user-mcp-atlassian-cloud`. Do not send DC custom-field IDs to Cloud or Cloud IDs to DC.
 7. **Never use components outside the 8-pillar list.** Old sub-component names (e.g. "RAG", "Agentic Framework", "AI Agent Runtime") are retired. If the user uses old names, map them to the correct pillar component and confirm with the user.
-8. **HARD STOP — DoR, DoD, AC, and Business Value are always required, never optional.** Every Epic, Initiative, Story, and Task MUST have all four populated in their custom fields before the issue is created — **custom field only, for every issue type**, never duplicated in the description (the sole exceptions are Business Value on Task and all four on Sub-task, which have no screen slot and fall back to description headings). There are no exceptions otherwise — not for simple tasks, not for tasks without explicit user input. If the user has not provided content for these fields, generate sensible, task-specific content based on context. A blank or placeholder-only DoR/DoD/AC/Business Value is not acceptable. This rule overrides any user instruction to "keep it simple" or "just create the ticket". The proposal shown in Step 2 MUST display the filled DoR, DoD, AC, and Business Value content so the user can review them before creation, regardless of which field(s) they'll ultimately land in.
+8. **HARD STOP (DC only) — DoR, DoD, AC, and Business Value are always required, never optional.** Every Epic, Initiative, Story, and Task MUST have all four populated in their custom fields before the issue is created — **custom field only, for every issue type**, never duplicated in the description (the sole exceptions are Business Value on Task and all four on Sub-task, which have no screen slot and fall back to description headings). There are no exceptions otherwise — not for simple tasks, not for tasks without explicit user input. If the user has not provided content for these fields, generate sensible, task-specific content based on context. A blank or placeholder-only DoR/DoD/AC/Business Value is not acceptable. This rule overrides any user instruction to "keep it simple" or "just create the ticket". The proposal shown in Step 2 MUST display the filled DoR, DoD, AC, and Business Value content so the user can review them before creation, regardless of which field(s) they'll ultimately land in. **On Cloud, do not send these DC field IDs.**
 
 ---
 
@@ -559,7 +604,7 @@ Use `jira_batch_create_issues`:
 After all issues are created, present a summary table:
 
 | WBS   | Key        | Type  | Summary                                  | Estimate | Components | Status  |
-|-------|------------|-------|-------------------------------------------|----------|------------|---------|
+|-------|------------|-------|------------------------------------------|----------|------------|---------|
 | 0.5   | LATC-1400  | Epic  | 0.5 Data Ingestion & Entity Extraction  | 34       | Data, Context & Memory | To Do   |
 | 0.5.1 | LATC-1401  | Story | 0.5.1 Design document ingestion architecture | 5    | Data, Context & Memory | To Do   |
 | 0.5.2 | LATC-1402  | Story | 0.5.2 Implement preprocessing and chunking  | 8     | Data, Context & Memory | To Do   |
@@ -581,7 +626,7 @@ Example payload for a Story:
   "issue_type": "Story",
   "description": "Automates the currently-manual JIRAFlow dashboard refresh so stakeholders always see current data without operator intervention.\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"customfield_16516\":\"- Requirements are clearly defined\\n- Dependencies are identified\",\"customfield_16544\":\"- Code merged and CI green\\n- AC verified by reviewer\",\"customfield_11491\":\"Removes recurring manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"customfield_16516\":\"- Requirements are clearly defined\\n- Dependencies are identified\",\"customfield_16544\":\"- Code merged and CI green\\n- AC verified by reviewer\",\"customfield_11491\":\"Removes recurring manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -619,10 +664,10 @@ Before creating anything, present this table and wait for explicit approval:
 
 | WBS   | Type  | Summary                                      | Est | Component(s)                | Labels                        |
 | ----- | ----- | -------------------------------------------- | --- | --------------------------- | ----------------------------- |
-| 4.1   | Epic  | 4.1 Kubernetes Cluster Upgrade               | —   | Operations & Infrastructure | team:infra-row                |
-| 4.1.1 | Story | 4.1.1 Design rolling upgrade strategy        | 5   | Operations & Infrastructure | team:infra-row                |
-| 4.1.2 | Story | 4.1.2 Implement node draining and migration  | 8   | Operations & Infrastructure | team:infra-row                |
-| 4.1.3 | Story | 4.1.3 Update monitoring dashboards           | 5   | Operations & Infrastructure, Evaluation | team:infra-row, team:eval |
+| 24.12 | Epic  | 24.12 Kubernetes Cluster Upgrade             | —   | Operations & Infrastructure | team:infra-row                |
+| 24.12.1 | Story | 24.12.1 Design rolling upgrade strategy    | 5   | Operations & Infrastructure | team:infra-row                |
+| 24.12.2 | Story | 24.12.2 Implement node draining and migration | 8 | Operations & Infrastructure | team:infra-row                |
+| 24.12.3 | Story | 24.12.3 Update monitoring dashboards       | 5   | Operations & Infrastructure, Evaluation | team:infra-row, team:eval |
 
 Ask explicitly: **"Does this look good? I'll create these tickets once you approve, or let me know what you'd like to change."**
 
@@ -713,7 +758,7 @@ WBS work:
 - `LATC-1304` summary is `0.4 Data and Infra Ops Tasks` → parent prefix `0.4`.
 - Scan: `project = LATC AND "Epic Link" = LATC-1304 AND issuetype in (Story, Task)`. Suppose existing children `0.4.1..0.4.6`.
 - Next slot: `0.4.7`.
-- Component: `Operations & Infrastructure`. Label: `team:infra-row`. Function area: `Operations`.
+- Component: `Operations & Infrastructure`. Label: `team:infra-row`. Function area: `Infrastructure` (technical infra work, not operational process).
 
 ```json
 {
@@ -722,7 +767,7 @@ WBS work:
   "issue_type": "Story",
   "description": "Replaces the currently-manual JIRAFlow dashboard refresh with a systemd timer on the shared VM that refreshes the dataset hourly and alerts on failure, reducing operator toil and keeping stakeholder data current.\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Operations\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"customfield_16516\":\"- [ ] AC reviewed by assignee\\n- [ ] VM access and credentials confirmed\\n- [ ] Effort estimated; risks captured\",\"customfield_16544\":\"- [ ] Timer deployed and green for 24 h\\n- [ ] Runbook updated\\n- [ ] AC verified by reviewer\\n- [ ] Stakeholders notified\",\"customfield_11491\":\"Removes manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"customfield_16516\":\"- [ ] AC reviewed by assignee\\n- [ ] VM access and credentials confirmed\\n- [ ] Effort estimated; risks captured\",\"customfield_16544\":\"- [ ] Timer deployed and green for 24 h\\n- [ ] Runbook updated\\n- [ ] AC verified by reviewer\\n- [ ] Stakeholders notified\",\"customfield_11491\":\"Removes manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -800,6 +845,8 @@ After the core Epic + Stories are created, offer the user these options:
 - **Don't bypass the Initiative Gating Rule.** If a proposed Initiative has fewer than 3 Epics or a timeline under 3 months, recommend modelling it as an Epic under an existing Initiative.
 - **Don't fabricate component names.** If the requested component doesn't exist in `jira_get_project_components`, stop and tell the user.
 - **Don't bypass confirmation** for create/batch-create operations. Always show the full proposed payload(s) and wait for an explicit go-ahead.
+- **Don't apply DC WBS / AC / DoR / DoD / BV / Function area IDs to Jira Cloud.** Cloud `SCRUM` uses `parent`, numeric `customfield_10016`, and `customfield_10015` start dates. Those DC IDs will be rejected.
+- **Don't try to create custom fields or edit screens via MCP.** Read metadata and set values only; field layout is Jira admin / project settings.
 
 ---
 
@@ -840,9 +887,23 @@ After the core Epic + Stories are created, offer the user these options:
 
 If a future project surfaces different IDs for AC/DoR/DoD/Business Value, confirm with `jira_search_fields` before creating.
 
+## Quick field reference (Jira Cloud trial — project `SCRUM`)
+
+Confirmed 2026-08-24 on `https://lenovo-latc.atlassian.net`. Use MCP namespace `user-mcp-atlassian-cloud`.
+
+| Field | Custom field ID / param | Notes |
+|---|---|---|
+| Start date | `customfield_10015` | `YYYY-MM-DD` string |
+| Due date | `duedate` | `YYYY-MM-DD` |
+| Story points | `customfield_10016` | **number**, not string |
+| Story → Epic | `parent` | Epic key; not `epic_link` |
+| Sprint | `jira_add_issues_to_sprint` after create | Active sprint example: `SCRUM Sprint 0` id `4` |
+
+DC IDs (`customfield_10816`, `customfield_10006`, `customfield_11491`, `customfield_10515`, `customfield_16516`, `customfield_16544`, `customfield_16400`, `customfield_12913`) are invalid on this Cloud site.
+
 ---
 
 ## References
 
-- MCP tools used: `jira_create_issue`, `jira_batch_create_issues`, `jira_create_issue_link`, `jira_link_to_epic`, `jira_get_project_components`, `jira_search`, `jira_search_fields`, `jira_get_issue`, `jira_get_sprints_from_board`.
-- Server: `user-mcp-atlassian` (sooperset / SharkyND mcp-atlassian, stdio over `uvx`).
+- MCP tools used: `jira_create_issue`, `jira_batch_create_issues`, `jira_create_issue_link`, `jira_link_to_epic`, `jira_get_project_components`, `jira_search`, `jira_search_fields`, `jira_get_issue`, `jira_get_sprints_from_board`, `jira_get_create_fields`, `jira_get_project_fields`.
+- Servers: `user-mcp-atlassian` (Jira DC + Confluence DC) and `user-mcp-atlassian-cloud` (Jira Cloud only). Both are sooperset / SharkyND mcp-atlassian, stdio over `uvx`.
