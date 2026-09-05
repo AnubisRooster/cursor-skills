@@ -3,7 +3,7 @@ name: infra-leadership-sync
 description: >
   Weekly Infrastructure Leadership Sync notes for LATC. Runs as a Windows
   Scheduled Task every Wednesday at 3:00 PM Eastern. Uses the Cursor SDK
-  (model grok-4.5) to scrape Jira Operations & Infrastructure, publish a dated
+  (model grok-4.6) to scrape Jira Operations & Infrastructure, publish a dated
   Confluence notes page under the Infrastructure Leadership Sync hub, and point
   the hub Latest notes link. Use when setting up, troubleshooting, or changing
   the sync page format, schedule, or leadership filter.
@@ -21,7 +21,7 @@ Weekly notes for the Infrastructure Leadership Sync.
 | Space | `LATC` |
 | Schedule | Wednesday 3:00 PM Eastern |
 | Task name | `LATC Infra Leadership Sync` |
-| Model | `grok-4.5` |
+| Model | `grok-4.6` |
 
 ## Approved page style (2026-09-02)
 
@@ -101,7 +101,7 @@ python infra_leadership_sync.py --date YYYY-MM-DD   # backfill
 ```
 Windows Task Scheduler (Wed 15:00 Eastern)
   └── infra_leadership_sync.py
-        └── Agent.prompt(..., model="grok-4.5")
+        └── Agent.prompt(..., model="grok-4.6")
               ├── jira_search (Ops & Infra window + Blocked)
               ├── confluence_create/update dated notes page
               └── confluence_update hub Latest notes pointer
@@ -131,7 +131,7 @@ Missing sentinel counts as failure. The runner retries once.
 | Symptom | Fix |
 |---|---|
 | DNS / xpaas unreachable | Connect Lenovo VPN; re-run |
-| Agent status=error empty result | Confirm `grok-4.5` still works |
+| Agent status=error empty result | Confirm `grok-4.6` still works |
 | Bridge WinError 10061 | Cursor agent bridge down; retry later |
 | WinError 10038 | Ensure `_win_bridge_patch` imports before `cursor_sdk` |
 | Page looks like a ticket dump | Leadership filter / In Progress rule skipped; re-run |

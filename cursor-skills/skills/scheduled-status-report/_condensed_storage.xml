@@ -1,0 +1,47 @@
+<p><em>Condensed summary — see the <a href="https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=684287433">full weekly report</a> for charts and ticket-level detail.</em></p>
+
+<h1>Models &mdash; Weekly Update</h1>
+<table><tbody>
+<tr><th>Week of</th><th>Pillar Lead</th><th>Overall Status</th><th>Last Updated</th></tr>
+<tr><td>2026-09-04</td><td>TBD &mdash; pillar lead to confirm</td><td>Amber</td><td>2026-09-04</td></tr>
+</tbody></table>
+
+<h2>Executive pulse</h2>
+<p><strong>Pillar week:</strong> Gemma4-E2B left the lab. First official SM8750 eval ran, MTK inference code landed, and a cluster of tool-call / empty-output / chat-template defects were closed on device. Davy discovery closed with a written Mitra vs Davy choice, including the PRC track. That is the decision the pillar has been circling. Fast verification flooded the P7 box. Speech translation and Flux editing did not move the completion needle.</p>
+<p><strong>Tech / delivery week:</strong> 143 Done (~143/wk), 4 epics closed, component <strong>1388 / 1836 Done (76%)</strong>. Risk sits on Gemma4-E2B fidelity (epic 58%, 50 children still open), AI Wearable listen-and-act (49%), on-device speech translation (22%), and Flux2Klein editing (42%). 262 issues remain In Progress against 186 To Do.</p>
+<p><strong>So what:</strong> Device eval is unblocked for Gemma4-E2B on SM8750; release is still gated on format fidelity matching BF16. Davy is no longer a research hole. Leadership has a memo and a harness comparison. Someone has to pick Mitra vs Davy. P7 testers can hit Granite, Harrier, OCR, and image-turbo services without a shared notebook. Wearable speech is still a firmware bring-up problem, not a model-choice problem.</p>
+
+<h2>Stand-up</h2>
+<table><tbody>
+<tr><th>What we completed</th><th>What is next</th><th>Blockers / help needed</th></tr>
+<tr>
+<td><p><em><strong>Training / Model Factory.</strong></em> <strong>Good:</strong> Jianbang closed FM Training Pipeline, Qira Granite v2 training, and FM Evaluation Integration. Gemma4-E2B got DPO, single-turn RL QAT, PE multilingual data, and a voice eval environment in the same factory path. <strong>Watch:</strong> PE data tickets were 30–44 days old when they closed; the mean cycle time (~16 days vs ~9-day median) is those long-lived factory items. <strong>Bad / actionable:</strong> Model Index (LATC-13116) still reads 0/7 Done in the child rollup even though a LATC Bench PE/safety eval closed. Link the children or the index will keep looking empty.</p></td>
+<td>Confirm the next factory wave now that the three FM epics are Done. Wire Model Index children so leadership can see inventory.</td>
+<td>Factory capacity after Granite v2 / FM eval close. Who owns the next training slate.</td>
+</tr>
+<tr>
+<td><p><em><strong>Optimization / edge / quantization.</strong></em> <strong>Good:</strong> Official Gemma4-E2B SM8750 eval plus PTQ recipe and QC enablement (Zhicheng, Yinglin, Gong). DeepSeekV4-Flash 2-bit has architecture, hosting, and a baseline eval. Granite embeddings ran 2-bit/4-bit GSQ and mixed 2.8/2.9-bit; Granite inferred on MTK via MNN. P7 box now hosts Granite, Harrier distilled, Tesseract JP, NDLOCR-Lite, Z-Image/ERNIE turbo. <strong>Watch:</strong> Ultra-low-bit is 88% complete on kernels; quality at those bit widths is not signed off. Flux2Klein is 42% with only edit-test and soft-mask work this week. <strong>Bad / actionable:</strong> Speech translation V2 is 22% (2/9). AIW listen-and-act is 49% (17/35). Both are firmware/SDK gates (16KB alignment, SAD crashes, WhisperASR lifecycle), not missing checkpoints.</p></td>
+<td>SM8750 fidelity vs BF16. P7 long-tail deploys. Decide whether DeepSeek 2-bit gets a second week. Wearable SAD/VAD/ASR stop-start harden.</td>
+<td>Device time on SM8750 / SM7635 / MTK. Runtime/firmware owner for 16KB and SAD CRLF class bugs.</td>
+</tr>
+<tr>
+<td><p><em><strong>Safety / eval integration / cross-pillar.</strong></em> <strong>Good:</strong> Gemma-4-26B safety LoRA reached GGUF, OSC tracking, and a deployment-readiness writeup (92%). AICS eval enablement hit 100% (execution + image-gen/edit QC). Davy 33.1 closed; 33.3 harness comparison vs TianxiCode/AIverse is Done. R&amp;O routing/planning requirements are written. <strong>Watch:</strong> Coding-eval HTML metric and voice eval env just landed; they are not yet a weekly gate. Gesture PRCP data and a trained gesture model closed, but Omni audio/gesture is still 17%. <strong>Bad / actionable:</strong> Davy is past discovery. Sitting on the Mitra vs Davy memo burns the week the discovery epic just bought.</p></td>
+<td>OSC consume of Gemma-4-26B LoRA. Stand up coding and voice eval as recurring gates. Davy investment decision.</td>
+<td>Named owner and date for Mitra vs Davy (incl. PRC track). Evaluation pillar date for first recurring coding/voice run.</td>
+</tr>
+</tbody></table>
+
+<h2>Interfaces, Risks &amp; Asks</h2>
+<table><tbody>
+<tr><th>Dependency / contract</th><th>What is needed</th><th>Owner / date</th><th>Status</th></tr>
+<tr><td>Runtime / device (QC SM8750, SM7635, MTK)</td><td>Enough device time to finish Gemma4-E2B fidelity vs BF16 and wearable Granite QNN240. Firmware owners for 16KB page alignment and SAD crash class.</td><td>Runtime + Models device leads / this sprint</td><td>A</td></tr>
+<tr><td>Davy / BU coding track</td><td>Decision: Mitra vs Davy (incl. PRC), using the closed 33.1 memo and 33.3 harness comparison.</td><td>TBD &mdash; pillar lead to confirm / before next Monday</td><td>A</td></tr>
+<tr><td>Evaluation</td><td>First recurring run of the new coding HTML metric and voice eval environment so FM Evaluation Integration staying Done means something weekly.</td><td>Evaluation + Models factory / next eval cycle</td><td>G</td></tr>
+</tbody></table>
+<ul>
+<li><strong>Top risk:</strong> Gemma4-E2B is now a device program at 58% complete (69/119). Tool-call mismatch, chat-template leak, and empty [END] outputs already showed up on SM8750. If fidelity is not treated as a release gate, a checkpoint ships that fails agent behavior. Mitigation: Zhicheng / Yinglin keep the official eval loop; do not declare local-agent done on deploy count.</li>
+<li><strong>Leadership ask:</strong> Name an owner and a date for Mitra vs Davy (including the PRC track). Discovery and the harness comparison are Done. Without a pick, 33.1 closing just creates another memo.</li>
+<li><strong>Reusability check:</strong> P7 model-service shape (Granite, Harrier, OCR, image-turbo) and Uni-Docker+SGLang are shared platform. Daikin SCP UI (18 tickets) is a BU one-off and should not be read as model-factory velocity. DeepSeek 2-bit and GSQ recipes are reusable if quality holds; do not fork a new stack per BU ask.</li>
+</ul>
+
+<p><strong>Evidence:</strong> <a href="https://km.xpaas.lenovo.com/pages/viewpage.action?pageId=684287433">Full weekly report</a> &middot; <a href="https://jira.xpaas.lenovo.com/issues/?jql=component%3D%22Models%22">Jira board</a> &middot; Roadmap &middot; Model registry / evaluation evidence</p>

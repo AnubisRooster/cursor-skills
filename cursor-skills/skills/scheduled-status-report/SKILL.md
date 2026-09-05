@@ -3,7 +3,7 @@ name: scheduled-status-report
 description: >
   Automated weekly LATC pillar status reports (Ops & Infra, Evaluation, Models).
   Runs as a Windows Scheduled Task every Monday at 9:00 AM Eastern — uses the
-  Cursor SDK (model grok-4.5) to query Jira for Done issues in the last 7 days,
+  Cursor SDK (model grok-4.6) to query Jira for Done issues in the last 7 days,
   publish a detailed Confluence report with native chart macros, and publish a
   decision-grade condensed Weekly Pillar Update (so-what pulse, Good/Watch/Bad
   workstreams, concrete risks/asks). Use when setting up, troubleshooting, or
@@ -110,7 +110,7 @@ python weekly_status_report.py --pillar infra --date YYYY-MM-DD   # backfill
 ```
 Windows Task Scheduler (Mon 09:00 Eastern)
   └── weekly_status_report.py
-        └── cursor_sdk.Agent.prompt(..., model="grok-4.5")
+        └── cursor_sdk.Agent.prompt(..., model="grok-4.6")
               ├── jira_search (Done in window)
               ├── epic resolve + % complete
               ├── confluence_create/update (detailed, storage XHTML)
@@ -132,7 +132,7 @@ Missing sentinels count as failure; the runner retries once.
 |---|---|
 | Condensed format / quality rules | Step 9 + `CONDENSED TEMPLATE` in each prompt |
 | Detailed charts / sections | Step 8 STORAGE TEMPLATE |
-| Model | `model=` in `AgentOptions` (currently `grok-4.5`) |
+| Model | `model=` in `AgentOptions` (currently `grok-4.6`) |
 | Schedule | `setup_scheduled_task.ps1` trigger → re-register |
 | Single pillar / backfill | `--pillar infra|eval|models` and/or `--date YYYY-MM-DD` |
 
@@ -141,7 +141,7 @@ Missing sentinels count as failure; the runner retries once.
 | Symptom | Fix |
 |---|---|
 | DNS NXDOMAIN / xpaas unreachable | Connect Lenovo VPN; re-run |
-| Agent `status=error` empty result | Confirm `grok-4.5` still works; fall back only if needed |
+| Agent `status=error` empty result | Confirm `grok-4.6` still works; fall back only if needed |
 | Bridge WinError 10061 | Cursor agent bridge down — retry later |
 | WinError 10038 | Ensure `_win_bridge_patch.py` imports before `cursor_sdk` |
 | Condensed looks like a ticket dump | Step 9 QUALITY RULES were skipped — tighten prompt / re-run pillar |

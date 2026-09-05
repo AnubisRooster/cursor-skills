@@ -1,0 +1,5005 @@
+{
+  "count": 143,
+  "unique_epics": [
+    "LATC-10229",
+    "LATC-10271",
+    "LATC-1049",
+    "LATC-13116",
+    "LATC-2240",
+    "LATC-243",
+    "LATC-2711",
+    "LATC-3171",
+    "LATC-3853",
+    "LATC-4013",
+    "LATC-4719",
+    "LATC-6591",
+    "LATC-6592",
+    "LATC-6594",
+    "LATC-6782",
+    "LATC-8292",
+    "LATC-8295",
+    "LATC-8298",
+    "LATC-8672",
+    "LATC-8674",
+    "LATC-8943",
+    "LATC-9376",
+    "LATC-9741",
+    "LATC-9801",
+    "LATC-9909"
+  ],
+  "by_type": [
+    [
+      "Task",
+      92
+    ],
+    [
+      "Sub-task",
+      27
+    ],
+    [
+      "Story",
+      10
+    ],
+    [
+      "Bug",
+      5
+    ],
+    [
+      "Epic",
+      4
+    ],
+    [
+      "Defects",
+      3
+    ],
+    [
+      "Test",
+      2
+    ]
+  ],
+  "by_epic": [
+    [
+      "No Epic linked",
+      35
+    ],
+    [
+      "LATC-6591",
+      26
+    ],
+    [
+      "LATC-6782",
+      18
+    ],
+    [
+      "LATC-3171",
+      13
+    ],
+    [
+      "LATC-8943",
+      7
+    ],
+    [
+      "LATC-8292",
+      5
+    ],
+    [
+      "LATC-8672",
+      5
+    ],
+    [
+      "LATC-2711",
+      4
+    ],
+    [
+      "LATC-9801",
+      3
+    ],
+    [
+      "LATC-6594",
+      3
+    ],
+    [
+      "LATC-3853",
+      2
+    ],
+    [
+      "LATC-1049",
+      2
+    ],
+    [
+      "LATC-243",
+      2
+    ],
+    [
+      "LATC-8674",
+      2
+    ],
+    [
+      "LATC-8295",
+      2
+    ],
+    [
+      "LATC-6592",
+      2
+    ],
+    [
+      "LATC-10229",
+      2
+    ],
+    [
+      "LATC-4719",
+      2
+    ],
+    [
+      "LATC-13116",
+      1
+    ],
+    [
+      "LATC-10271",
+      1
+    ],
+    [
+      "LATC-2240",
+      1
+    ],
+    [
+      "LATC-9741",
+      1
+    ],
+    [
+      "LATC-9909",
+      1
+    ],
+    [
+      "LATC-8298",
+      1
+    ],
+    [
+      "LATC-9376",
+      1
+    ],
+    [
+      "LATC-4013",
+      1
+    ]
+  ],
+  "by_assignee": [
+    [
+      "Zhiyao ZY58 Zhang",
+      12
+    ],
+    [
+      "Zhicheng Fu",
+      11
+    ],
+    [
+      "Eli Guo9",
+      8
+    ],
+    [
+      "Adrian Chan16",
+      7
+    ],
+    [
+      "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      6
+    ],
+    [
+      "Jiaxin JX38 Li",
+      5
+    ],
+    [
+      "Xuan Xuan3 Cao",
+      5
+    ],
+    [
+      "Zongfu ZF3 Qu",
+      5
+    ],
+    [
+      "Gong Chen",
+      4
+    ],
+    [
+      "Haoran HR3 Lu",
+      4
+    ],
+    [
+      "Hong Hong16 Wang",
+      4
+    ],
+    [
+      "Tom Sheffler",
+      4
+    ],
+    [
+      "Yinglin YL4 Ji",
+      4
+    ],
+    [
+      "Aoxiang AX4 Zhang",
+      3
+    ],
+    [
+      "Jianbang Zhang",
+      3
+    ],
+    [
+      "Jianlin JL2 Deng",
+      3
+    ],
+    [
+      "Kai Kai23 Liu",
+      3
+    ],
+    [
+      "Lin Lin13 Yang | \u6768\u7433",
+      3
+    ],
+    [
+      "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+      3
+    ],
+    [
+      "Mike Fink",
+      3
+    ],
+    [
+      "Xiao Xiao3 Ma",
+      3
+    ],
+    [
+      "Xue Xue5 Xia",
+      3
+    ],
+    [
+      "Ziqi ZQ24 Liu",
+      3
+    ],
+    [
+      "Fei Fei4 Ma",
+      2
+    ],
+    [
+      "Hai Long",
+      2
+    ],
+    [
+      "Hao Hao51 Liu",
+      2
+    ],
+    [
+      "Heming HM22 Zhang",
+      2
+    ],
+    [
+      "Jinchuan JC20 Liu",
+      2
+    ],
+    [
+      "Jin Jin1 Yuan",
+      2
+    ],
+    [
+      "Mi Mi1 Hong",
+      2
+    ],
+    [
+      "Yanan YN4 Wu",
+      2
+    ],
+    [
+      "Francisco Ponce gomez2",
+      1
+    ],
+    [
+      "Grant Forbes",
+      1
+    ],
+    [
+      "Haitao HT37 Wang",
+      1
+    ],
+    [
+      "Hui Hui47 Li",
+      1
+    ],
+    [
+      "Jie Yang",
+      1
+    ],
+    [
+      "Jinyi JY2 Zou",
+      1
+    ],
+    [
+      "Nan Nan1 Yan",
+      1
+    ],
+    [
+      "Shengzhe SZ2 Tao",
+      1
+    ],
+    [
+      "Shiru SR1 Bu",
+      1
+    ],
+    [
+      "Shi Shi1 Gu",
+      1
+    ],
+    [
+      "Sriman Donthireddi",
+      1
+    ],
+    [
+      "Tian Tian2 Zhou",
+      1
+    ],
+    [
+      "Tongtong TT20 Zhang",
+      1
+    ],
+    [
+      "Tuan anh Dang1",
+      1
+    ],
+    [
+      "Wei Wei19 Xu",
+      1
+    ],
+    [
+      "Yuxuan YX25 Xu",
+      1
+    ],
+    [
+      "Zeyang ZY26 Yang",
+      1
+    ],
+    [
+      "Zhenhua ZH17 Liu",
+      1
+    ]
+  ],
+  "assignee_count_named": 49,
+  "unassigned": 0,
+  "cycle": {
+    "n": 112,
+    "median": 8.724976851851853,
+    "mean": 16.000716145833334,
+    "min": 0.5004050925925926,
+    "max": 62.19341435185185,
+    "p90": 37.98935185185185,
+    "outliers_gt_30": [
+      {
+        "key": "LATC-6623",
+        "days": 38.0,
+        "summary": "9.7.5 Document LoRA safety update results and deployment readiness",
+        "assignee": "Adrian Chan16"
+      },
+      {
+        "key": "LATC-5680",
+        "days": 49.2,
+        "summary": "\t[Eval] Building HTML dataset and metric for evaluation model coding capability",
+        "assignee": "Aoxiang AX4 Zhang"
+      },
+      {
+        "key": "LATC-6653",
+        "days": 40.6,
+        "summary": "9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6669",
+        "days": 40.6,
+        "summary": "9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-8285",
+        "days": 30.7,
+        "summary": "[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6627",
+        "days": 40.6,
+        "summary": "9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6117",
+        "days": 44.4,
+        "summary": "[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6638",
+        "days": 40.6,
+        "summary": "9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6634",
+        "days": 40.6,
+        "summary": "9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks",
+        "assignee": "Eli Guo9"
+      },
+      {
+        "key": "LATC-6448",
+        "days": 42.6,
+        "summary": "[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models",
+        "assignee": "Grant Forbes"
+      },
+      {
+        "key": "LATC-7985",
+        "days": 34.5,
+        "summary": "[general]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c"
+      },
+      {
+        "key": "LATC-7790",
+        "days": 35.3,
+        "summary": "[PP]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c"
+      },
+      {
+        "key": "LATC-7503",
+        "days": 35.5,
+        "summary": "[PP]Add Production Type filter to Planned Order creation",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c"
+      },
+      {
+        "key": "LATC-8030",
+        "days": 35.3,
+        "summary": "[DP]sales_order_page_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c"
+      },
+      {
+        "key": "LATC-8020",
+        "days": 35.4,
+        "summary": "[DP]sales_order_upload_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c"
+      },
+      {
+        "key": "LATC-6537",
+        "days": 40.2,
+        "summary": "[Eval]Building voice model evaluation environment",
+        "assignee": "Nan Nan1 Yan"
+      },
+      {
+        "key": "LATC-5826",
+        "days": 48.4,
+        "summary": "Research absorb: ABot-World \u2014 sub-1B on-device interactive world model (feasibility read)",
+        "assignee": "Tuan anh Dang1"
+      },
+      {
+        "key": "LATC-4792",
+        "days": 62.2,
+        "summary": "[Eval] Evaluate and Optimize Multimodal Embedding Model",
+        "assignee": "Xiao Xiao3 Ma"
+      },
+      {
+        "key": "LATC-5028",
+        "days": 58.5,
+        "summary": "[Training] Train Qwen3.5-0.8B using only the CLIP training set",
+        "assignee": "Xiao Xiao3 Ma"
+      },
+      {
+        "key": "LATC-8467",
+        "days": 31.3,
+        "summary": "[Training] DPO",
+        "assignee": "Zhenhua ZH17 Liu"
+      },
+      {
+        "key": "LATC-7812",
+        "days": 35.2,
+        "summary": "[general]run job finish notification",
+        "assignee": "Zhiyao ZY58 Zhang"
+      },
+      {
+        "key": "LATC-7544",
+        "days": 35.4,
+        "summary": "[general]dashboard-production",
+        "assignee": "Zhiyao ZY58 Zhang"
+      },
+      {
+        "key": "LATC-8006",
+        "days": 34.4,
+        "summary": "[general]dashboard production ",
+        "assignee": "Zhiyao ZY58 Zhang"
+      },
+      {
+        "key": "LATC-8005",
+        "days": 34.4,
+        "summary": "[PP]pp_filter and data display",
+        "assignee": "Zhiyao ZY58 Zhang"
+      },
+      {
+        "key": "LATC-8003",
+        "days": 34.4,
+        "summary": "[PP]pp_Add Production Type filter to Planned Order creation",
+        "assignee": "Zhiyao ZY58 Zhang"
+      }
+    ],
+    "missing_resolutiondate": [
+      "LATC-3705",
+      "LATC-10733",
+      "LATC-12564",
+      "LATC-11510",
+      "LATC-11513",
+      "LATC-10691",
+      "LATC-10713",
+      "LATC-12656",
+      "LATC-10485",
+      "LATC-10486",
+      "LATC-12602",
+      "LATC-12601",
+      "LATC-11496",
+      "LATC-1048",
+      "LATC-1136",
+      "LATC-1049",
+      "LATC-10681",
+      "LATC-13387",
+      "LATC-13389",
+      "LATC-11492",
+      "LATC-10491",
+      "LATC-13181",
+      "LATC-8672",
+      "LATC-12619",
+      "LATC-13194",
+      "LATC-12534",
+      "LATC-13447",
+      "LATC-11445",
+      "LATC-10688",
+      "LATC-12401",
+      "LATC-10690"
+    ]
+  },
+  "issues": [
+    {
+      "key": "LATC-9805",
+      "summary": "DeepSeekV4-Flash 2-Bit Quantization Baseline Evaluation",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-9801",
+      "created": "2026-08-14 12:01:26 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T21:30:00.000+0800",
+      "cycle_days": 17.394837962962963
+    },
+    {
+      "key": "LATC-7328",
+      "summary": "DeepSeek + GLM + Inkling Hosting",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-3853",
+      "created": "2026-07-29 17:19:08 Eastern Daylight Time",
+      "resolutiondate": "2026-08-14T23:48:49.000+0800",
+      "cycle_days": 16.270613425925927
+    },
+    {
+      "key": "LATC-9804",
+      "summary": "DeepSeekV4-Flash 2-Bit Quantization Hosting Configuration",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-9801",
+      "created": "2026-08-14 12:01:11 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T11:51:46.000+0800",
+      "cycle_days": 16.993460648148147
+    },
+    {
+      "key": "LATC-9803",
+      "summary": "DeepSeekV4-Flash Architecture Research",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-9801",
+      "created": "2026-08-14 12:00:51 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T11:52:03.000+0800",
+      "cycle_days": 16.99388888888889
+    },
+    {
+      "key": "LATC-6623",
+      "summary": "9.7.5 Document LoRA safety update results and deployment readiness",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-6594",
+      "created": "2026-07-24 12:07:47 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T11:52:27.000+0800",
+      "cycle_days": 37.98935185185185
+    },
+    {
+      "key": "LATC-9800",
+      "summary": "Text Watermark Research",
+      "assignee": "Adrian Chan16",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-14 11:53:20 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T11:52:39.000+0800",
+      "cycle_days": 16.999525462962964
+    },
+    {
+      "key": "LATC-3705",
+      "summary": "Safety Data Generation [Adrian]",
+      "assignee": "Adrian Chan16",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-06-09 22:14:23 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-8773",
+      "summary": "9.7.10 Convert Gemma4-26B-A4B Q4/Q6 LoRA Models to GGUF, Support Inference   Integration, and Debug Issues",
+      "assignee": "Aoxiang AX4 Zhang",
+      "type": "Task",
+      "epic": "LATC-6594",
+      "created": "2026-08-06 02:30:14 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T10:36:51.000+0800",
+      "cycle_days": 27.33792824074074
+    },
+    {
+      "key": "LATC-8765",
+      "summary": "9.7.8 Prepare and Track Gemma4-26B-A4B Q4/Q6 LoRA Models for OSC Review",
+      "assignee": "Aoxiang AX4 Zhang",
+      "type": "Task",
+      "epic": "LATC-6594",
+      "created": "2026-08-06 02:11:18 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T10:37:34.000+0800",
+      "cycle_days": 27.351574074074072
+    },
+    {
+      "key": "LATC-5680",
+      "summary": "\t[Eval] Building HTML dataset and metric for evaluation model coding capability",
+      "assignee": "Aoxiang AX4 Zhang",
+      "type": "Task",
+      "epic": "LATC-1049",
+      "created": "2026-07-15 05:52:12 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T10:07:05.000+0800",
+      "cycle_days": 49.177002314814814
+    },
+    {
+      "key": "LATC-6653",
+      "summary": "9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-07-24 12:11:04 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:55.000+0800",
+      "cycle_days": 40.60892361111111
+    },
+    {
+      "key": "LATC-6669",
+      "summary": "9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-07-24 12:15:18 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:48:04.000+0800",
+      "cycle_days": 40.60608796296296
+    },
+    {
+      "key": "LATC-9451",
+      "summary": "[Eval] LATC Bench Personal- Evaluation model PE&safety capabilities",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-13116",
+      "created": "2026-08-12 06:13:56 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:54:38.000+0800",
+      "cycle_days": 21.861597222222223
+    },
+    {
+      "key": "LATC-8285",
+      "summary": "[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-243",
+      "created": "2026-08-03 10:51:01 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:12.000+0800",
+      "cycle_days": 30.664016203703703
+    },
+    {
+      "key": "LATC-6627",
+      "summary": "9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-07-24 12:08:21 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:27.000+0800",
+      "cycle_days": 40.61048611111111
+    },
+    {
+      "key": "LATC-6117",
+      "summary": "[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-243",
+      "created": "2026-07-20 16:53:59 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:19.000+0800",
+      "cycle_days": 44.41203703703704
+    },
+    {
+      "key": "LATC-6638",
+      "summary": "9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-07-24 12:09:27 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:45.000+0800",
+      "cycle_days": 40.60993055555556
+    },
+    {
+      "key": "LATC-6634",
+      "summary": "9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks",
+      "assignee": "Eli Guo9",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-07-24 12:09:06 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:47:38.000+0800",
+      "cycle_days": 40.61009259259259
+    },
+    {
+      "key": "LATC-10733",
+      "summary": "Apply 16KB page alignment for SAD library (including dependent ONNX library)",
+      "assignee": "Fei Fei4 Ma",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 06:08:23 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12564",
+      "summary": "Assist in resolving ASR SDK deployment issues",
+      "assignee": "Fei Fei4 Ma",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-27 22:41:50 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10278",
+      "summary": "33.3.2 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+      "assignee": "Francisco Ponce gomez2",
+      "type": "Story",
+      "epic": "LATC-8674",
+      "created": "2026-08-19 13:30:25 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T04:05:46.000+0800",
+      "cycle_days": 14.607881944444445
+    },
+    {
+      "key": "LATC-11870",
+      "summary": "Quantize Gemma 4 E2B Across Four Precision Configurations",
+      "assignee": "Gong Chen",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-26 09:43:14 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T03:52:20.000+0800",
+      "cycle_days": 5.756319444444444
+    },
+    {
+      "key": "LATC-13134",
+      "summary": "[MTK System Prompt and Tool-Call Input Support Comparison for Mobile Gemma 4 E2B",
+      "assignee": "Gong Chen",
+      "type": "Bug",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 14:28:49 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T01:54:24.000+0800",
+      "cycle_days": 1.4760995370370371
+    },
+    {
+      "key": "LATC-13135",
+      "summary": "[MTK]  Profile Result Saving Support Comparison for VLM Testing",
+      "assignee": "Gong Chen",
+      "type": "Bug",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 14:28:53 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T01:54:51.000+0800",
+      "cycle_days": 1.4763657407407407
+    },
+    {
+      "key": "LATC-12900",
+      "summary": "9.5.9 Gong - [MTK][Gemma 4 E2B] Develop On-Device Inference Code and Documentation for External Model Evaluation on MT6899",
+      "assignee": "Gong Chen",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-31 09:58:33 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T01:52:46.000+0800",
+      "cycle_days": 2.662650462962963
+    },
+    {
+      "key": "LATC-6448",
+      "summary": "[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models",
+      "assignee": "Grant Forbes",
+      "type": "Task",
+      "epic": "LATC-2711",
+      "created": "2026-07-23 09:53:19 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T00:47:15.000+0800",
+      "cycle_days": 42.62078703703704
+    },
+    {
+      "key": "LATC-11510",
+      "summary": "Diar SDK standalone project + release AAR",
+      "assignee": "Hai Long",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-25 03:09:50 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11513",
+      "summary": "Integrate Diar SDK (AAR) to WhisperASR and Regression",
+      "assignee": "Hai Long",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-25 03:15:46 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10413",
+      "summary": "Technical Requirements Analysis for R&O Model Routing and Understanding & Planning",
+      "assignee": "Haitao HT37 Wang",
+      "type": "Task",
+      "epic": "LATC-10271",
+      "created": "2026-08-20 03:03:58 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T17:43:31.000+0800",
+      "cycle_days": 15.610798611111111
+    },
+    {
+      "key": "LATC-13398",
+      "summary": "Cooperate with the testing colleagues to conduct the test on the P7 box",
+      "assignee": "Hao Hao51 Liu",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-09-03 01:49:02 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T13:42:30.000+0800",
+      "cycle_days": 1.495462962962963
+    },
+    {
+      "key": "LATC-13077",
+      "summary": "Deploy multiple granite models",
+      "assignee": "Hao Hao51 Liu",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-09-01 05:57:52 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T18:17:02.000+0800",
+      "cycle_days": 1.5133101851851851
+    },
+    {
+      "key": "LATC-10691",
+      "summary": "Implement Model-Specific Summary Generation for Local Goodsum Inference (Gemma 3 1B, Gemma 4 E2B, and Granite 4.0 1B)",
+      "assignee": "Haoran HR3 Lu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 03:41:35 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-8927",
+      "summary": "AIW: Compare cloud vs on-device LLM performance (best cloud model vs Gemma 3 1B / Gemma 4 E2B / Granite 4.0 1B)",
+      "assignee": "Haoran HR3 Lu",
+      "type": "Task",
+      "epic": null,
+      "created": "2026-08-07 04:11:51 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T15:58:28.000+0800",
+      "cycle_days": 21.49070601851852
+    },
+    {
+      "key": "LATC-10713",
+      "summary": "Score and Analyze Model-Specific Summary Quality Using EN Data",
+      "assignee": "Haoran HR3 Lu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 05:10:14 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12656",
+      "summary": "Expand EN Action Item Coverage and Refine Gold Annotations",
+      "assignee": "Haoran HR3 Lu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-28 04:49:42 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11905",
+      "summary": "Granite\u2011Embedding GPU Memory Footprint Troubleshooting & Analysis",
+      "assignee": "Heming HM22 Zhang",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-26 22:03:47 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T15:26:53.000+0800",
+      "cycle_days": 8.724375
+    },
+    {
+      "key": "LATC-11904",
+      "summary": "Granite\u2011Embedding Memory Footprint Troubleshooting & Analysis",
+      "assignee": "Heming HM22 Zhang",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-26 22:03:19 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T15:28:09.000+0800",
+      "cycle_days": 8.725578703703704
+    },
+    {
+      "key": "LATC-10485",
+      "summary": "Test Translation SDK V2 Stability and Peak Memory Usage",
+      "assignee": "Hong Hong16 Wang",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-20 06:29:39 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10486",
+      "summary": "Conduct M2M100 Fine-tuning Experiments with Different Data Scales, and Adjust Data Configuration Based on Model Performance",
+      "assignee": "Hong Hong16 Wang",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-20 06:50:30 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12602",
+      "summary": "Explore a solution that balances Chinese-English translation performance and multilingual generalization based on 40K-scale training data",
+      "assignee": "Hong Hong16 Wang",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-28 01:59:51 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12601",
+      "summary": "SDK v2 Performance Optimization and Processing Efficiency Improvement",
+      "assignee": "Hong Hong16 Wang",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-28 01:57:54 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11496",
+      "summary": "Demo Dataset for Outlook Calendar & Email Scenarios-2",
+      "assignee": "Hui Hui47 Li",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-25 02:13:59 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-1048",
+      "summary": "FM Training Pipeline",
+      "assignee": "Jianbang Zhang",
+      "type": "Epic",
+      "epic": null,
+      "created": "2026-02-03 20:29:31 Eastern Standard Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-1136",
+      "summary": "9.4 Qira Granite v2 Model Training",
+      "assignee": "Jianbang Zhang",
+      "type": "Epic",
+      "epic": null,
+      "created": "2026-02-25 15:04:33 Eastern Standard Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-1049",
+      "summary": "FM Evaluation Integration",
+      "assignee": "Jianbang Zhang",
+      "type": "Epic",
+      "epic": null,
+      "created": "2026-02-03 20:33:50 Eastern Standard Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-13294",
+      "summary": "granite model research for long token",
+      "assignee": "Jianlin JL2 Deng",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-09-02 04:48:31 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:53:54.000+0800",
+      "cycle_days": 2.253738425925926
+    },
+    {
+      "key": "LATC-10810",
+      "summary": "Evaluate ColModernVBERT split-vision model",
+      "assignee": "Jianlin JL2 Deng",
+      "type": "Story",
+      "epic": "LATC-3171",
+      "created": "2026-08-23 22:30:53 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T11:00:20.000+0800",
+      "cycle_days": 11.520451388888889
+    },
+    {
+      "key": "LATC-12574",
+      "summary": "Participate in CLI Router discussion and design",
+      "assignee": "Jianlin JL2 Deng",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-27 23:22:59 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T15:27:35.000+0800",
+      "cycle_days": 7.6698611111111115
+    },
+    {
+      "key": "LATC-10678",
+      "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+      "assignee": "Jiaxin JX38 Li",
+      "type": "Task",
+      "epic": "LATC-8295",
+      "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T14:04:07.000+0800",
+      "cycle_days": 7.452025462962963
+    },
+    {
+      "key": "LATC-10681",
+      "summary": "Package, deliver, and support a stable Android test build for QA",
+      "assignee": "Jiaxin JX38 Li",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 03:15:14 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10678",
+      "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+      "assignee": "Jiaxin JX38 Li",
+      "type": "Task",
+      "epic": "LATC-8295",
+      "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T14:04:07.000+0800",
+      "cycle_days": 7.452025462962963
+    },
+    {
+      "key": "LATC-13387",
+      "summary": "Add Batch Recognition Toggle for File Recognition",
+      "assignee": "Jiaxin JX38 Li",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-09-02 23:09:13 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-13389",
+      "summary": "Integrate and Validate ASR Memory Monitoring",
+      "assignee": "Jiaxin JX38 Li",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-09-02 23:09:15 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11877",
+      "summary": "ONNX Official Documentation Review",
+      "assignee": "Jie Yang",
+      "type": "Task",
+      "epic": "LATC-3853",
+      "created": "2026-08-26 11:01:56 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T01:53:20.000+0800",
+      "cycle_days": 5.619027777777778
+    },
+    {
+      "key": "LATC-10866",
+      "summary": "Long-text embedding memory optimization: graph split",
+      "assignee": "Jinchuan JC20 Liu",
+      "type": "Task",
+      "epic": "LATC-2240",
+      "created": "2026-08-24 03:15:46 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:16:24.000+0800",
+      "cycle_days": 4.625439814814815
+    },
+    {
+      "key": "LATC-10764",
+      "summary": "[Eval] Quantized Granite model inference testing on low-end Qualcomm platforms",
+      "assignee": "Jinchuan JC20 Liu",
+      "type": "Task",
+      "epic": "LATC-8292",
+      "created": "2026-08-22 02:05:20 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T15:58:35.000+0800",
+      "cycle_days": 13.578645833333333
+    },
+    {
+      "key": "LATC-10127",
+      "summary": "Compositional editing test for flux",
+      "assignee": "Jin Jin1 Yuan",
+      "type": "Task",
+      "epic": "LATC-6592",
+      "created": "2026-08-18 04:05:57 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:22:39.000+0800",
+      "cycle_days": 10.594930555555555
+    },
+    {
+      "key": "LATC-10128",
+      "summary": "Soft mask strategy for flux distillation",
+      "assignee": "Jin Jin1 Yuan",
+      "type": "Task",
+      "epic": "LATC-6592",
+      "created": "2026-08-18 04:07:36 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:23:43.000+0800",
+      "cycle_days": 10.594525462962963
+    },
+    {
+      "key": "LATC-11492",
+      "summary": "Add short-chunk cross-lingual data and short monolingual English data for a new round of training.",
+      "assignee": "Jinyi JY2 Zou",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-25 01:58:55 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12625",
+      "summary": "[DP]order_check_modifiedby",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-28 03:14:19 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:49:46.000+0800",
+      "cycle_days": 6.524618055555556
+    },
+    {
+      "key": "LATC-7985",
+      "summary": "[general]dashboard production ",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-30 23:24:02 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:21:51.000+0800",
+      "cycle_days": 34.45681712962963
+    },
+    {
+      "key": "LATC-7790",
+      "summary": "[PP]dashboard production ",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-30 04:14:12 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:23:03.000+0800",
+      "cycle_days": 35.256145833333335
+    },
+    {
+      "key": "LATC-7503",
+      "summary": "[PP]Add Production Type filter to Planned Order creation",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-29 23:31:44 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:25:07.000+0800",
+      "cycle_days": 35.45373842592593
+    },
+    {
+      "key": "LATC-8030",
+      "summary": "[DP]sales_order_page_change",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-31 02:13:49 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:27:23.000+0800",
+      "cycle_days": 35.34275462962963
+    },
+    {
+      "key": "LATC-8020",
+      "summary": "[DP]sales_order_upload_change",
+      "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-31 02:09:48 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:43:37.000+0800",
+      "cycle_days": 35.35681712962963
+    },
+    {
+      "key": "LATC-8423",
+      "summary": "Exploration of KV cache quantization path",
+      "assignee": "Kai Kai23 Liu",
+      "type": "Task",
+      "epic": "LATC-2711",
+      "created": "2026-08-04 03:51:35 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:17:27.000+0800",
+      "cycle_days": 24.601296296296297
+    },
+    {
+      "key": "LATC-9048",
+      "summary": "Research on the usability of gesture recognition under the llama.cpp multimodal model",
+      "assignee": "Kai Kai23 Liu",
+      "type": "Task",
+      "epic": "LATC-2711",
+      "created": "2026-08-09 22:37:48 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T18:15:17.000+0800",
+      "cycle_days": 25.81769675925926
+    },
+    {
+      "key": "LATC-9749",
+      "summary": "Research on Audio and Gesture Recognition of Omni Model",
+      "assignee": "Kai Kai23 Liu",
+      "type": "Task",
+      "epic": "LATC-9741",
+      "created": "2026-08-14 06:03:49 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T18:15:55.000+0800",
+      "cycle_days": 21.50840277777778
+    },
+    {
+      "key": "LATC-7995",
+      "summary": "AIW: Implement target speaker enrollment feature for speaker diarization.",
+      "assignee": "Lin Lin13 Yang | \u6768\u7433",
+      "type": "Task",
+      "epic": null,
+      "created": "2026-07-31 01:14:02 Eastern Daylight Time",
+      "resolutiondate": "2026-08-19T16:12:23.000+0800",
+      "cycle_days": 19.623854166666668
+    },
+    {
+      "key": "LATC-10491",
+      "summary": "Construct dev dataset suitable for target speaker enrollment",
+      "assignee": "Lin Lin13 Yang | \u6768\u7433",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-20 10:19:59 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-13181",
+      "summary": "Baseline development of enroll-binding pipeline",
+      "assignee": "Lin Lin13 Yang | \u6768\u7433",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-09-01 23:18:44 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10730",
+      "summary": "AIW: Align dependent SO libraries with 16KB page alignment",
+      "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+      "type": "Task",
+      "epic": "LATC-8292",
+      "created": "2026-08-21 06:01:45 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T11:09:15.000+0800",
+      "cycle_days": 7.213541666666667
+    },
+    {
+      "key": "LATC-12566",
+      "summary": "SAD Crash occurs when SAD config file uses CRLF line\u2011ending format",
+      "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+      "type": "Defects",
+      "epic": "LATC-8292",
+      "created": "2026-08-27 22:52:56 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T16:56:36.000+0800",
+      "cycle_days": 0.7525462962962963
+    },
+    {
+      "key": "LATC-13400",
+      "summary": "AIW: WhisperASR Refactor session lifecycle and decode pipeline; harden safe stop/finish shutdown",
+      "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+      "type": "Task",
+      "epic": "LATC-8292",
+      "created": "2026-09-03 01:54:31 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T17:32:44.000+0800",
+      "cycle_days": 0.6515393518518519
+    },
+    {
+      "key": "LATC-10279",
+      "summary": "33.1.10 Provision cloud model-service access (Azure, AWS, or Model Factory)",
+      "assignee": "Mike Fink",
+      "type": "Story",
+      "epic": "LATC-8672",
+      "created": "2026-08-19 13:30:29 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:14:59.000+0800",
+      "cycle_days": 14.530902777777778
+    },
+    {
+      "key": "LATC-8672",
+      "summary": "33.1 Discovery, access & gap analysis",
+      "assignee": "Mike Fink",
+      "type": "Epic",
+      "epic": null,
+      "created": "2026-08-05 13:21:36 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-8681",
+      "summary": "33.1.6 Draft Mitra vs Davy positioning memo (incl. PRC track options)",
+      "assignee": "Mike Fink",
+      "type": "Story",
+      "epic": "LATC-8672",
+      "created": "2026-08-05 13:22:34 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:16:29.000+0800",
+      "cycle_days": 28.53744212962963
+    },
+    {
+      "key": "LATC-12619",
+      "summary": "On AP firmware linking stage\uff0clightweight SAD crashed with undefined reference",
+      "assignee": "Mi Mi1 Hong",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-28 03:00:05 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-13194",
+      "summary": "Give support to intergration team for vad lib on Andes",
+      "assignee": "Mi Mi1 Hong",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-09-01 23:48:46 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-6537",
+      "summary": "[Eval]Building voice model evaluation environment",
+      "assignee": "Nan Nan1 Yan",
+      "type": "Task",
+      "epic": "LATC-1049",
+      "created": "2026-07-24 04:14:59 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T10:08:17.000+0800",
+      "cycle_days": 40.24534722222222
+    },
+    {
+      "key": "LATC-10814",
+      "summary": "[QAT] Singleturn RL Training [Shengzhe]",
+      "assignee": "Shengzhe SZ2 Tao",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-23 22:40:34 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:58:38.000+0800",
+      "cycle_days": 11.512546296296296
+    },
+    {
+      "key": "LATC-12426",
+      "summary": "DataAgent Pre-implementation Research",
+      "assignee": "Shiru SR1 Bu",
+      "type": "Task",
+      "epic": "LATC-10229",
+      "created": "2026-08-27 05:54:17 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T17:09:06.000+0800",
+      "cycle_days": 7.468622685185185
+    },
+    {
+      "key": "LATC-11841",
+      "summary": "Collect gesture recognition training data",
+      "assignee": "Shi Shi1 Gu",
+      "type": "Task",
+      "epic": "LATC-9909",
+      "created": "2026-08-26 06:12:00 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T12:26:36.000+0800",
+      "cycle_days": 9.26013888888889
+    },
+    {
+      "key": "LATC-12534",
+      "summary": "Set up Uni-Docker environment with SGLang",
+      "assignee": "Sriman Donthireddi",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-27 15:04:25 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11848",
+      "summary": "granite-embedding-97m-multilingual-r2 multi test 8/24-8/28",
+      "assignee": "Tian Tian2 Zhou",
+      "type": "Test",
+      "epic": "LATC-8298",
+      "created": "2026-08-26 06:26:33 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:01:40.000+0800",
+      "cycle_days": 2.4827199074074073
+    },
+    {
+      "key": "LATC-8678",
+      "summary": "33.1.3 Research spike: LATC value proposition for Davy",
+      "assignee": "Tom Sheffler",
+      "type": "Story",
+      "epic": "LATC-8672",
+      "created": "2026-08-05 13:22:22 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T02:17:45.000+0800",
+      "cycle_days": 28.53846064814815
+    },
+    {
+      "key": "LATC-10276",
+      "summary": "33.1.9 Write Davy coding-agent evaluation, gap analysis, and recommendations in Confluence",
+      "assignee": "Tom Sheffler",
+      "type": "Story",
+      "epic": "LATC-8672",
+      "created": "2026-08-19 13:30:16 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T04:04:08.000+0800",
+      "cycle_days": 14.606851851851852
+    },
+    {
+      "key": "LATC-8680",
+      "summary": "33.1.5 Assess Davy capacity & quality parity for LATC-ROW coding cohort",
+      "assignee": "Tom Sheffler",
+      "type": "Story",
+      "epic": "LATC-8672",
+      "created": "2026-08-05 13:22:30 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T04:04:41.000+0800",
+      "cycle_days": 28.612627314814816
+    },
+    {
+      "key": "LATC-10277",
+      "summary": "33.3.1 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+      "assignee": "Tom Sheffler",
+      "type": "Story",
+      "epic": "LATC-8674",
+      "created": "2026-08-19 13:30:21 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T04:05:38.000+0800",
+      "cycle_days": 14.607835648148148
+    },
+    {
+      "key": "LATC-12431",
+      "summary": "DataForge 1.0: P0-P1 develop",
+      "assignee": "Tongtong TT20 Zhang",
+      "type": "Task",
+      "epic": "LATC-10229",
+      "created": "2026-08-27 06:12:29 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T18:05:43.000+0800",
+      "cycle_days": 7.495300925925926
+    },
+    {
+      "key": "LATC-5826",
+      "summary": "Research absorb: ABot-World \u2014 sub-1B on-device interactive world model (feasibility read)",
+      "assignee": "Tuan anh Dang1",
+      "type": "Story",
+      "epic": "LATC-2711",
+      "created": "2026-07-16 13:28:42 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T00:15:13.000+0800",
+      "cycle_days": 48.44896990740741
+    },
+    {
+      "key": "LATC-10430",
+      "summary": "Implement Pre-/Post-Processing Features in the Translation System",
+      "assignee": "Wei Wei19 Xu",
+      "type": "Task",
+      "epic": null,
+      "created": "2026-08-20 04:07:07 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T14:04:26.000+0800",
+      "cycle_days": 8.41480324074074
+    },
+    {
+      "key": "LATC-4792",
+      "summary": "[Eval] Evaluate and Optimize Multimodal Embedding Model",
+      "assignee": "Xiao Xiao3 Ma",
+      "type": "Task",
+      "epic": "LATC-4719",
+      "created": "2026-07-02 12:07:03 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T16:45:34.000+0800",
+      "cycle_days": 62.19341435185185
+    },
+    {
+      "key": "LATC-10215",
+      "summary": "[Training] Design and train gesture recognition model",
+      "assignee": "Xiao Xiao3 Ma",
+      "type": "Task",
+      "epic": "LATC-9376",
+      "created": "2026-08-19 02:00:51 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T16:44:39.000+0800",
+      "cycle_days": 14.61375
+    },
+    {
+      "key": "LATC-5028",
+      "summary": "[Training] Train Qwen3.5-0.8B using only the CLIP training set",
+      "assignee": "Xiao Xiao3 Ma",
+      "type": "Task",
+      "epic": "LATC-4719",
+      "created": "2026-07-06 05:39:12 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T16:46:01.000+0800",
+      "cycle_days": 58.46306712962963
+    },
+    {
+      "key": "LATC-11813",
+      "summary": "Deploy Cross KD, JA Mono KD, and Total v2 Models",
+      "assignee": "Xuan Xuan3 Cao",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-26 03:36:39 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:41:40.000+0800",
+      "cycle_days": 2.5868171296296296
+    },
+    {
+      "key": "LATC-11814",
+      "summary": "Align Qwen3-VL-Embedding-2B, PPOCRv6, and Layout-Infer with P7 Box I/O",
+      "assignee": "Xuan Xuan3 Cao",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-26 03:40:57 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:41:08.000+0800",
+      "cycle_days": 2.583460648148148
+    },
+    {
+      "key": "LATC-10884",
+      "summary": "Deploy Gemma and Harrier Distilled Models",
+      "assignee": "Xuan Xuan3 Cao",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-24 04:41:52 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:41:15.000+0800",
+      "cycle_days": 4.5412384259259255
+    },
+    {
+      "key": "LATC-12741",
+      "summary": "Deploy Harrier Distilled Single-Ordered Bidirectional and v2 Models",
+      "assignee": "Xuan Xuan3 Cao",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-30 23:23:55 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:17:38.000+0800",
+      "cycle_days": 3.6623032407407408
+    },
+    {
+      "key": "LATC-12720",
+      "summary": "Deploy Z-Image-Turbo and ERNIE-Image-Turbo",
+      "assignee": "Xuan Xuan3 Cao",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-30 22:23:54 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:17:30.000+0800",
+      "cycle_days": 3.703888888888889
+    },
+    {
+      "key": "LATC-12592",
+      "summary": "Model service for deploying Tesseract's Japanese model",
+      "assignee": "Xue Xue5 Xia",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-28 01:37:48 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T10:58:02.000+0800",
+      "cycle_days": 3.389050925925926
+    },
+    {
+      "key": "LATC-13278",
+      "summary": "Deploying the NDLOCR-Lite model's model service(Python Service)",
+      "assignee": "Xue Xue5 Xia",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-09-02 04:09:23 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T09:48:05.000+0800",
+      "cycle_days": 2.2352083333333335
+    },
+    {
+      "key": "LATC-12859",
+      "summary": "Deploying the harrier-0806 quantitative model's model service",
+      "assignee": "Xue Xue5 Xia",
+      "type": "Task",
+      "epic": "LATC-3171",
+      "created": "2026-08-31 05:24:54 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T09:55:33.000+0800",
+      "cycle_days": 4.187951388888889
+    },
+    {
+      "key": "LATC-13447",
+      "summary": "Voice data quality validation and gap analysis",
+      "assignee": "Yanan YN4 Wu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-09-03 05:30:59 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11445",
+      "summary": "voice data synthesis method research",
+      "assignee": "Yanan YN4 Wu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-24 21:24:30 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12626",
+      "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+      "assignee": "Yinglin YL4 Ji",
+      "type": "Task",
+      "epic": "LATC-8292",
+      "created": "2026-08-28 03:17:29 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T18:25:32.000+0800",
+      "cycle_days": 0.6305902777777778
+    },
+    {
+      "key": "LATC-13102",
+      "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+      "assignee": "Yinglin YL4 Ji",
+      "type": "Defects",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 07:58:38 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T19:59:18.000+0800",
+      "cycle_days": 0.500462962962963
+    },
+    {
+      "key": "LATC-12716",
+      "summary": "1st Official Evaluation of Gemma4-E2B on Qualcomm SM8750 Device",
+      "assignee": "Yinglin YL4 Ji",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-30 22:18:27 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T19:06:49.000+0800",
+      "cycle_days": 2.8669212962962964
+    },
+    {
+      "key": "LATC-12623",
+      "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+      "assignee": "Yinglin YL4 Ji",
+      "type": "Test",
+      "epic": null,
+      "created": "2026-08-28 03:11:53 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T15:18:05.000+0800",
+      "cycle_days": 0.5043055555555556
+    },
+    {
+      "key": "LATC-10883",
+      "summary": "[Eval] LATC-Gemma-4-E2B QAT model test",
+      "assignee": "Yuxuan YX25 Xu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-24 04:35:46 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T10:40:34.000+0800",
+      "cycle_days": 4.253333333333333
+    },
+    {
+      "key": "LATC-12528",
+      "summary": "[Eval] Test P7 Image Generation Model Performance",
+      "assignee": "Zeyang ZY26 Yang",
+      "type": "Task",
+      "epic": "LATC-4013",
+      "created": "2026-08-27 10:43:39 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T18:36:14.000+0800",
+      "cycle_days": 4.32818287037037
+    },
+    {
+      "key": "LATC-8467",
+      "summary": "[Training] DPO",
+      "assignee": "Zhenhua ZH17 Liu",
+      "type": "Story",
+      "epic": "LATC-6591",
+      "created": "2026-08-04 05:06:53 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T11:10:59.000+0800",
+      "cycle_days": 31.252847222222222
+    },
+    {
+      "key": "LATC-12934",
+      "summary": "Prepare and Enable Gemma4-E2B 1st Official Evaluation on SM8750",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-31 18:46:30 Eastern Daylight Time",
+      "resolutiondate": "2026-09-02T02:12:03.000+0800",
+      "cycle_days": 1.3094097222222223
+    },
+    {
+      "key": "LATC-12643",
+      "summary": "Add System Prompt and Tool-Call Input Support for Mobile Gemma 4 E2B",
+      "assignee": "Zhicheng Fu",
+      "type": "Defects",
+      "epic": "LATC-6591",
+      "created": "2026-08-28 04:16:33 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T06:49:21.000+0800",
+      "cycle_days": 4.106111111111111
+    },
+    {
+      "key": "LATC-11676",
+      "summary": "Evaluate different PTQ configurations for Gemma4-E2B and identify the best recipe for on-device deployment.",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-25 11:47:23 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T10:27:12.000+0800",
+      "cycle_days": 5.9443171296296295
+    },
+    {
+      "key": "LATC-9374",
+      "summary": "9.5.42 Enable and optimize Gemma4-e2b on QC platform",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-11 14:08:12 Eastern Daylight Time",
+      "resolutiondate": "2026-08-31T10:27:21.000+0800",
+      "cycle_days": 19.846631944444443
+    },
+    {
+      "key": "LATC-12895",
+      "summary": "9.5.4 Zhicheng Fu - Mobile Quantization Placeholder 1",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-31 09:57:56 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T06:48:17.000+0800",
+      "cycle_days": 0.8682986111111111
+    },
+    {
+      "key": "LATC-12719",
+      "summary": "Support and Debug Gemma4-E2B 1st Official Evaluation on Qualcomm SM8750",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-30 22:23:43 Eastern Daylight Time",
+      "resolutiondate": "2026-09-01T06:48:32.000+0800",
+      "cycle_days": 1.3505671296296295
+    },
+    {
+      "key": "LATC-12891",
+      "summary": "Add Genie profile result saving support for VLM testing",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-31 09:42:32 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T01:56:36.000+0800",
+      "cycle_days": 3.676435185185185
+    },
+    {
+      "key": "LATC-13105",
+      "summary": "Model response leaks abnormal chat template in outputs, with a 20% occurrence rate",
+      "assignee": "Zhicheng Fu",
+      "type": "Bug",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 08:04:18 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T01:56:24.000+0800",
+      "cycle_days": 2.7445138888888887
+    },
+    {
+      "key": "LATC-13103",
+      "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+      "assignee": "Zhicheng Fu",
+      "type": "Bug",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 08:00:25 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T01:56:18.000+0800",
+      "cycle_days": 2.7471412037037037
+    },
+    {
+      "key": "LATC-13106",
+      "summary": "Model returns no output, emitting only an [END] marker without [BEGIN], with a 14.6% occurrence rate",
+      "assignee": "Zhicheng Fu",
+      "type": "Bug",
+      "epic": "LATC-6591",
+      "created": "2026-09-01 08:09:18 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T01:55:57.000+0800",
+      "cycle_days": 2.7407291666666667
+    },
+    {
+      "key": "LATC-12935",
+      "summary": "Iterative Model Update and Debug Support for Gemma4-E2B SM8750 Evaluation",
+      "assignee": "Zhicheng Fu",
+      "type": "Task",
+      "epic": "LATC-6591",
+      "created": "2026-08-31 18:47:22 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:17:33.000+0800",
+      "cycle_days": 3.645960648148148
+    },
+    {
+      "key": "LATC-7812",
+      "summary": "[general]run job finish notification",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-30 05:07:33 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:22:42.000+0800",
+      "cycle_days": 35.21885416666667
+    },
+    {
+      "key": "LATC-7544",
+      "summary": "[general]dashboard-production",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-29 23:39:02 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:24:55.000+0800",
+      "cycle_days": 35.44853009259259
+    },
+    {
+      "key": "LATC-8006",
+      "summary": "[general]dashboard production ",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-31 01:48:39 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:19:08.000+0800",
+      "cycle_days": 34.354502314814816
+    },
+    {
+      "key": "LATC-8005",
+      "summary": "[PP]pp_filter and data display",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-31 01:47:56 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:20:15.000+0800",
+      "cycle_days": 34.35577546296296
+    },
+    {
+      "key": "LATC-8003",
+      "summary": "[PP]pp_Add Production Type filter to Planned Order creation",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-07-31 01:45:39 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T10:20:58.000+0800",
+      "cycle_days": 34.3578587962963
+    },
+    {
+      "key": "LATC-12573",
+      "summary": "[DP]FE_order_check",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-27 23:21:31 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:06:42.000+0800",
+      "cycle_days": 7.448043981481481
+    },
+    {
+      "key": "LATC-12571",
+      "summary": "[DP]FE_sales_order_page_change",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-27 23:19:46 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:12:01.000+0800",
+      "cycle_days": 7.452951388888889
+    },
+    {
+      "key": "LATC-9632",
+      "summary": "[DP] Separate page permissions",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-13 23:16:17 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T10:13:36.000+0800",
+      "cycle_days": 21.456469907407406
+    },
+    {
+      "key": "LATC-12624",
+      "summary": "[DP]FE_customer_configue",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-28 03:12:53 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:51:13.000+0800",
+      "cycle_days": 6.52662037037037
+    },
+    {
+      "key": "LATC-12621",
+      "summary": "[DP]FE_default_display",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-28 03:10:20 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:52:50.000+0800",
+      "cycle_days": 6.529513888888889
+    },
+    {
+      "key": "LATC-12617",
+      "summary": "[general]FE_item",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-28 02:57:00 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:56:59.000+0800",
+      "cycle_days": 6.541655092592593
+    },
+    {
+      "key": "LATC-12615",
+      "summary": "[DP]FE_demand_aggeregation",
+      "assignee": "Zhiyao ZY58 Zhang",
+      "type": "Task",
+      "epic": "LATC-6782",
+      "created": "2026-08-28 02:47:44 Eastern Daylight Time",
+      "resolutiondate": "2026-09-03T15:57:39.000+0800",
+      "cycle_days": 6.54855324074074
+    },
+    {
+      "key": "LATC-10688",
+      "summary": "Organize and improve logging and log persistence for trans-sys-poc",
+      "assignee": "Ziqi ZQ24 Liu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 03:36:56 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-12401",
+      "summary": "Consolidate shared functionality from the Windows and Android demos in trans-sys-poc",
+      "assignee": "Ziqi ZQ24 Liu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-27 04:43:22 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-10690",
+      "summary": "Release the trans-sys-poc version and support the testing team",
+      "assignee": "Ziqi ZQ24 Liu",
+      "type": "Sub-task",
+      "epic": null,
+      "created": "2026-08-21 03:38:06 Eastern Daylight Time",
+      "resolutiondate": null,
+      "cycle_days": null
+    },
+    {
+      "key": "LATC-11902",
+      "summary": "2 bit quantization on granite embedding using GSQ",
+      "assignee": "Zongfu ZF3 Qu",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-26 21:58:46 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:07:41.000+0800",
+      "cycle_days": 1.7978587962962962
+    },
+    {
+      "key": "LATC-10720",
+      "summary": "Analyze the 2.8-bit mixed-precision quantization strategy.",
+      "assignee": "Zongfu ZF3 Qu",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-21 05:29:56 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:06:15.000+0800",
+      "cycle_days": 7.483553240740741
+    },
+    {
+      "key": "LATC-11903",
+      "summary": "Test 4 bit quantization on granite embedding using GSQ",
+      "assignee": "Zongfu ZF3 Qu",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-26 22:00:30 Eastern Daylight Time",
+      "resolutiondate": "2026-08-28T17:08:07.000+0800",
+      "cycle_days": 1.7969560185185185
+    },
+    {
+      "key": "LATC-13613",
+      "summary": "Infer granite on mtk low level phone using mnn",
+      "assignee": "Zongfu ZF3 Qu",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-09-04 04:05:46 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T16:06:21.000+0800",
+      "cycle_days": 0.5004050925925926
+    },
+    {
+      "key": "LATC-12672",
+      "summary": "Mixed groupsize on 2.9 bit",
+      "assignee": "Zongfu ZF3 Qu",
+      "type": "Task",
+      "epic": "LATC-8943",
+      "created": "2026-08-28 05:10:10 Eastern Daylight Time",
+      "resolutiondate": "2026-09-04T15:58:53.000+0800",
+      "cycle_days": 7.450497685185185
+    }
+  ],
+  "by_assignee_issues": {
+    "Adrian Chan16": [
+      {
+        "key": "LATC-9805",
+        "summary": "DeepSeekV4-Flash 2-Bit Quantization Baseline Evaluation",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:01:26 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T21:30:00.000+0800",
+        "cycle_days": 17.394837962962963
+      },
+      {
+        "key": "LATC-7328",
+        "summary": "DeepSeek + GLM + Inkling Hosting",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-3853",
+        "created": "2026-07-29 17:19:08 Eastern Daylight Time",
+        "resolutiondate": "2026-08-14T23:48:49.000+0800",
+        "cycle_days": 16.270613425925927
+      },
+      {
+        "key": "LATC-9804",
+        "summary": "DeepSeekV4-Flash 2-Bit Quantization Hosting Configuration",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:01:11 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:51:46.000+0800",
+        "cycle_days": 16.993460648148147
+      },
+      {
+        "key": "LATC-9803",
+        "summary": "DeepSeekV4-Flash Architecture Research",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:00:51 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:03.000+0800",
+        "cycle_days": 16.99388888888889
+      },
+      {
+        "key": "LATC-6623",
+        "summary": "9.7.5 Document LoRA safety update results and deployment readiness",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-07-24 12:07:47 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:27.000+0800",
+        "cycle_days": 37.98935185185185
+      },
+      {
+        "key": "LATC-9800",
+        "summary": "Text Watermark Research",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-14 11:53:20 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:39.000+0800",
+        "cycle_days": 16.999525462962964
+      },
+      {
+        "key": "LATC-3705",
+        "summary": "Safety Data Generation [Adrian]",
+        "assignee": "Adrian Chan16",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-06-09 22:14:23 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Aoxiang AX4 Zhang": [
+      {
+        "key": "LATC-8773",
+        "summary": "9.7.10 Convert Gemma4-26B-A4B Q4/Q6 LoRA Models to GGUF, Support Inference   Integration, and Debug Issues",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-08-06 02:30:14 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:36:51.000+0800",
+        "cycle_days": 27.33792824074074
+      },
+      {
+        "key": "LATC-8765",
+        "summary": "9.7.8 Prepare and Track Gemma4-26B-A4B Q4/Q6 LoRA Models for OSC Review",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-08-06 02:11:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:37:34.000+0800",
+        "cycle_days": 27.351574074074072
+      },
+      {
+        "key": "LATC-5680",
+        "summary": "\t[Eval] Building HTML dataset and metric for evaluation model coding capability",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-1049",
+        "created": "2026-07-15 05:52:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:07:05.000+0800",
+        "cycle_days": 49.177002314814814
+      }
+    ],
+    "Eli Guo9": [
+      {
+        "key": "LATC-6653",
+        "summary": "9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:11:04 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:55.000+0800",
+        "cycle_days": 40.60892361111111
+      },
+      {
+        "key": "LATC-6669",
+        "summary": "9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:15:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:48:04.000+0800",
+        "cycle_days": 40.60608796296296
+      },
+      {
+        "key": "LATC-9451",
+        "summary": "[Eval] LATC Bench Personal- Evaluation model PE&safety capabilities",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-13116",
+        "created": "2026-08-12 06:13:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:54:38.000+0800",
+        "cycle_days": 21.861597222222223
+      },
+      {
+        "key": "LATC-8285",
+        "summary": "[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-243",
+        "created": "2026-08-03 10:51:01 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:12.000+0800",
+        "cycle_days": 30.664016203703703
+      },
+      {
+        "key": "LATC-6627",
+        "summary": "9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:08:21 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:27.000+0800",
+        "cycle_days": 40.61048611111111
+      },
+      {
+        "key": "LATC-6117",
+        "summary": "[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-243",
+        "created": "2026-07-20 16:53:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:19.000+0800",
+        "cycle_days": 44.41203703703704
+      },
+      {
+        "key": "LATC-6638",
+        "summary": "9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:09:27 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:45.000+0800",
+        "cycle_days": 40.60993055555556
+      },
+      {
+        "key": "LATC-6634",
+        "summary": "9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:09:06 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:38.000+0800",
+        "cycle_days": 40.61009259259259
+      }
+    ],
+    "Fei Fei4 Ma": [
+      {
+        "key": "LATC-10733",
+        "summary": "Apply 16KB page alignment for SAD library (including dependent ONNX library)",
+        "assignee": "Fei Fei4 Ma",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 06:08:23 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12564",
+        "summary": "Assist in resolving ASR SDK deployment issues",
+        "assignee": "Fei Fei4 Ma",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 22:41:50 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Francisco Ponce gomez2": [
+      {
+        "key": "LATC-10278",
+        "summary": "33.3.2 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+        "assignee": "Francisco Ponce gomez2",
+        "type": "Story",
+        "epic": "LATC-8674",
+        "created": "2026-08-19 13:30:25 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:05:46.000+0800",
+        "cycle_days": 14.607881944444445
+      }
+    ],
+    "Gong Chen": [
+      {
+        "key": "LATC-11870",
+        "summary": "Quantize Gemma 4 E2B Across Four Precision Configurations",
+        "assignee": "Gong Chen",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-26 09:43:14 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T03:52:20.000+0800",
+        "cycle_days": 5.756319444444444
+      },
+      {
+        "key": "LATC-13134",
+        "summary": "[MTK System Prompt and Tool-Call Input Support Comparison for Mobile Gemma 4 E2B",
+        "assignee": "Gong Chen",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 14:28:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:54:24.000+0800",
+        "cycle_days": 1.4760995370370371
+      },
+      {
+        "key": "LATC-13135",
+        "summary": "[MTK]  Profile Result Saving Support Comparison for VLM Testing",
+        "assignee": "Gong Chen",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 14:28:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:54:51.000+0800",
+        "cycle_days": 1.4763657407407407
+      },
+      {
+        "key": "LATC-12900",
+        "summary": "9.5.9 Gong - [MTK][Gemma 4 E2B] Develop On-Device Inference Code and Documentation for External Model Evaluation on MT6899",
+        "assignee": "Gong Chen",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:58:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:52:46.000+0800",
+        "cycle_days": 2.662650462962963
+      }
+    ],
+    "Grant Forbes": [
+      {
+        "key": "LATC-6448",
+        "summary": "[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models",
+        "assignee": "Grant Forbes",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-07-23 09:53:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T00:47:15.000+0800",
+        "cycle_days": 42.62078703703704
+      }
+    ],
+    "Hai Long": [
+      {
+        "key": "LATC-11510",
+        "summary": "Diar SDK standalone project + release AAR",
+        "assignee": "Hai Long",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 03:09:50 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11513",
+        "summary": "Integrate Diar SDK (AAR) to WhisperASR and Regression",
+        "assignee": "Hai Long",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 03:15:46 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Haitao HT37 Wang": [
+      {
+        "key": "LATC-10413",
+        "summary": "Technical Requirements Analysis for R&O Model Routing and Understanding & Planning",
+        "assignee": "Haitao HT37 Wang",
+        "type": "Task",
+        "epic": "LATC-10271",
+        "created": "2026-08-20 03:03:58 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T17:43:31.000+0800",
+        "cycle_days": 15.610798611111111
+      }
+    ],
+    "Hao Hao51 Liu": [
+      {
+        "key": "LATC-13398",
+        "summary": "Cooperate with the testing colleagues to conduct the test on the P7 box",
+        "assignee": "Hao Hao51 Liu",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-03 01:49:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T13:42:30.000+0800",
+        "cycle_days": 1.495462962962963
+      },
+      {
+        "key": "LATC-13077",
+        "summary": "Deploy multiple granite models",
+        "assignee": "Hao Hao51 Liu",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-01 05:57:52 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T18:17:02.000+0800",
+        "cycle_days": 1.5133101851851851
+      }
+    ],
+    "Haoran HR3 Lu": [
+      {
+        "key": "LATC-10691",
+        "summary": "Implement Model-Specific Summary Generation for Local Goodsum Inference (Gemma 3 1B, Gemma 4 E2B, and Granite 4.0 1B)",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:41:35 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-8927",
+        "summary": "AIW: Compare cloud vs on-device LLM performance (best cloud model vs Gemma 3 1B / Gemma 4 E2B / Granite 4.0 1B)",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-08-07 04:11:51 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T15:58:28.000+0800",
+        "cycle_days": 21.49070601851852
+      },
+      {
+        "key": "LATC-10713",
+        "summary": "Score and Analyze Model-Specific Summary Quality Using EN Data",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 05:10:14 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12656",
+        "summary": "Expand EN Action Item Coverage and Refine Gold Annotations",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 04:49:42 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Heming HM22 Zhang": [
+      {
+        "key": "LATC-11905",
+        "summary": "Granite\u2011Embedding GPU Memory Footprint Troubleshooting & Analysis",
+        "assignee": "Heming HM22 Zhang",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:03:47 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:26:53.000+0800",
+        "cycle_days": 8.724375
+      },
+      {
+        "key": "LATC-11904",
+        "summary": "Granite\u2011Embedding Memory Footprint Troubleshooting & Analysis",
+        "assignee": "Heming HM22 Zhang",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:03:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:28:09.000+0800",
+        "cycle_days": 8.725578703703704
+      }
+    ],
+    "Hong Hong16 Wang": [
+      {
+        "key": "LATC-10485",
+        "summary": "Test Translation SDK V2 Stability and Peak Memory Usage",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 06:29:39 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10486",
+        "summary": "Conduct M2M100 Fine-tuning Experiments with Different Data Scales, and Adjust Data Configuration Based on Model Performance",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 06:50:30 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12602",
+        "summary": "Explore a solution that balances Chinese-English translation performance and multilingual generalization based on 40K-scale training data",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 01:59:51 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12601",
+        "summary": "SDK v2 Performance Optimization and Processing Efficiency Improvement",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 01:57:54 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Hui Hui47 Li": [
+      {
+        "key": "LATC-11496",
+        "summary": "Demo Dataset for Outlook Calendar & Email Scenarios-2",
+        "assignee": "Hui Hui47 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 02:13:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Jianbang Zhang": [
+      {
+        "key": "LATC-1048",
+        "summary": "FM Training Pipeline",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-03 20:29:31 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-1136",
+        "summary": "9.4 Qira Granite v2 Model Training",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-25 15:04:33 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-1049",
+        "summary": "FM Evaluation Integration",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-03 20:33:50 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Jianlin JL2 Deng": [
+      {
+        "key": "LATC-13294",
+        "summary": "granite model research for long token",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-02 04:48:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:53:54.000+0800",
+        "cycle_days": 2.253738425925926
+      },
+      {
+        "key": "LATC-10810",
+        "summary": "Evaluate ColModernVBERT split-vision model",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Story",
+        "epic": "LATC-3171",
+        "created": "2026-08-23 22:30:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T11:00:20.000+0800",
+        "cycle_days": 11.520451388888889
+      },
+      {
+        "key": "LATC-12574",
+        "summary": "Participate in CLI Router discussion and design",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-27 23:22:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:27:35.000+0800",
+        "cycle_days": 7.6698611111111115
+      }
+    ],
+    "Jiaxin JX38 Li": [
+      {
+        "key": "LATC-10678",
+        "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Task",
+        "epic": "LATC-8295",
+        "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:07.000+0800",
+        "cycle_days": 7.452025462962963
+      },
+      {
+        "key": "LATC-10681",
+        "summary": "Package, deliver, and support a stable Android test build for QA",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:15:14 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10678",
+        "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Task",
+        "epic": "LATC-8295",
+        "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:07.000+0800",
+        "cycle_days": 7.452025462962963
+      },
+      {
+        "key": "LATC-13387",
+        "summary": "Add Batch Recognition Toggle for File Recognition",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-02 23:09:13 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13389",
+        "summary": "Integrate and Validate ASR Memory Monitoring",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-02 23:09:15 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Jie Yang": [
+      {
+        "key": "LATC-11877",
+        "summary": "ONNX Official Documentation Review",
+        "assignee": "Jie Yang",
+        "type": "Task",
+        "epic": "LATC-3853",
+        "created": "2026-08-26 11:01:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T01:53:20.000+0800",
+        "cycle_days": 5.619027777777778
+      }
+    ],
+    "Jinchuan JC20 Liu": [
+      {
+        "key": "LATC-10866",
+        "summary": "Long-text embedding memory optimization: graph split",
+        "assignee": "Jinchuan JC20 Liu",
+        "type": "Task",
+        "epic": "LATC-2240",
+        "created": "2026-08-24 03:15:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:16:24.000+0800",
+        "cycle_days": 4.625439814814815
+      },
+      {
+        "key": "LATC-10764",
+        "summary": "[Eval] Quantized Granite model inference testing on low-end Qualcomm platforms",
+        "assignee": "Jinchuan JC20 Liu",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-22 02:05:20 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:58:35.000+0800",
+        "cycle_days": 13.578645833333333
+      }
+    ],
+    "Jin Jin1 Yuan": [
+      {
+        "key": "LATC-10127",
+        "summary": "Compositional editing test for flux",
+        "assignee": "Jin Jin1 Yuan",
+        "type": "Task",
+        "epic": "LATC-6592",
+        "created": "2026-08-18 04:05:57 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:22:39.000+0800",
+        "cycle_days": 10.594930555555555
+      },
+      {
+        "key": "LATC-10128",
+        "summary": "Soft mask strategy for flux distillation",
+        "assignee": "Jin Jin1 Yuan",
+        "type": "Task",
+        "epic": "LATC-6592",
+        "created": "2026-08-18 04:07:36 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:23:43.000+0800",
+        "cycle_days": 10.594525462962963
+      }
+    ],
+    "Jinyi JY2 Zou": [
+      {
+        "key": "LATC-11492",
+        "summary": "Add short-chunk cross-lingual data and short monolingual English data for a new round of training.",
+        "assignee": "Jinyi JY2 Zou",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 01:58:55 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c": [
+      {
+        "key": "LATC-12625",
+        "summary": "[DP]order_check_modifiedby",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:14:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:49:46.000+0800",
+        "cycle_days": 6.524618055555556
+      },
+      {
+        "key": "LATC-7985",
+        "summary": "[general]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 23:24:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:21:51.000+0800",
+        "cycle_days": 34.45681712962963
+      },
+      {
+        "key": "LATC-7790",
+        "summary": "[PP]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 04:14:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:23:03.000+0800",
+        "cycle_days": 35.256145833333335
+      },
+      {
+        "key": "LATC-7503",
+        "summary": "[PP]Add Production Type filter to Planned Order creation",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-29 23:31:44 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:25:07.000+0800",
+        "cycle_days": 35.45373842592593
+      },
+      {
+        "key": "LATC-8030",
+        "summary": "[DP]sales_order_page_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 02:13:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:27:23.000+0800",
+        "cycle_days": 35.34275462962963
+      },
+      {
+        "key": "LATC-8020",
+        "summary": "[DP]sales_order_upload_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 02:09:48 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:43:37.000+0800",
+        "cycle_days": 35.35681712962963
+      }
+    ],
+    "Kai Kai23 Liu": [
+      {
+        "key": "LATC-8423",
+        "summary": "Exploration of KV cache quantization path",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-08-04 03:51:35 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:17:27.000+0800",
+        "cycle_days": 24.601296296296297
+      },
+      {
+        "key": "LATC-9048",
+        "summary": "Research on the usability of gesture recognition under the llama.cpp multimodal model",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-08-09 22:37:48 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T18:15:17.000+0800",
+        "cycle_days": 25.81769675925926
+      },
+      {
+        "key": "LATC-9749",
+        "summary": "Research on Audio and Gesture Recognition of Omni Model",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-9741",
+        "created": "2026-08-14 06:03:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T18:15:55.000+0800",
+        "cycle_days": 21.50840277777778
+      }
+    ],
+    "Lin Lin13 Yang | \u6768\u7433": [
+      {
+        "key": "LATC-7995",
+        "summary": "AIW: Implement target speaker enrollment feature for speaker diarization.",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-07-31 01:14:02 Eastern Daylight Time",
+        "resolutiondate": "2026-08-19T16:12:23.000+0800",
+        "cycle_days": 19.623854166666668
+      },
+      {
+        "key": "LATC-10491",
+        "summary": "Construct dev dataset suitable for target speaker enrollment",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 10:19:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13181",
+        "summary": "Baseline development of enroll-binding pipeline",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-01 23:18:44 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Longlong LL22 Liu | \u5218\u9f99\u9f99": [
+      {
+        "key": "LATC-10730",
+        "summary": "AIW: Align dependent SO libraries with 16KB page alignment",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-21 06:01:45 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T11:09:15.000+0800",
+        "cycle_days": 7.213541666666667
+      },
+      {
+        "key": "LATC-12566",
+        "summary": "SAD Crash occurs when SAD config file uses CRLF line\u2011ending format",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Defects",
+        "epic": "LATC-8292",
+        "created": "2026-08-27 22:52:56 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T16:56:36.000+0800",
+        "cycle_days": 0.7525462962962963
+      },
+      {
+        "key": "LATC-13400",
+        "summary": "AIW: WhisperASR Refactor session lifecycle and decode pipeline; harden safe stop/finish shutdown",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-09-03 01:54:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T17:32:44.000+0800",
+        "cycle_days": 0.6515393518518519
+      }
+    ],
+    "Mike Fink": [
+      {
+        "key": "LATC-10279",
+        "summary": "33.1.10 Provision cloud model-service access (Azure, AWS, or Model Factory)",
+        "assignee": "Mike Fink",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-19 13:30:29 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:14:59.000+0800",
+        "cycle_days": 14.530902777777778
+      },
+      {
+        "key": "LATC-8672",
+        "summary": "33.1 Discovery, access & gap analysis",
+        "assignee": "Mike Fink",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-08-05 13:21:36 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-8681",
+        "summary": "33.1.6 Draft Mitra vs Davy positioning memo (incl. PRC track options)",
+        "assignee": "Mike Fink",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:34 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:16:29.000+0800",
+        "cycle_days": 28.53744212962963
+      }
+    ],
+    "Mi Mi1 Hong": [
+      {
+        "key": "LATC-12619",
+        "summary": "On AP firmware linking stage\uff0clightweight SAD crashed with undefined reference",
+        "assignee": "Mi Mi1 Hong",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 03:00:05 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13194",
+        "summary": "Give support to intergration team for vad lib on Andes",
+        "assignee": "Mi Mi1 Hong",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-01 23:48:46 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Nan Nan1 Yan": [
+      {
+        "key": "LATC-6537",
+        "summary": "[Eval]Building voice model evaluation environment",
+        "assignee": "Nan Nan1 Yan",
+        "type": "Task",
+        "epic": "LATC-1049",
+        "created": "2026-07-24 04:14:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:08:17.000+0800",
+        "cycle_days": 40.24534722222222
+      }
+    ],
+    "Shengzhe SZ2 Tao": [
+      {
+        "key": "LATC-10814",
+        "summary": "[QAT] Singleturn RL Training [Shengzhe]",
+        "assignee": "Shengzhe SZ2 Tao",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-23 22:40:34 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:58:38.000+0800",
+        "cycle_days": 11.512546296296296
+      }
+    ],
+    "Shiru SR1 Bu": [
+      {
+        "key": "LATC-12426",
+        "summary": "DataAgent Pre-implementation Research",
+        "assignee": "Shiru SR1 Bu",
+        "type": "Task",
+        "epic": "LATC-10229",
+        "created": "2026-08-27 05:54:17 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T17:09:06.000+0800",
+        "cycle_days": 7.468622685185185
+      }
+    ],
+    "Shi Shi1 Gu": [
+      {
+        "key": "LATC-11841",
+        "summary": "Collect gesture recognition training data",
+        "assignee": "Shi Shi1 Gu",
+        "type": "Task",
+        "epic": "LATC-9909",
+        "created": "2026-08-26 06:12:00 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T12:26:36.000+0800",
+        "cycle_days": 9.26013888888889
+      }
+    ],
+    "Sriman Donthireddi": [
+      {
+        "key": "LATC-12534",
+        "summary": "Set up Uni-Docker environment with SGLang",
+        "assignee": "Sriman Donthireddi",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 15:04:25 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Tian Tian2 Zhou": [
+      {
+        "key": "LATC-11848",
+        "summary": "granite-embedding-97m-multilingual-r2 multi test 8/24-8/28",
+        "assignee": "Tian Tian2 Zhou",
+        "type": "Test",
+        "epic": "LATC-8298",
+        "created": "2026-08-26 06:26:33 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:01:40.000+0800",
+        "cycle_days": 2.4827199074074073
+      }
+    ],
+    "Tom Sheffler": [
+      {
+        "key": "LATC-8678",
+        "summary": "33.1.3 Research spike: LATC value proposition for Davy",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:22 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:17:45.000+0800",
+        "cycle_days": 28.53846064814815
+      },
+      {
+        "key": "LATC-10276",
+        "summary": "33.1.9 Write Davy coding-agent evaluation, gap analysis, and recommendations in Confluence",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-19 13:30:16 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:04:08.000+0800",
+        "cycle_days": 14.606851851851852
+      },
+      {
+        "key": "LATC-8680",
+        "summary": "33.1.5 Assess Davy capacity & quality parity for LATC-ROW coding cohort",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:30 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:04:41.000+0800",
+        "cycle_days": 28.612627314814816
+      },
+      {
+        "key": "LATC-10277",
+        "summary": "33.3.1 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8674",
+        "created": "2026-08-19 13:30:21 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:05:38.000+0800",
+        "cycle_days": 14.607835648148148
+      }
+    ],
+    "Tongtong TT20 Zhang": [
+      {
+        "key": "LATC-12431",
+        "summary": "DataForge 1.0: P0-P1 develop",
+        "assignee": "Tongtong TT20 Zhang",
+        "type": "Task",
+        "epic": "LATC-10229",
+        "created": "2026-08-27 06:12:29 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T18:05:43.000+0800",
+        "cycle_days": 7.495300925925926
+      }
+    ],
+    "Tuan anh Dang1": [
+      {
+        "key": "LATC-5826",
+        "summary": "Research absorb: ABot-World \u2014 sub-1B on-device interactive world model (feasibility read)",
+        "assignee": "Tuan anh Dang1",
+        "type": "Story",
+        "epic": "LATC-2711",
+        "created": "2026-07-16 13:28:42 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T00:15:13.000+0800",
+        "cycle_days": 48.44896990740741
+      }
+    ],
+    "Wei Wei19 Xu": [
+      {
+        "key": "LATC-10430",
+        "summary": "Implement Pre-/Post-Processing Features in the Translation System",
+        "assignee": "Wei Wei19 Xu",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-08-20 04:07:07 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:26.000+0800",
+        "cycle_days": 8.41480324074074
+      }
+    ],
+    "Xiao Xiao3 Ma": [
+      {
+        "key": "LATC-4792",
+        "summary": "[Eval] Evaluate and Optimize Multimodal Embedding Model",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-4719",
+        "created": "2026-07-02 12:07:03 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:45:34.000+0800",
+        "cycle_days": 62.19341435185185
+      },
+      {
+        "key": "LATC-10215",
+        "summary": "[Training] Design and train gesture recognition model",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-9376",
+        "created": "2026-08-19 02:00:51 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:44:39.000+0800",
+        "cycle_days": 14.61375
+      },
+      {
+        "key": "LATC-5028",
+        "summary": "[Training] Train Qwen3.5-0.8B using only the CLIP training set",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-4719",
+        "created": "2026-07-06 05:39:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:46:01.000+0800",
+        "cycle_days": 58.46306712962963
+      }
+    ],
+    "Xuan Xuan3 Cao": [
+      {
+        "key": "LATC-11813",
+        "summary": "Deploy Cross KD, JA Mono KD, and Total v2 Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-26 03:36:39 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:40.000+0800",
+        "cycle_days": 2.5868171296296296
+      },
+      {
+        "key": "LATC-11814",
+        "summary": "Align Qwen3-VL-Embedding-2B, PPOCRv6, and Layout-Infer with P7 Box I/O",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-26 03:40:57 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:08.000+0800",
+        "cycle_days": 2.583460648148148
+      },
+      {
+        "key": "LATC-10884",
+        "summary": "Deploy Gemma and Harrier Distilled Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-24 04:41:52 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:15.000+0800",
+        "cycle_days": 4.5412384259259255
+      },
+      {
+        "key": "LATC-12741",
+        "summary": "Deploy Harrier Distilled Single-Ordered Bidirectional and v2 Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-30 23:23:55 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:17:38.000+0800",
+        "cycle_days": 3.6623032407407408
+      },
+      {
+        "key": "LATC-12720",
+        "summary": "Deploy Z-Image-Turbo and ERNIE-Image-Turbo",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-30 22:23:54 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:17:30.000+0800",
+        "cycle_days": 3.703888888888889
+      }
+    ],
+    "Xue Xue5 Xia": [
+      {
+        "key": "LATC-12592",
+        "summary": "Model service for deploying Tesseract's Japanese model",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-28 01:37:48 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:58:02.000+0800",
+        "cycle_days": 3.389050925925926
+      },
+      {
+        "key": "LATC-13278",
+        "summary": "Deploying the NDLOCR-Lite model's model service(Python Service)",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-02 04:09:23 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T09:48:05.000+0800",
+        "cycle_days": 2.2352083333333335
+      },
+      {
+        "key": "LATC-12859",
+        "summary": "Deploying the harrier-0806 quantitative model's model service",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-31 05:24:54 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T09:55:33.000+0800",
+        "cycle_days": 4.187951388888889
+      }
+    ],
+    "Yanan YN4 Wu": [
+      {
+        "key": "LATC-13447",
+        "summary": "Voice data quality validation and gap analysis",
+        "assignee": "Yanan YN4 Wu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-03 05:30:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11445",
+        "summary": "voice data synthesis method research",
+        "assignee": "Yanan YN4 Wu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-24 21:24:30 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Yinglin YL4 Ji": [
+      {
+        "key": "LATC-12626",
+        "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-28 03:17:29 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:25:32.000+0800",
+        "cycle_days": 0.6305902777777778
+      },
+      {
+        "key": "LATC-13102",
+        "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Defects",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 07:58:38 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T19:59:18.000+0800",
+        "cycle_days": 0.500462962962963
+      },
+      {
+        "key": "LATC-12716",
+        "summary": "1st Official Evaluation of Gemma4-E2B on Qualcomm SM8750 Device",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-30 22:18:27 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T19:06:49.000+0800",
+        "cycle_days": 2.8669212962962964
+      },
+      {
+        "key": "LATC-12623",
+        "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Test",
+        "epic": null,
+        "created": "2026-08-28 03:11:53 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T15:18:05.000+0800",
+        "cycle_days": 0.5043055555555556
+      }
+    ],
+    "Yuxuan YX25 Xu": [
+      {
+        "key": "LATC-10883",
+        "summary": "[Eval] LATC-Gemma-4-E2B QAT model test",
+        "assignee": "Yuxuan YX25 Xu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-24 04:35:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T10:40:34.000+0800",
+        "cycle_days": 4.253333333333333
+      }
+    ],
+    "Zeyang ZY26 Yang": [
+      {
+        "key": "LATC-12528",
+        "summary": "[Eval] Test P7 Image Generation Model Performance",
+        "assignee": "Zeyang ZY26 Yang",
+        "type": "Task",
+        "epic": "LATC-4013",
+        "created": "2026-08-27 10:43:39 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T18:36:14.000+0800",
+        "cycle_days": 4.32818287037037
+      }
+    ],
+    "Zhenhua ZH17 Liu": [
+      {
+        "key": "LATC-8467",
+        "summary": "[Training] DPO",
+        "assignee": "Zhenhua ZH17 Liu",
+        "type": "Story",
+        "epic": "LATC-6591",
+        "created": "2026-08-04 05:06:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T11:10:59.000+0800",
+        "cycle_days": 31.252847222222222
+      }
+    ],
+    "Zhicheng Fu": [
+      {
+        "key": "LATC-12934",
+        "summary": "Prepare and Enable Gemma4-E2B 1st Official Evaluation on SM8750",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 18:46:30 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T02:12:03.000+0800",
+        "cycle_days": 1.3094097222222223
+      },
+      {
+        "key": "LATC-12643",
+        "summary": "Add System Prompt and Tool-Call Input Support for Mobile Gemma 4 E2B",
+        "assignee": "Zhicheng Fu",
+        "type": "Defects",
+        "epic": "LATC-6591",
+        "created": "2026-08-28 04:16:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:49:21.000+0800",
+        "cycle_days": 4.106111111111111
+      },
+      {
+        "key": "LATC-11676",
+        "summary": "Evaluate different PTQ configurations for Gemma4-E2B and identify the best recipe for on-device deployment.",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-25 11:47:23 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:27:12.000+0800",
+        "cycle_days": 5.9443171296296295
+      },
+      {
+        "key": "LATC-9374",
+        "summary": "9.5.42 Enable and optimize Gemma4-e2b on QC platform",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-11 14:08:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:27:21.000+0800",
+        "cycle_days": 19.846631944444443
+      },
+      {
+        "key": "LATC-12895",
+        "summary": "9.5.4 Zhicheng Fu - Mobile Quantization Placeholder 1",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:57:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:48:17.000+0800",
+        "cycle_days": 0.8682986111111111
+      },
+      {
+        "key": "LATC-12719",
+        "summary": "Support and Debug Gemma4-E2B 1st Official Evaluation on Qualcomm SM8750",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-30 22:23:43 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:48:32.000+0800",
+        "cycle_days": 1.3505671296296295
+      },
+      {
+        "key": "LATC-12891",
+        "summary": "Add Genie profile result saving support for VLM testing",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:42:32 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:36.000+0800",
+        "cycle_days": 3.676435185185185
+      },
+      {
+        "key": "LATC-13105",
+        "summary": "Model response leaks abnormal chat template in outputs, with a 20% occurrence rate",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:04:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:24.000+0800",
+        "cycle_days": 2.7445138888888887
+      },
+      {
+        "key": "LATC-13103",
+        "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:00:25 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:18.000+0800",
+        "cycle_days": 2.7471412037037037
+      },
+      {
+        "key": "LATC-13106",
+        "summary": "Model returns no output, emitting only an [END] marker without [BEGIN], with a 14.6% occurrence rate",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:09:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:55:57.000+0800",
+        "cycle_days": 2.7407291666666667
+      },
+      {
+        "key": "LATC-12935",
+        "summary": "Iterative Model Update and Debug Support for Gemma4-E2B SM8750 Evaluation",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 18:47:22 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:17:33.000+0800",
+        "cycle_days": 3.645960648148148
+      }
+    ],
+    "Zhiyao ZY58 Zhang": [
+      {
+        "key": "LATC-7812",
+        "summary": "[general]run job finish notification",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 05:07:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:22:42.000+0800",
+        "cycle_days": 35.21885416666667
+      },
+      {
+        "key": "LATC-7544",
+        "summary": "[general]dashboard-production",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-29 23:39:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:24:55.000+0800",
+        "cycle_days": 35.44853009259259
+      },
+      {
+        "key": "LATC-8006",
+        "summary": "[general]dashboard production ",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:48:39 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:19:08.000+0800",
+        "cycle_days": 34.354502314814816
+      },
+      {
+        "key": "LATC-8005",
+        "summary": "[PP]pp_filter and data display",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:47:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:20:15.000+0800",
+        "cycle_days": 34.35577546296296
+      },
+      {
+        "key": "LATC-8003",
+        "summary": "[PP]pp_Add Production Type filter to Planned Order creation",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:45:39 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:20:58.000+0800",
+        "cycle_days": 34.3578587962963
+      },
+      {
+        "key": "LATC-12573",
+        "summary": "[DP]FE_order_check",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-27 23:21:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:06:42.000+0800",
+        "cycle_days": 7.448043981481481
+      },
+      {
+        "key": "LATC-12571",
+        "summary": "[DP]FE_sales_order_page_change",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-27 23:19:46 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:12:01.000+0800",
+        "cycle_days": 7.452951388888889
+      },
+      {
+        "key": "LATC-9632",
+        "summary": "[DP] Separate page permissions",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-13 23:16:17 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:13:36.000+0800",
+        "cycle_days": 21.456469907407406
+      },
+      {
+        "key": "LATC-12624",
+        "summary": "[DP]FE_customer_configue",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:12:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:51:13.000+0800",
+        "cycle_days": 6.52662037037037
+      },
+      {
+        "key": "LATC-12621",
+        "summary": "[DP]FE_default_display",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:10:20 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:52:50.000+0800",
+        "cycle_days": 6.529513888888889
+      },
+      {
+        "key": "LATC-12617",
+        "summary": "[general]FE_item",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 02:57:00 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:56:59.000+0800",
+        "cycle_days": 6.541655092592593
+      },
+      {
+        "key": "LATC-12615",
+        "summary": "[DP]FE_demand_aggeregation",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 02:47:44 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:57:39.000+0800",
+        "cycle_days": 6.54855324074074
+      }
+    ],
+    "Ziqi ZQ24 Liu": [
+      {
+        "key": "LATC-10688",
+        "summary": "Organize and improve logging and log persistence for trans-sys-poc",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:36:56 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12401",
+        "summary": "Consolidate shared functionality from the Windows and Android demos in trans-sys-poc",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 04:43:22 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10690",
+        "summary": "Release the trans-sys-poc version and support the testing team",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:38:06 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "Zongfu ZF3 Qu": [
+      {
+        "key": "LATC-11902",
+        "summary": "2 bit quantization on granite embedding using GSQ",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 21:58:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:07:41.000+0800",
+        "cycle_days": 1.7978587962962962
+      },
+      {
+        "key": "LATC-10720",
+        "summary": "Analyze the 2.8-bit mixed-precision quantization strategy.",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-21 05:29:56 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:06:15.000+0800",
+        "cycle_days": 7.483553240740741
+      },
+      {
+        "key": "LATC-11903",
+        "summary": "Test 4 bit quantization on granite embedding using GSQ",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:00:30 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:08:07.000+0800",
+        "cycle_days": 1.7969560185185185
+      },
+      {
+        "key": "LATC-13613",
+        "summary": "Infer granite on mtk low level phone using mnn",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-09-04 04:05:46 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T16:06:21.000+0800",
+        "cycle_days": 0.5004050925925926
+      },
+      {
+        "key": "LATC-12672",
+        "summary": "Mixed groupsize on 2.9 bit",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-28 05:10:10 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:58:53.000+0800",
+        "cycle_days": 7.450497685185185
+      }
+    ]
+  },
+  "by_epic_issues": {
+    "LATC-9801": [
+      {
+        "key": "LATC-9805",
+        "summary": "DeepSeekV4-Flash 2-Bit Quantization Baseline Evaluation",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:01:26 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T21:30:00.000+0800",
+        "cycle_days": 17.394837962962963
+      },
+      {
+        "key": "LATC-9804",
+        "summary": "DeepSeekV4-Flash 2-Bit Quantization Hosting Configuration",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:01:11 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:51:46.000+0800",
+        "cycle_days": 16.993460648148147
+      },
+      {
+        "key": "LATC-9803",
+        "summary": "DeepSeekV4-Flash Architecture Research",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-9801",
+        "created": "2026-08-14 12:00:51 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:03.000+0800",
+        "cycle_days": 16.99388888888889
+      }
+    ],
+    "LATC-3853": [
+      {
+        "key": "LATC-7328",
+        "summary": "DeepSeek + GLM + Inkling Hosting",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-3853",
+        "created": "2026-07-29 17:19:08 Eastern Daylight Time",
+        "resolutiondate": "2026-08-14T23:48:49.000+0800",
+        "cycle_days": 16.270613425925927
+      },
+      {
+        "key": "LATC-11877",
+        "summary": "ONNX Official Documentation Review",
+        "assignee": "Jie Yang",
+        "type": "Task",
+        "epic": "LATC-3853",
+        "created": "2026-08-26 11:01:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T01:53:20.000+0800",
+        "cycle_days": 5.619027777777778
+      }
+    ],
+    "LATC-6594": [
+      {
+        "key": "LATC-6623",
+        "summary": "9.7.5 Document LoRA safety update results and deployment readiness",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-07-24 12:07:47 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:27.000+0800",
+        "cycle_days": 37.98935185185185
+      },
+      {
+        "key": "LATC-8773",
+        "summary": "9.7.10 Convert Gemma4-26B-A4B Q4/Q6 LoRA Models to GGUF, Support Inference   Integration, and Debug Issues",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-08-06 02:30:14 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:36:51.000+0800",
+        "cycle_days": 27.33792824074074
+      },
+      {
+        "key": "LATC-8765",
+        "summary": "9.7.8 Prepare and Track Gemma4-26B-A4B Q4/Q6 LoRA Models for OSC Review",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-6594",
+        "created": "2026-08-06 02:11:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:37:34.000+0800",
+        "cycle_days": 27.351574074074072
+      }
+    ],
+    "LATC-6591": [
+      {
+        "key": "LATC-9800",
+        "summary": "Text Watermark Research",
+        "assignee": "Adrian Chan16",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-14 11:53:20 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T11:52:39.000+0800",
+        "cycle_days": 16.999525462962964
+      },
+      {
+        "key": "LATC-6653",
+        "summary": "9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:11:04 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:55.000+0800",
+        "cycle_days": 40.60892361111111
+      },
+      {
+        "key": "LATC-6669",
+        "summary": "9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:15:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:48:04.000+0800",
+        "cycle_days": 40.60608796296296
+      },
+      {
+        "key": "LATC-6627",
+        "summary": "9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:08:21 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:27.000+0800",
+        "cycle_days": 40.61048611111111
+      },
+      {
+        "key": "LATC-6638",
+        "summary": "9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:09:27 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:45.000+0800",
+        "cycle_days": 40.60993055555556
+      },
+      {
+        "key": "LATC-6634",
+        "summary": "9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-07-24 12:09:06 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:38.000+0800",
+        "cycle_days": 40.61009259259259
+      },
+      {
+        "key": "LATC-11870",
+        "summary": "Quantize Gemma 4 E2B Across Four Precision Configurations",
+        "assignee": "Gong Chen",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-26 09:43:14 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T03:52:20.000+0800",
+        "cycle_days": 5.756319444444444
+      },
+      {
+        "key": "LATC-13134",
+        "summary": "[MTK System Prompt and Tool-Call Input Support Comparison for Mobile Gemma 4 E2B",
+        "assignee": "Gong Chen",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 14:28:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:54:24.000+0800",
+        "cycle_days": 1.4760995370370371
+      },
+      {
+        "key": "LATC-13135",
+        "summary": "[MTK]  Profile Result Saving Support Comparison for VLM Testing",
+        "assignee": "Gong Chen",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 14:28:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:54:51.000+0800",
+        "cycle_days": 1.4763657407407407
+      },
+      {
+        "key": "LATC-12900",
+        "summary": "9.5.9 Gong - [MTK][Gemma 4 E2B] Develop On-Device Inference Code and Documentation for External Model Evaluation on MT6899",
+        "assignee": "Gong Chen",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:58:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T01:52:46.000+0800",
+        "cycle_days": 2.662650462962963
+      },
+      {
+        "key": "LATC-10814",
+        "summary": "[QAT] Singleturn RL Training [Shengzhe]",
+        "assignee": "Shengzhe SZ2 Tao",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-23 22:40:34 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:58:38.000+0800",
+        "cycle_days": 11.512546296296296
+      },
+      {
+        "key": "LATC-13102",
+        "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Defects",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 07:58:38 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T19:59:18.000+0800",
+        "cycle_days": 0.500462962962963
+      },
+      {
+        "key": "LATC-12716",
+        "summary": "1st Official Evaluation of Gemma4-E2B on Qualcomm SM8750 Device",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-30 22:18:27 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T19:06:49.000+0800",
+        "cycle_days": 2.8669212962962964
+      },
+      {
+        "key": "LATC-10883",
+        "summary": "[Eval] LATC-Gemma-4-E2B QAT model test",
+        "assignee": "Yuxuan YX25 Xu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-24 04:35:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T10:40:34.000+0800",
+        "cycle_days": 4.253333333333333
+      },
+      {
+        "key": "LATC-8467",
+        "summary": "[Training] DPO",
+        "assignee": "Zhenhua ZH17 Liu",
+        "type": "Story",
+        "epic": "LATC-6591",
+        "created": "2026-08-04 05:06:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T11:10:59.000+0800",
+        "cycle_days": 31.252847222222222
+      },
+      {
+        "key": "LATC-12934",
+        "summary": "Prepare and Enable Gemma4-E2B 1st Official Evaluation on SM8750",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 18:46:30 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T02:12:03.000+0800",
+        "cycle_days": 1.3094097222222223
+      },
+      {
+        "key": "LATC-12643",
+        "summary": "Add System Prompt and Tool-Call Input Support for Mobile Gemma 4 E2B",
+        "assignee": "Zhicheng Fu",
+        "type": "Defects",
+        "epic": "LATC-6591",
+        "created": "2026-08-28 04:16:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:49:21.000+0800",
+        "cycle_days": 4.106111111111111
+      },
+      {
+        "key": "LATC-11676",
+        "summary": "Evaluate different PTQ configurations for Gemma4-E2B and identify the best recipe for on-device deployment.",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-25 11:47:23 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:27:12.000+0800",
+        "cycle_days": 5.9443171296296295
+      },
+      {
+        "key": "LATC-9374",
+        "summary": "9.5.42 Enable and optimize Gemma4-e2b on QC platform",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-11 14:08:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:27:21.000+0800",
+        "cycle_days": 19.846631944444443
+      },
+      {
+        "key": "LATC-12895",
+        "summary": "9.5.4 Zhicheng Fu - Mobile Quantization Placeholder 1",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:57:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:48:17.000+0800",
+        "cycle_days": 0.8682986111111111
+      },
+      {
+        "key": "LATC-12719",
+        "summary": "Support and Debug Gemma4-E2B 1st Official Evaluation on Qualcomm SM8750",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-30 22:23:43 Eastern Daylight Time",
+        "resolutiondate": "2026-09-01T06:48:32.000+0800",
+        "cycle_days": 1.3505671296296295
+      },
+      {
+        "key": "LATC-12891",
+        "summary": "Add Genie profile result saving support for VLM testing",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 09:42:32 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:36.000+0800",
+        "cycle_days": 3.676435185185185
+      },
+      {
+        "key": "LATC-13105",
+        "summary": "Model response leaks abnormal chat template in outputs, with a 20% occurrence rate",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:04:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:24.000+0800",
+        "cycle_days": 2.7445138888888887
+      },
+      {
+        "key": "LATC-13103",
+        "summary": "Tool-call output formatting is inconsistent and not fully aligned with BF16 reference",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:00:25 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:56:18.000+0800",
+        "cycle_days": 2.7471412037037037
+      },
+      {
+        "key": "LATC-13106",
+        "summary": "Model returns no output, emitting only an [END] marker without [BEGIN], with a 14.6% occurrence rate",
+        "assignee": "Zhicheng Fu",
+        "type": "Bug",
+        "epic": "LATC-6591",
+        "created": "2026-09-01 08:09:18 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T01:55:57.000+0800",
+        "cycle_days": 2.7407291666666667
+      },
+      {
+        "key": "LATC-12935",
+        "summary": "Iterative Model Update and Debug Support for Gemma4-E2B SM8750 Evaluation",
+        "assignee": "Zhicheng Fu",
+        "type": "Task",
+        "epic": "LATC-6591",
+        "created": "2026-08-31 18:47:22 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:17:33.000+0800",
+        "cycle_days": 3.645960648148148
+      }
+    ],
+    "No Epic linked": [
+      {
+        "key": "LATC-3705",
+        "summary": "Safety Data Generation [Adrian]",
+        "assignee": "Adrian Chan16",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-06-09 22:14:23 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10733",
+        "summary": "Apply 16KB page alignment for SAD library (including dependent ONNX library)",
+        "assignee": "Fei Fei4 Ma",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 06:08:23 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12564",
+        "summary": "Assist in resolving ASR SDK deployment issues",
+        "assignee": "Fei Fei4 Ma",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 22:41:50 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11510",
+        "summary": "Diar SDK standalone project + release AAR",
+        "assignee": "Hai Long",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 03:09:50 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11513",
+        "summary": "Integrate Diar SDK (AAR) to WhisperASR and Regression",
+        "assignee": "Hai Long",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 03:15:46 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10691",
+        "summary": "Implement Model-Specific Summary Generation for Local Goodsum Inference (Gemma 3 1B, Gemma 4 E2B, and Granite 4.0 1B)",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:41:35 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-8927",
+        "summary": "AIW: Compare cloud vs on-device LLM performance (best cloud model vs Gemma 3 1B / Gemma 4 E2B / Granite 4.0 1B)",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-08-07 04:11:51 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T15:58:28.000+0800",
+        "cycle_days": 21.49070601851852
+      },
+      {
+        "key": "LATC-10713",
+        "summary": "Score and Analyze Model-Specific Summary Quality Using EN Data",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 05:10:14 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12656",
+        "summary": "Expand EN Action Item Coverage and Refine Gold Annotations",
+        "assignee": "Haoran HR3 Lu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 04:49:42 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10485",
+        "summary": "Test Translation SDK V2 Stability and Peak Memory Usage",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 06:29:39 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10486",
+        "summary": "Conduct M2M100 Fine-tuning Experiments with Different Data Scales, and Adjust Data Configuration Based on Model Performance",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 06:50:30 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12602",
+        "summary": "Explore a solution that balances Chinese-English translation performance and multilingual generalization based on 40K-scale training data",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 01:59:51 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12601",
+        "summary": "SDK v2 Performance Optimization and Processing Efficiency Improvement",
+        "assignee": "Hong Hong16 Wang",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 01:57:54 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11496",
+        "summary": "Demo Dataset for Outlook Calendar & Email Scenarios-2",
+        "assignee": "Hui Hui47 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 02:13:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-1048",
+        "summary": "FM Training Pipeline",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-03 20:29:31 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-1136",
+        "summary": "9.4 Qira Granite v2 Model Training",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-25 15:04:33 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-1049",
+        "summary": "FM Evaluation Integration",
+        "assignee": "Jianbang Zhang",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-02-03 20:33:50 Eastern Standard Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10681",
+        "summary": "Package, deliver, and support a stable Android test build for QA",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:15:14 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13387",
+        "summary": "Add Batch Recognition Toggle for File Recognition",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-02 23:09:13 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13389",
+        "summary": "Integrate and Validate ASR Memory Monitoring",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-02 23:09:15 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11492",
+        "summary": "Add short-chunk cross-lingual data and short monolingual English data for a new round of training.",
+        "assignee": "Jinyi JY2 Zou",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-25 01:58:55 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-7995",
+        "summary": "AIW: Implement target speaker enrollment feature for speaker diarization.",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-07-31 01:14:02 Eastern Daylight Time",
+        "resolutiondate": "2026-08-19T16:12:23.000+0800",
+        "cycle_days": 19.623854166666668
+      },
+      {
+        "key": "LATC-10491",
+        "summary": "Construct dev dataset suitable for target speaker enrollment",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-20 10:19:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13181",
+        "summary": "Baseline development of enroll-binding pipeline",
+        "assignee": "Lin Lin13 Yang | \u6768\u7433",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-01 23:18:44 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-8672",
+        "summary": "33.1 Discovery, access & gap analysis",
+        "assignee": "Mike Fink",
+        "type": "Epic",
+        "epic": null,
+        "created": "2026-08-05 13:21:36 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12619",
+        "summary": "On AP firmware linking stage\uff0clightweight SAD crashed with undefined reference",
+        "assignee": "Mi Mi1 Hong",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-28 03:00:05 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-13194",
+        "summary": "Give support to intergration team for vad lib on Andes",
+        "assignee": "Mi Mi1 Hong",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-01 23:48:46 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12534",
+        "summary": "Set up Uni-Docker environment with SGLang",
+        "assignee": "Sriman Donthireddi",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 15:04:25 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10430",
+        "summary": "Implement Pre-/Post-Processing Features in the Translation System",
+        "assignee": "Wei Wei19 Xu",
+        "type": "Task",
+        "epic": null,
+        "created": "2026-08-20 04:07:07 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:26.000+0800",
+        "cycle_days": 8.41480324074074
+      },
+      {
+        "key": "LATC-13447",
+        "summary": "Voice data quality validation and gap analysis",
+        "assignee": "Yanan YN4 Wu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-09-03 05:30:59 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-11445",
+        "summary": "voice data synthesis method research",
+        "assignee": "Yanan YN4 Wu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-24 21:24:30 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12623",
+        "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Test",
+        "epic": null,
+        "created": "2026-08-28 03:11:53 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T15:18:05.000+0800",
+        "cycle_days": 0.5043055555555556
+      },
+      {
+        "key": "LATC-10688",
+        "summary": "Organize and improve logging and log persistence for trans-sys-poc",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:36:56 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-12401",
+        "summary": "Consolidate shared functionality from the Windows and Android demos in trans-sys-poc",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-27 04:43:22 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      },
+      {
+        "key": "LATC-10690",
+        "summary": "Release the trans-sys-poc version and support the testing team",
+        "assignee": "Ziqi ZQ24 Liu",
+        "type": "Sub-task",
+        "epic": null,
+        "created": "2026-08-21 03:38:06 Eastern Daylight Time",
+        "resolutiondate": null,
+        "cycle_days": null
+      }
+    ],
+    "LATC-1049": [
+      {
+        "key": "LATC-5680",
+        "summary": "\t[Eval] Building HTML dataset and metric for evaluation model coding capability",
+        "assignee": "Aoxiang AX4 Zhang",
+        "type": "Task",
+        "epic": "LATC-1049",
+        "created": "2026-07-15 05:52:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:07:05.000+0800",
+        "cycle_days": 49.177002314814814
+      },
+      {
+        "key": "LATC-6537",
+        "summary": "[Eval]Building voice model evaluation environment",
+        "assignee": "Nan Nan1 Yan",
+        "type": "Task",
+        "epic": "LATC-1049",
+        "created": "2026-07-24 04:14:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T10:08:17.000+0800",
+        "cycle_days": 40.24534722222222
+      }
+    ],
+    "LATC-13116": [
+      {
+        "key": "LATC-9451",
+        "summary": "[Eval] LATC Bench Personal- Evaluation model PE&safety capabilities",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-13116",
+        "created": "2026-08-12 06:13:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:54:38.000+0800",
+        "cycle_days": 21.861597222222223
+      }
+    ],
+    "LATC-243": [
+      {
+        "key": "LATC-8285",
+        "summary": "[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-243",
+        "created": "2026-08-03 10:51:01 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:12.000+0800",
+        "cycle_days": 30.664016203703703
+      },
+      {
+        "key": "LATC-6117",
+        "summary": "[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow",
+        "assignee": "Eli Guo9",
+        "type": "Task",
+        "epic": "LATC-243",
+        "created": "2026-07-20 16:53:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:47:19.000+0800",
+        "cycle_days": 44.41203703703704
+      }
+    ],
+    "LATC-8674": [
+      {
+        "key": "LATC-10278",
+        "summary": "33.3.2 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+        "assignee": "Francisco Ponce gomez2",
+        "type": "Story",
+        "epic": "LATC-8674",
+        "created": "2026-08-19 13:30:25 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:05:46.000+0800",
+        "cycle_days": 14.607881944444445
+      },
+      {
+        "key": "LATC-10277",
+        "summary": "33.3.1 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8674",
+        "created": "2026-08-19 13:30:21 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:05:38.000+0800",
+        "cycle_days": 14.607835648148148
+      }
+    ],
+    "LATC-2711": [
+      {
+        "key": "LATC-6448",
+        "summary": "[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models",
+        "assignee": "Grant Forbes",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-07-23 09:53:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T00:47:15.000+0800",
+        "cycle_days": 42.62078703703704
+      },
+      {
+        "key": "LATC-8423",
+        "summary": "Exploration of KV cache quantization path",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-08-04 03:51:35 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:17:27.000+0800",
+        "cycle_days": 24.601296296296297
+      },
+      {
+        "key": "LATC-9048",
+        "summary": "Research on the usability of gesture recognition under the llama.cpp multimodal model",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-2711",
+        "created": "2026-08-09 22:37:48 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T18:15:17.000+0800",
+        "cycle_days": 25.81769675925926
+      },
+      {
+        "key": "LATC-5826",
+        "summary": "Research absorb: ABot-World \u2014 sub-1B on-device interactive world model (feasibility read)",
+        "assignee": "Tuan anh Dang1",
+        "type": "Story",
+        "epic": "LATC-2711",
+        "created": "2026-07-16 13:28:42 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T00:15:13.000+0800",
+        "cycle_days": 48.44896990740741
+      }
+    ],
+    "LATC-10271": [
+      {
+        "key": "LATC-10413",
+        "summary": "Technical Requirements Analysis for R&O Model Routing and Understanding & Planning",
+        "assignee": "Haitao HT37 Wang",
+        "type": "Task",
+        "epic": "LATC-10271",
+        "created": "2026-08-20 03:03:58 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T17:43:31.000+0800",
+        "cycle_days": 15.610798611111111
+      }
+    ],
+    "LATC-3171": [
+      {
+        "key": "LATC-13398",
+        "summary": "Cooperate with the testing colleagues to conduct the test on the P7 box",
+        "assignee": "Hao Hao51 Liu",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-03 01:49:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T13:42:30.000+0800",
+        "cycle_days": 1.495462962962963
+      },
+      {
+        "key": "LATC-13077",
+        "summary": "Deploy multiple granite models",
+        "assignee": "Hao Hao51 Liu",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-01 05:57:52 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T18:17:02.000+0800",
+        "cycle_days": 1.5133101851851851
+      },
+      {
+        "key": "LATC-13294",
+        "summary": "granite model research for long token",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-02 04:48:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:53:54.000+0800",
+        "cycle_days": 2.253738425925926
+      },
+      {
+        "key": "LATC-10810",
+        "summary": "Evaluate ColModernVBERT split-vision model",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Story",
+        "epic": "LATC-3171",
+        "created": "2026-08-23 22:30:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T11:00:20.000+0800",
+        "cycle_days": 11.520451388888889
+      },
+      {
+        "key": "LATC-12574",
+        "summary": "Participate in CLI Router discussion and design",
+        "assignee": "Jianlin JL2 Deng",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-27 23:22:59 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:27:35.000+0800",
+        "cycle_days": 7.6698611111111115
+      },
+      {
+        "key": "LATC-11813",
+        "summary": "Deploy Cross KD, JA Mono KD, and Total v2 Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-26 03:36:39 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:40.000+0800",
+        "cycle_days": 2.5868171296296296
+      },
+      {
+        "key": "LATC-11814",
+        "summary": "Align Qwen3-VL-Embedding-2B, PPOCRv6, and Layout-Infer with P7 Box I/O",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-26 03:40:57 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:08.000+0800",
+        "cycle_days": 2.583460648148148
+      },
+      {
+        "key": "LATC-10884",
+        "summary": "Deploy Gemma and Harrier Distilled Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-24 04:41:52 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:41:15.000+0800",
+        "cycle_days": 4.5412384259259255
+      },
+      {
+        "key": "LATC-12741",
+        "summary": "Deploy Harrier Distilled Single-Ordered Bidirectional and v2 Models",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-30 23:23:55 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:17:38.000+0800",
+        "cycle_days": 3.6623032407407408
+      },
+      {
+        "key": "LATC-12720",
+        "summary": "Deploy Z-Image-Turbo and ERNIE-Image-Turbo",
+        "assignee": "Xuan Xuan3 Cao",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-30 22:23:54 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:17:30.000+0800",
+        "cycle_days": 3.703888888888889
+      },
+      {
+        "key": "LATC-12592",
+        "summary": "Model service for deploying Tesseract's Japanese model",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-28 01:37:48 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T10:58:02.000+0800",
+        "cycle_days": 3.389050925925926
+      },
+      {
+        "key": "LATC-13278",
+        "summary": "Deploying the NDLOCR-Lite model's model service(Python Service)",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-09-02 04:09:23 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T09:48:05.000+0800",
+        "cycle_days": 2.2352083333333335
+      },
+      {
+        "key": "LATC-12859",
+        "summary": "Deploying the harrier-0806 quantitative model's model service",
+        "assignee": "Xue Xue5 Xia",
+        "type": "Task",
+        "epic": "LATC-3171",
+        "created": "2026-08-31 05:24:54 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T09:55:33.000+0800",
+        "cycle_days": 4.187951388888889
+      }
+    ],
+    "LATC-8943": [
+      {
+        "key": "LATC-11905",
+        "summary": "Granite\u2011Embedding GPU Memory Footprint Troubleshooting & Analysis",
+        "assignee": "Heming HM22 Zhang",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:03:47 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:26:53.000+0800",
+        "cycle_days": 8.724375
+      },
+      {
+        "key": "LATC-11904",
+        "summary": "Granite\u2011Embedding Memory Footprint Troubleshooting & Analysis",
+        "assignee": "Heming HM22 Zhang",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:03:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:28:09.000+0800",
+        "cycle_days": 8.725578703703704
+      },
+      {
+        "key": "LATC-11902",
+        "summary": "2 bit quantization on granite embedding using GSQ",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 21:58:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:07:41.000+0800",
+        "cycle_days": 1.7978587962962962
+      },
+      {
+        "key": "LATC-10720",
+        "summary": "Analyze the 2.8-bit mixed-precision quantization strategy.",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-21 05:29:56 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:06:15.000+0800",
+        "cycle_days": 7.483553240740741
+      },
+      {
+        "key": "LATC-11903",
+        "summary": "Test 4 bit quantization on granite embedding using GSQ",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-26 22:00:30 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T17:08:07.000+0800",
+        "cycle_days": 1.7969560185185185
+      },
+      {
+        "key": "LATC-13613",
+        "summary": "Infer granite on mtk low level phone using mnn",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-09-04 04:05:46 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T16:06:21.000+0800",
+        "cycle_days": 0.5004050925925926
+      },
+      {
+        "key": "LATC-12672",
+        "summary": "Mixed groupsize on 2.9 bit",
+        "assignee": "Zongfu ZF3 Qu",
+        "type": "Task",
+        "epic": "LATC-8943",
+        "created": "2026-08-28 05:10:10 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:58:53.000+0800",
+        "cycle_days": 7.450497685185185
+      }
+    ],
+    "LATC-8295": [
+      {
+        "key": "LATC-10678",
+        "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Task",
+        "epic": "LATC-8295",
+        "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:07.000+0800",
+        "cycle_days": 7.452025462962963
+      },
+      {
+        "key": "LATC-10678",
+        "summary": "Deliver stable Android test build for on-device speech translation (prep + support)",
+        "assignee": "Jiaxin JX38 Li",
+        "type": "Task",
+        "epic": "LATC-8295",
+        "created": "2026-08-21 03:13:12 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T14:04:07.000+0800",
+        "cycle_days": 7.452025462962963
+      }
+    ],
+    "LATC-2240": [
+      {
+        "key": "LATC-10866",
+        "summary": "Long-text embedding memory optimization: graph split",
+        "assignee": "Jinchuan JC20 Liu",
+        "type": "Task",
+        "epic": "LATC-2240",
+        "created": "2026-08-24 03:15:46 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:16:24.000+0800",
+        "cycle_days": 4.625439814814815
+      }
+    ],
+    "LATC-8292": [
+      {
+        "key": "LATC-10764",
+        "summary": "[Eval] Quantized Granite model inference testing on low-end Qualcomm platforms",
+        "assignee": "Jinchuan JC20 Liu",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-22 02:05:20 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T15:58:35.000+0800",
+        "cycle_days": 13.578645833333333
+      },
+      {
+        "key": "LATC-10730",
+        "summary": "AIW: Align dependent SO libraries with 16KB page alignment",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-21 06:01:45 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T11:09:15.000+0800",
+        "cycle_days": 7.213541666666667
+      },
+      {
+        "key": "LATC-12566",
+        "summary": "SAD Crash occurs when SAD config file uses CRLF line\u2011ending format",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Defects",
+        "epic": "LATC-8292",
+        "created": "2026-08-27 22:52:56 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T16:56:36.000+0800",
+        "cycle_days": 0.7525462962962963
+      },
+      {
+        "key": "LATC-13400",
+        "summary": "AIW: WhisperASR Refactor session lifecycle and decode pipeline; harden safe stop/finish shutdown",
+        "assignee": "Longlong LL22 Liu | \u5218\u9f99\u9f99",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-09-03 01:54:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T17:32:44.000+0800",
+        "cycle_days": 0.6515393518518519
+      },
+      {
+        "key": "LATC-12626",
+        "summary": "Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635",
+        "assignee": "Yinglin YL4 Ji",
+        "type": "Task",
+        "epic": "LATC-8292",
+        "created": "2026-08-28 03:17:29 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:25:32.000+0800",
+        "cycle_days": 0.6305902777777778
+      }
+    ],
+    "LATC-6592": [
+      {
+        "key": "LATC-10127",
+        "summary": "Compositional editing test for flux",
+        "assignee": "Jin Jin1 Yuan",
+        "type": "Task",
+        "epic": "LATC-6592",
+        "created": "2026-08-18 04:05:57 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:22:39.000+0800",
+        "cycle_days": 10.594930555555555
+      },
+      {
+        "key": "LATC-10128",
+        "summary": "Soft mask strategy for flux distillation",
+        "assignee": "Jin Jin1 Yuan",
+        "type": "Task",
+        "epic": "LATC-6592",
+        "created": "2026-08-18 04:07:36 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:23:43.000+0800",
+        "cycle_days": 10.594525462962963
+      }
+    ],
+    "LATC-6782": [
+      {
+        "key": "LATC-12625",
+        "summary": "[DP]order_check_modifiedby",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:14:19 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:49:46.000+0800",
+        "cycle_days": 6.524618055555556
+      },
+      {
+        "key": "LATC-7985",
+        "summary": "[general]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 23:24:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:21:51.000+0800",
+        "cycle_days": 34.45681712962963
+      },
+      {
+        "key": "LATC-7790",
+        "summary": "[PP]dashboard production ",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 04:14:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:23:03.000+0800",
+        "cycle_days": 35.256145833333335
+      },
+      {
+        "key": "LATC-7503",
+        "summary": "[PP]Add Production Type filter to Planned Order creation",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-29 23:31:44 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:25:07.000+0800",
+        "cycle_days": 35.45373842592593
+      },
+      {
+        "key": "LATC-8030",
+        "summary": "[DP]sales_order_page_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 02:13:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:27:23.000+0800",
+        "cycle_days": 35.34275462962963
+      },
+      {
+        "key": "LATC-8020",
+        "summary": "[DP]sales_order_upload_change",
+        "assignee": "Jundong JD1 Tan | \u8c2d\u4fca\u4e1c",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 02:09:48 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:43:37.000+0800",
+        "cycle_days": 35.35681712962963
+      },
+      {
+        "key": "LATC-7812",
+        "summary": "[general]run job finish notification",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-30 05:07:33 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:22:42.000+0800",
+        "cycle_days": 35.21885416666667
+      },
+      {
+        "key": "LATC-7544",
+        "summary": "[general]dashboard-production",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-29 23:39:02 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:24:55.000+0800",
+        "cycle_days": 35.44853009259259
+      },
+      {
+        "key": "LATC-8006",
+        "summary": "[general]dashboard production ",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:48:39 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:19:08.000+0800",
+        "cycle_days": 34.354502314814816
+      },
+      {
+        "key": "LATC-8005",
+        "summary": "[PP]pp_filter and data display",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:47:56 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:20:15.000+0800",
+        "cycle_days": 34.35577546296296
+      },
+      {
+        "key": "LATC-8003",
+        "summary": "[PP]pp_Add Production Type filter to Planned Order creation",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-07-31 01:45:39 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T10:20:58.000+0800",
+        "cycle_days": 34.3578587962963
+      },
+      {
+        "key": "LATC-12573",
+        "summary": "[DP]FE_order_check",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-27 23:21:31 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:06:42.000+0800",
+        "cycle_days": 7.448043981481481
+      },
+      {
+        "key": "LATC-12571",
+        "summary": "[DP]FE_sales_order_page_change",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-27 23:19:46 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:12:01.000+0800",
+        "cycle_days": 7.452951388888889
+      },
+      {
+        "key": "LATC-9632",
+        "summary": "[DP] Separate page permissions",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-13 23:16:17 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T10:13:36.000+0800",
+        "cycle_days": 21.456469907407406
+      },
+      {
+        "key": "LATC-12624",
+        "summary": "[DP]FE_customer_configue",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:12:53 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:51:13.000+0800",
+        "cycle_days": 6.52662037037037
+      },
+      {
+        "key": "LATC-12621",
+        "summary": "[DP]FE_default_display",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 03:10:20 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:52:50.000+0800",
+        "cycle_days": 6.529513888888889
+      },
+      {
+        "key": "LATC-12617",
+        "summary": "[general]FE_item",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 02:57:00 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:56:59.000+0800",
+        "cycle_days": 6.541655092592593
+      },
+      {
+        "key": "LATC-12615",
+        "summary": "[DP]FE_demand_aggeregation",
+        "assignee": "Zhiyao ZY58 Zhang",
+        "type": "Task",
+        "epic": "LATC-6782",
+        "created": "2026-08-28 02:47:44 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T15:57:39.000+0800",
+        "cycle_days": 6.54855324074074
+      }
+    ],
+    "LATC-9741": [
+      {
+        "key": "LATC-9749",
+        "summary": "Research on Audio and Gesture Recognition of Omni Model",
+        "assignee": "Kai Kai23 Liu",
+        "type": "Task",
+        "epic": "LATC-9741",
+        "created": "2026-08-14 06:03:49 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T18:15:55.000+0800",
+        "cycle_days": 21.50840277777778
+      }
+    ],
+    "LATC-8672": [
+      {
+        "key": "LATC-10279",
+        "summary": "33.1.10 Provision cloud model-service access (Azure, AWS, or Model Factory)",
+        "assignee": "Mike Fink",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-19 13:30:29 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:14:59.000+0800",
+        "cycle_days": 14.530902777777778
+      },
+      {
+        "key": "LATC-8681",
+        "summary": "33.1.6 Draft Mitra vs Davy positioning memo (incl. PRC track options)",
+        "assignee": "Mike Fink",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:34 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:16:29.000+0800",
+        "cycle_days": 28.53744212962963
+      },
+      {
+        "key": "LATC-8678",
+        "summary": "33.1.3 Research spike: LATC value proposition for Davy",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:22 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T02:17:45.000+0800",
+        "cycle_days": 28.53846064814815
+      },
+      {
+        "key": "LATC-10276",
+        "summary": "33.1.9 Write Davy coding-agent evaluation, gap analysis, and recommendations in Confluence",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-19 13:30:16 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:04:08.000+0800",
+        "cycle_days": 14.606851851851852
+      },
+      {
+        "key": "LATC-8680",
+        "summary": "33.1.5 Assess Davy capacity & quality parity for LATC-ROW coding cohort",
+        "assignee": "Tom Sheffler",
+        "type": "Story",
+        "epic": "LATC-8672",
+        "created": "2026-08-05 13:22:30 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T04:04:41.000+0800",
+        "cycle_days": 28.612627314814816
+      }
+    ],
+    "LATC-10229": [
+      {
+        "key": "LATC-12426",
+        "summary": "DataAgent Pre-implementation Research",
+        "assignee": "Shiru SR1 Bu",
+        "type": "Task",
+        "epic": "LATC-10229",
+        "created": "2026-08-27 05:54:17 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T17:09:06.000+0800",
+        "cycle_days": 7.468622685185185
+      },
+      {
+        "key": "LATC-12431",
+        "summary": "DataForge 1.0: P0-P1 develop",
+        "assignee": "Tongtong TT20 Zhang",
+        "type": "Task",
+        "epic": "LATC-10229",
+        "created": "2026-08-27 06:12:29 Eastern Daylight Time",
+        "resolutiondate": "2026-09-03T18:05:43.000+0800",
+        "cycle_days": 7.495300925925926
+      }
+    ],
+    "LATC-9909": [
+      {
+        "key": "LATC-11841",
+        "summary": "Collect gesture recognition training data",
+        "assignee": "Shi Shi1 Gu",
+        "type": "Task",
+        "epic": "LATC-9909",
+        "created": "2026-08-26 06:12:00 Eastern Daylight Time",
+        "resolutiondate": "2026-09-04T12:26:36.000+0800",
+        "cycle_days": 9.26013888888889
+      }
+    ],
+    "LATC-8298": [
+      {
+        "key": "LATC-11848",
+        "summary": "granite-embedding-97m-multilingual-r2 multi test 8/24-8/28",
+        "assignee": "Tian Tian2 Zhou",
+        "type": "Test",
+        "epic": "LATC-8298",
+        "created": "2026-08-26 06:26:33 Eastern Daylight Time",
+        "resolutiondate": "2026-08-28T18:01:40.000+0800",
+        "cycle_days": 2.4827199074074073
+      }
+    ],
+    "LATC-4719": [
+      {
+        "key": "LATC-4792",
+        "summary": "[Eval] Evaluate and Optimize Multimodal Embedding Model",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-4719",
+        "created": "2026-07-02 12:07:03 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:45:34.000+0800",
+        "cycle_days": 62.19341435185185
+      },
+      {
+        "key": "LATC-5028",
+        "summary": "[Training] Train Qwen3.5-0.8B using only the CLIP training set",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-4719",
+        "created": "2026-07-06 05:39:12 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:46:01.000+0800",
+        "cycle_days": 58.46306712962963
+      }
+    ],
+    "LATC-9376": [
+      {
+        "key": "LATC-10215",
+        "summary": "[Training] Design and train gesture recognition model",
+        "assignee": "Xiao Xiao3 Ma",
+        "type": "Task",
+        "epic": "LATC-9376",
+        "created": "2026-08-19 02:00:51 Eastern Daylight Time",
+        "resolutiondate": "2026-09-02T16:44:39.000+0800",
+        "cycle_days": 14.61375
+      }
+    ],
+    "LATC-4013": [
+      {
+        "key": "LATC-12528",
+        "summary": "[Eval] Test P7 Image Generation Model Performance",
+        "assignee": "Zeyang ZY26 Yang",
+        "type": "Task",
+        "epic": "LATC-4013",
+        "created": "2026-08-27 10:43:39 Eastern Daylight Time",
+        "resolutiondate": "2026-08-31T18:36:14.000+0800",
+        "cycle_days": 4.32818287037037
+      }
+    ]
+  }
+}

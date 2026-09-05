@@ -282,7 +282,7 @@ def _run_sync(prompt: str, api_key: str) -> bool:
             prompt,
             AgentOptions(
                 api_key=api_key,
-                model="grok-4.5",
+                model="grok-4.6",
                 local=LocalAgentOptions(
                     cwd=os.path.dirname(os.path.abspath(__file__)),
                     setting_sources=["all"],

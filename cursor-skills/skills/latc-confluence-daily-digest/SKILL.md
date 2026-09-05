@@ -3,7 +3,7 @@ name: latc-confluence-daily-digest
 description: >
   Daily LATC Confluence digest for Mike Fink's personal space (~mfink). Runs as
   a Windows Scheduled Task weekdays at 8:00 AM Eastern. Uses the Cursor SDK
-  (model grok-4.5) to scrape LATC Confluence updates, score/cluster them, join
+  (model grok-4.6) to scrape LATC Confluence updates, score/cluster them, join
   Jira where possible, publish a dated digest under the LATC Daily Digest hub
   in Mike Fink's writing-voice (formal Confluence), and point the hub Latest
   link. Use when setting up, troubleshooting, or changing digest format,
@@ -23,7 +23,7 @@ Personal weekday briefing of LATC Confluence activity.
 | Source space | `LATC` |
 | Schedule | Mon–Fri 8:00 AM Eastern |
 | Task name | `LATC Confluence Daily Digest` |
-| Model | `grok-4.5` |
+| Model | `grok-4.6` |
 
 ## Cadence
 
@@ -91,7 +91,7 @@ python latc_confluence_daily_digest.py --date YYYY-MM-DD   # backfill
 ```
 Windows Task Scheduler (Mon-Fri 08:00 Eastern)
   └── latc_confluence_daily_digest.py
-        └── Agent.prompt(..., model="grok-4.5")
+        └── Agent.prompt(..., model="grok-4.6")
               ├── confluence_search (LATC window)
               ├── confluence_get_page / get_page_diff (high-signal)
               ├── jira_get_issue / jira_search (join keys)
@@ -122,7 +122,7 @@ Missing sentinel counts as failure. The runner retries once.
 | Symptom | Fix |
 |---|---|
 | DNS / xpaas unreachable | Connect Lenovo VPN; re-run |
-| Agent status=error empty result | Confirm `grok-4.5` still works |
+| Agent status=error empty result | Confirm `grok-4.6` still works |
 | Bridge WinError 10061 | Cursor agent bridge down; retry later |
 | WinError 10038 | Ensure `_win_bridge_patch` imports before `cursor_sdk` |
 | Digest is a changelog | Signal score / hard cap skipped; re-run |

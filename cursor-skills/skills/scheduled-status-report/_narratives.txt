@@ -1,0 +1,365 @@
+CYCLE n=112 median=8.7 mean=16.0 min=0.5 max=62.2 p90=38.0
+OUTLIERS>30: 25 MISSING_RES=31
+===EPICS===
+## No Epic linked (35)
+  LATC-3705|Sub-task|Adrian Chan16|Safety Data Generation [Adrian]
+  LATC-10733|Sub-task|Fei Fei4 Ma|Apply 16KB page alignment for SAD library (including dependent ONNX library)
+  LATC-12564|Sub-task|Fei Fei4 Ma|Assist in resolving ASR SDK deployment issues
+  LATC-11510|Sub-task|Hai Long|Diar SDK standalone project + release AAR
+  LATC-11513|Sub-task|Hai Long|Integrate Diar SDK (AAR) to WhisperASR and Regression
+  LATC-10691|Sub-task|Haoran HR3 Lu|Implement Model-Specific Summary Generation for Local Goodsum Inference (Gemma 3 1B, Gemma 4 E2B, and Granite 4.0 1B)
+  LATC-8927|Task|Haoran HR3 Lu|AIW: Compare cloud vs on-device LLM performance (best cloud model vs Gemma 3 1B / Gemma 4 E2B / Granite 4.0 1B)
+  LATC-10713|Sub-task|Haoran HR3 Lu|Score and Analyze Model-Specific Summary Quality Using EN Data
+  LATC-12656|Sub-task|Haoran HR3 Lu|Expand EN Action Item Coverage and Refine Gold Annotations
+  LATC-10485|Sub-task|Hong Hong16 Wang|Test Translation SDK V2 Stability and Peak Memory Usage
+  LATC-10486|Sub-task|Hong Hong16 Wang|Conduct M2M100 Fine-tuning Experiments with Different Data Scales, and Adjust Data Configuration Based on Model Performance
+  LATC-12602|Sub-task|Hong Hong16 Wang|Explore a solution that balances Chinese-English translation performance and multilingual generalization based on 40K-scale training data
+  LATC-12601|Sub-task|Hong Hong16 Wang|SDK v2 Performance Optimization and Processing Efficiency Improvement
+  LATC-11496|Sub-task|Hui Hui47 Li|Demo Dataset for Outlook Calendar & Email Scenarios-2
+  LATC-1048|Epic|Jianbang Zhang|FM Training Pipeline
+  LATC-1136|Epic|Jianbang Zhang|9.4 Qira Granite v2 Model Training
+  LATC-1049|Epic|Jianbang Zhang|FM Evaluation Integration
+  LATC-10681|Sub-task|Jiaxin JX38 Li|Package, deliver, and support a stable Android test build for QA
+  LATC-13387|Sub-task|Jiaxin JX38 Li|Add Batch Recognition Toggle for File Recognition
+  LATC-13389|Sub-task|Jiaxin JX38 Li|Integrate and Validate ASR Memory Monitoring
+  LATC-11492|Sub-task|Jinyi JY2 Zou|Add short-chunk cross-lingual data and short monolingual English data for a new round of training.
+  LATC-7995|Task|Lin Lin13 Yang | 杨琳|AIW: Implement target speaker enrollment feature for speaker diarization.
+  LATC-10491|Sub-task|Lin Lin13 Yang | 杨琳|Construct dev dataset suitable for target speaker enrollment
+  LATC-13181|Sub-task|Lin Lin13 Yang | 杨琳|Baseline development of enroll-binding pipeline
+  LATC-8672|Epic|Mike Fink|33.1 Discovery, access & gap analysis
+  LATC-12619|Sub-task|Mi Mi1 Hong|On AP firmware linking stage，lightweight SAD crashed with undefined reference
+  LATC-13194|Sub-task|Mi Mi1 Hong|Give support to intergration team for vad lib on Andes
+  LATC-12534|Sub-task|Sriman Donthireddi|Set up Uni-Docker environment with SGLang
+  LATC-10430|Task|Wei Wei19 Xu|Implement Pre-/Post-Processing Features in the Translation System
+  LATC-13447|Sub-task|Yanan YN4 Wu|Voice data quality validation and gap analysis
+  LATC-11445|Sub-task|Yanan YN4 Wu|voice data synthesis method research
+  LATC-12623|Test|Yinglin YL4 Ji|Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635
+  LATC-10688|Sub-task|Ziqi ZQ24 Liu|Organize and improve logging and log persistence for trans-sys-poc
+  LATC-12401|Sub-task|Ziqi ZQ24 Liu|Consolidate shared functionality from the Windows and Android demos in trans-sys-poc
+  LATC-10690|Sub-task|Ziqi ZQ24 Liu|Release the trans-sys-poc version and support the testing team
+## LATC-6591 (26)
+  LATC-9800|Task|Adrian Chan16|Text Watermark Research
+  LATC-6653|Task|Eli Guo9|9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset
+  LATC-6669|Task|Eli Guo9|9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation
+  LATC-6627|Task|Eli Guo9|9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting
+  LATC-6638|Task|Eli Guo9|9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset
+  LATC-6634|Task|Eli Guo9|9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks
+  LATC-11870|Task|Gong Chen|Quantize Gemma 4 E2B Across Four Precision Configurations
+  LATC-13134|Bug|Gong Chen|[MTK System Prompt and Tool-Call Input Support Comparison for Mobile Gemma 4 E2B
+  LATC-13135|Bug|Gong Chen|[MTK]  Profile Result Saving Support Comparison for VLM Testing
+  LATC-12900|Task|Gong Chen|9.5.9 Gong - [MTK][Gemma 4 E2B] Develop On-Device Inference Code and Documentation for External Model Evaluation on MT6899
+  LATC-10814|Task|Shengzhe SZ2 Tao|[QAT] Singleturn RL Training [Shengzhe]
+  LATC-13102|Defects|Yinglin YL4 Ji|Tool-call output formatting is inconsistent and not fully aligned with BF16 reference
+  LATC-12716|Task|Yinglin YL4 Ji|1st Official Evaluation of Gemma4-E2B on Qualcomm SM8750 Device
+  LATC-10883|Task|Yuxuan YX25 Xu|[Eval] LATC-Gemma-4-E2B QAT model test
+  LATC-8467|Story|Zhenhua ZH17 Liu|[Training] DPO
+  LATC-12934|Task|Zhicheng Fu|Prepare and Enable Gemma4-E2B 1st Official Evaluation on SM8750
+  LATC-12643|Defects|Zhicheng Fu|Add System Prompt and Tool-Call Input Support for Mobile Gemma 4 E2B
+  LATC-11676|Task|Zhicheng Fu|Evaluate different PTQ configurations for Gemma4-E2B and identify the best recipe for on-device deployment.
+  LATC-9374|Task|Zhicheng Fu|9.5.42 Enable and optimize Gemma4-e2b on QC platform
+  LATC-12895|Task|Zhicheng Fu|9.5.4 Zhicheng Fu - Mobile Quantization Placeholder 1
+  LATC-12719|Task|Zhicheng Fu|Support and Debug Gemma4-E2B 1st Official Evaluation on Qualcomm SM8750
+  LATC-12891|Task|Zhicheng Fu|Add Genie profile result saving support for VLM testing
+  LATC-13105|Bug|Zhicheng Fu|Model response leaks abnormal chat template in outputs, with a 20% occurrence rate
+  LATC-13103|Bug|Zhicheng Fu|Tool-call output formatting is inconsistent and not fully aligned with BF16 reference
+  LATC-13106|Bug|Zhicheng Fu|Model returns no output, emitting only an [END] marker without [BEGIN], with a 14.6% occurrence rate
+  LATC-12935|Task|Zhicheng Fu|Iterative Model Update and Debug Support for Gemma4-E2B SM8750 Evaluation
+## LATC-6782 (18)
+  LATC-12625|Task|Jundong JD1 Tan | 谭俊东|[DP]order_check_modifiedby
+  LATC-7985|Task|Jundong JD1 Tan | 谭俊东|[general]dashboard production 
+  LATC-7790|Task|Jundong JD1 Tan | 谭俊东|[PP]dashboard production 
+  LATC-7503|Task|Jundong JD1 Tan | 谭俊东|[PP]Add Production Type filter to Planned Order creation
+  LATC-8030|Task|Jundong JD1 Tan | 谭俊东|[DP]sales_order_page_change
+  LATC-8020|Task|Jundong JD1 Tan | 谭俊东|[DP]sales_order_upload_change
+  LATC-7812|Task|Zhiyao ZY58 Zhang|[general]run job finish notification
+  LATC-7544|Task|Zhiyao ZY58 Zhang|[general]dashboard-production
+  LATC-8006|Task|Zhiyao ZY58 Zhang|[general]dashboard production 
+  LATC-8005|Task|Zhiyao ZY58 Zhang|[PP]pp_filter and data display
+  LATC-8003|Task|Zhiyao ZY58 Zhang|[PP]pp_Add Production Type filter to Planned Order creation
+  LATC-12573|Task|Zhiyao ZY58 Zhang|[DP]FE_order_check
+  LATC-12571|Task|Zhiyao ZY58 Zhang|[DP]FE_sales_order_page_change
+  LATC-9632|Task|Zhiyao ZY58 Zhang|[DP] Separate page permissions
+  LATC-12624|Task|Zhiyao ZY58 Zhang|[DP]FE_customer_configue
+  LATC-12621|Task|Zhiyao ZY58 Zhang|[DP]FE_default_display
+  LATC-12617|Task|Zhiyao ZY58 Zhang|[general]FE_item
+  LATC-12615|Task|Zhiyao ZY58 Zhang|[DP]FE_demand_aggeregation
+## LATC-3171 (13)
+  LATC-13398|Task|Hao Hao51 Liu|Cooperate with the testing colleagues to conduct the test on the P7 box
+  LATC-13077|Task|Hao Hao51 Liu|Deploy multiple granite models
+  LATC-13294|Task|Jianlin JL2 Deng|granite model research for long token
+  LATC-10810|Story|Jianlin JL2 Deng|Evaluate ColModernVBERT split-vision model
+  LATC-12574|Task|Jianlin JL2 Deng|Participate in CLI Router discussion and design
+  LATC-11813|Task|Xuan Xuan3 Cao|Deploy Cross KD, JA Mono KD, and Total v2 Models
+  LATC-11814|Task|Xuan Xuan3 Cao|Align Qwen3-VL-Embedding-2B, PPOCRv6, and Layout-Infer with P7 Box I/O
+  LATC-10884|Task|Xuan Xuan3 Cao|Deploy Gemma and Harrier Distilled Models
+  LATC-12741|Task|Xuan Xuan3 Cao|Deploy Harrier Distilled Single-Ordered Bidirectional and v2 Models
+  LATC-12720|Task|Xuan Xuan3 Cao|Deploy Z-Image-Turbo and ERNIE-Image-Turbo
+  LATC-12592|Task|Xue Xue5 Xia|Model service for deploying Tesseract's Japanese model
+  LATC-13278|Task|Xue Xue5 Xia|Deploying the NDLOCR-Lite model's model service(Python Service)
+  LATC-12859|Task|Xue Xue5 Xia|Deploying the harrier-0806 quantitative model's model service
+## LATC-8943 (7)
+  LATC-11905|Task|Heming HM22 Zhang|Granite‑Embedding GPU Memory Footprint Troubleshooting & Analysis
+  LATC-11904|Task|Heming HM22 Zhang|Granite‑Embedding Memory Footprint Troubleshooting & Analysis
+  LATC-11902|Task|Zongfu ZF3 Qu|2 bit quantization on granite embedding using GSQ
+  LATC-10720|Task|Zongfu ZF3 Qu|Analyze the 2.8-bit mixed-precision quantization strategy.
+  LATC-11903|Task|Zongfu ZF3 Qu|Test 4 bit quantization on granite embedding using GSQ
+  LATC-13613|Task|Zongfu ZF3 Qu|Infer granite on mtk low level phone using mnn
+  LATC-12672|Task|Zongfu ZF3 Qu|Mixed groupsize on 2.9 bit
+## LATC-8292 (5)
+  LATC-10764|Task|Jinchuan JC20 Liu|[Eval] Quantized Granite model inference testing on low-end Qualcomm platforms
+  LATC-10730|Task|Longlong LL22 Liu | 刘龙龙|AIW: Align dependent SO libraries with 16KB page alignment
+  LATC-12566|Defects|Longlong LL22 Liu | 刘龙龙|SAD Crash occurs when SAD config file uses CRLF line‑ending format
+  LATC-13400|Task|Longlong LL22 Liu | 刘龙龙|AIW: WhisperASR Refactor session lifecycle and decode pipeline; harden safe stop/finish shutdown
+  LATC-12626|Task|Yinglin YL4 Ji|Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635
+## LATC-8672 (5)
+  LATC-10279|Story|Mike Fink|33.1.10 Provision cloud model-service access (Azure, AWS, or Model Factory)
+  LATC-8681|Story|Mike Fink|33.1.6 Draft Mitra vs Davy positioning memo (incl. PRC track options)
+  LATC-8678|Story|Tom Sheffler|33.1.3 Research spike: LATC value proposition for Davy
+  LATC-10276|Story|Tom Sheffler|33.1.9 Write Davy coding-agent evaluation, gap analysis, and recommendations in Confluence
+  LATC-8680|Story|Tom Sheffler|33.1.5 Assess Davy capacity & quality parity for LATC-ROW coding cohort
+## LATC-2711 (4)
+  LATC-6448|Task|Grant Forbes|[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models
+  LATC-8423|Task|Kai Kai23 Liu|Exploration of KV cache quantization path
+  LATC-9048|Task|Kai Kai23 Liu|Research on the usability of gesture recognition under the llama.cpp multimodal model
+  LATC-5826|Story|Tuan anh Dang1|Research absorb: ABot-World — sub-1B on-device interactive world model (feasibility read)
+## LATC-9801 (3)
+  LATC-9805|Task|Adrian Chan16|DeepSeekV4-Flash 2-Bit Quantization Baseline Evaluation
+  LATC-9804|Task|Adrian Chan16|DeepSeekV4-Flash 2-Bit Quantization Hosting Configuration
+  LATC-9803|Task|Adrian Chan16|DeepSeekV4-Flash Architecture Research
+## LATC-6594 (3)
+  LATC-6623|Task|Adrian Chan16|9.7.5 Document LoRA safety update results and deployment readiness
+  LATC-8773|Task|Aoxiang AX4 Zhang|9.7.10 Convert Gemma4-26B-A4B Q4/Q6 LoRA Models to GGUF, Support Inference   Integration, and Debug Issues
+  LATC-8765|Task|Aoxiang AX4 Zhang|9.7.8 Prepare and Track Gemma4-26B-A4B Q4/Q6 LoRA Models for OSC Review
+## LATC-3853 (2)
+  LATC-7328|Task|Adrian Chan16|DeepSeek + GLM + Inkling Hosting
+  LATC-11877|Task|Jie Yang|ONNX Official Documentation Review
+## LATC-1049 (2)
+  LATC-5680|Task|Aoxiang AX4 Zhang|	[Eval] Building HTML dataset and metric for evaluation model coding capability
+  LATC-6537|Task|Nan Nan1 Yan|[Eval]Building voice model evaluation environment
+## LATC-243 (2)
+  LATC-8285|Task|Eli Guo9|[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting
+  LATC-6117|Task|Eli Guo9|[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow
+## LATC-8674 (2)
+  LATC-10278|Story|Francisco Ponce gomez2|33.3.2 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse
+  LATC-10277|Story|Tom Sheffler|33.3.1 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse
+## LATC-8295 (2)
+  LATC-10678|Task|Jiaxin JX38 Li|Deliver stable Android test build for on-device speech translation (prep + support)
+  LATC-10678|Task|Jiaxin JX38 Li|Deliver stable Android test build for on-device speech translation (prep + support)
+## LATC-6592 (2)
+  LATC-10127|Task|Jin Jin1 Yuan|Compositional editing test for flux
+  LATC-10128|Task|Jin Jin1 Yuan|Soft mask strategy for flux distillation
+## LATC-10229 (2)
+  LATC-12426|Task|Shiru SR1 Bu|DataAgent Pre-implementation Research
+  LATC-12431|Task|Tongtong TT20 Zhang|DataForge 1.0: P0-P1 develop
+## LATC-4719 (2)
+  LATC-4792|Task|Xiao Xiao3 Ma|[Eval] Evaluate and Optimize Multimodal Embedding Model
+  LATC-5028|Task|Xiao Xiao3 Ma|[Training] Train Qwen3.5-0.8B using only the CLIP training set
+## LATC-13116 (1)
+  LATC-9451|Task|Eli Guo9|[Eval] LATC Bench Personal- Evaluation model PE&safety capabilities
+## LATC-10271 (1)
+  LATC-10413|Task|Haitao HT37 Wang|Technical Requirements Analysis for R&O Model Routing and Understanding & Planning
+## LATC-2240 (1)
+  LATC-10866|Task|Jinchuan JC20 Liu|Long-text embedding memory optimization: graph split
+## LATC-9741 (1)
+  LATC-9749|Task|Kai Kai23 Liu|Research on Audio and Gesture Recognition of Omni Model
+## LATC-9909 (1)
+  LATC-11841|Task|Shi Shi1 Gu|Collect gesture recognition training data
+## LATC-8298 (1)
+  LATC-11848|Test|Tian Tian2 Zhou|granite-embedding-97m-multilingual-r2 multi test 8/24-8/28
+## LATC-9376 (1)
+  LATC-10215|Task|Xiao Xiao3 Ma|[Training] Design and train gesture recognition model
+## LATC-4013 (1)
+  LATC-12528|Task|Zeyang ZY26 Yang|[Eval] Test P7 Image Generation Model Performance
+===ASSIGNEES===
+## Adrian Chan16 (7)
+  LATC-9805|Task|LATC-9801|DeepSeekV4-Flash 2-Bit Quantization Baseline Evaluation
+  LATC-7328|Task|LATC-3853|DeepSeek + GLM + Inkling Hosting
+  LATC-9804|Task|LATC-9801|DeepSeekV4-Flash 2-Bit Quantization Hosting Configuration
+  LATC-9803|Task|LATC-9801|DeepSeekV4-Flash Architecture Research
+  LATC-6623|Task|LATC-6594|9.7.5 Document LoRA safety update results and deployment readiness
+  LATC-9800|Task|LATC-6591|Text Watermark Research
+  LATC-3705|Sub-task|NONE|Safety Data Generation [Adrian]
+## Aoxiang AX4 Zhang (3)
+  LATC-8773|Task|LATC-6594|9.7.10 Convert Gemma4-26B-A4B Q4/Q6 LoRA Models to GGUF, Support Inference   Integration, and Debug Issues
+  LATC-8765|Task|LATC-6594|9.7.8 Prepare and Track Gemma4-26B-A4B Q4/Q6 LoRA Models for OSC Review
+  LATC-5680|Task|LATC-1049|	[Eval] Building HTML dataset and metric for evaluation model coding capability
+## Eli Guo9 (8)
+  LATC-6653|Task|LATC-6591|9.5.36 [PE][DATA] Build Training Data Generation Pipeline and Initial Reviewed Dataset
+  LATC-6669|Task|LATC-6591|9.5.40 [PE][DATA] Perception Engine Requirements Alignment and Data Schema Preparation
+  LATC-9451|Task|LATC-13116|[Eval] LATC Bench Personal- Evaluation model PE&safety capabilities
+  LATC-8285|Task|LATC-243|[Tech Enablement][Evaluation Workflow] Improve Evaluation Execution, Validation, and Troubleshooting
+  LATC-6627|Task|LATC-6591|9.5.24 [PE][DATA] PE SFT Data Follow-up, Evaluation Alignment, and Model Troubleshooting
+  LATC-6117|Task|LATC-243|[Tech Enablement][Multimodal Eval/Data QC] Generalize Image Generation Evaluation and Image Editing Data Quality Workflow
+  LATC-6638|Task|LATC-6591|9.5.29 [PE][DATA] Generate Multilingual Training Data and Final Reviewed Dataset
+  LATC-6634|Task|LATC-6591|9.5.28 [CZ][Research] Study Image Generation Scope, Training Framework, and Data Quality Checks
+## Fei Fei4 Ma (2)
+  LATC-10733|Sub-task|NONE|Apply 16KB page alignment for SAD library (including dependent ONNX library)
+  LATC-12564|Sub-task|NONE|Assist in resolving ASR SDK deployment issues
+## Francisco Ponce gomez2 (1)
+  LATC-10278|Story|LATC-8674|33.3.2 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse
+## Gong Chen (4)
+  LATC-11870|Task|LATC-6591|Quantize Gemma 4 E2B Across Four Precision Configurations
+  LATC-13134|Bug|LATC-6591|[MTK System Prompt and Tool-Call Input Support Comparison for Mobile Gemma 4 E2B
+  LATC-13135|Bug|LATC-6591|[MTK]  Profile Result Saving Support Comparison for VLM Testing
+  LATC-12900|Task|LATC-6591|9.5.9 Gong - [MTK][Gemma 4 E2B] Develop On-Device Inference Code and Documentation for External Model Evaluation on MT6899
+## Grant Forbes (1)
+  LATC-6448|Task|LATC-2711|[Spike] Investigate 1-2 Bit Quantization Feasibility for 12B Parameter Models
+## Hai Long (2)
+  LATC-11510|Sub-task|NONE|Diar SDK standalone project + release AAR
+  LATC-11513|Sub-task|NONE|Integrate Diar SDK (AAR) to WhisperASR and Regression
+## Haitao HT37 Wang (1)
+  LATC-10413|Task|LATC-10271|Technical Requirements Analysis for R&O Model Routing and Understanding & Planning
+## Hao Hao51 Liu (2)
+  LATC-13398|Task|LATC-3171|Cooperate with the testing colleagues to conduct the test on the P7 box
+  LATC-13077|Task|LATC-3171|Deploy multiple granite models
+## Haoran HR3 Lu (4)
+  LATC-10691|Sub-task|NONE|Implement Model-Specific Summary Generation for Local Goodsum Inference (Gemma 3 1B, Gemma 4 E2B, and Granite 4.0 1B)
+  LATC-8927|Task|NONE|AIW: Compare cloud vs on-device LLM performance (best cloud model vs Gemma 3 1B / Gemma 4 E2B / Granite 4.0 1B)
+  LATC-10713|Sub-task|NONE|Score and Analyze Model-Specific Summary Quality Using EN Data
+  LATC-12656|Sub-task|NONE|Expand EN Action Item Coverage and Refine Gold Annotations
+## Heming HM22 Zhang (2)
+  LATC-11905|Task|LATC-8943|Granite‑Embedding GPU Memory Footprint Troubleshooting & Analysis
+  LATC-11904|Task|LATC-8943|Granite‑Embedding Memory Footprint Troubleshooting & Analysis
+## Hong Hong16 Wang (4)
+  LATC-10485|Sub-task|NONE|Test Translation SDK V2 Stability and Peak Memory Usage
+  LATC-10486|Sub-task|NONE|Conduct M2M100 Fine-tuning Experiments with Different Data Scales, and Adjust Data Configuration Based on Model Performance
+  LATC-12602|Sub-task|NONE|Explore a solution that balances Chinese-English translation performance and multilingual generalization based on 40K-scale training data
+  LATC-12601|Sub-task|NONE|SDK v2 Performance Optimization and Processing Efficiency Improvement
+## Hui Hui47 Li (1)
+  LATC-11496|Sub-task|NONE|Demo Dataset for Outlook Calendar & Email Scenarios-2
+## Jianbang Zhang (3)
+  LATC-1048|Epic|NONE|FM Training Pipeline
+  LATC-1136|Epic|NONE|9.4 Qira Granite v2 Model Training
+  LATC-1049|Epic|NONE|FM Evaluation Integration
+## Jianlin JL2 Deng (3)
+  LATC-13294|Task|LATC-3171|granite model research for long token
+  LATC-10810|Story|LATC-3171|Evaluate ColModernVBERT split-vision model
+  LATC-12574|Task|LATC-3171|Participate in CLI Router discussion and design
+## Jiaxin JX38 Li (5)
+  LATC-10678|Task|LATC-8295|Deliver stable Android test build for on-device speech translation (prep + support)
+  LATC-10681|Sub-task|NONE|Package, deliver, and support a stable Android test build for QA
+  LATC-10678|Task|LATC-8295|Deliver stable Android test build for on-device speech translation (prep + support)
+  LATC-13387|Sub-task|NONE|Add Batch Recognition Toggle for File Recognition
+  LATC-13389|Sub-task|NONE|Integrate and Validate ASR Memory Monitoring
+## Jie Yang (1)
+  LATC-11877|Task|LATC-3853|ONNX Official Documentation Review
+## Jin Jin1 Yuan (2)
+  LATC-10127|Task|LATC-6592|Compositional editing test for flux
+  LATC-10128|Task|LATC-6592|Soft mask strategy for flux distillation
+## Jinchuan JC20 Liu (2)
+  LATC-10866|Task|LATC-2240|Long-text embedding memory optimization: graph split
+  LATC-10764|Task|LATC-8292|[Eval] Quantized Granite model inference testing on low-end Qualcomm platforms
+## Jinyi JY2 Zou (1)
+  LATC-11492|Sub-task|NONE|Add short-chunk cross-lingual data and short monolingual English data for a new round of training.
+## Jundong JD1 Tan | 谭俊东 (6)
+  LATC-12625|Task|LATC-6782|[DP]order_check_modifiedby
+  LATC-7985|Task|LATC-6782|[general]dashboard production 
+  LATC-7790|Task|LATC-6782|[PP]dashboard production 
+  LATC-7503|Task|LATC-6782|[PP]Add Production Type filter to Planned Order creation
+  LATC-8030|Task|LATC-6782|[DP]sales_order_page_change
+  LATC-8020|Task|LATC-6782|[DP]sales_order_upload_change
+## Kai Kai23 Liu (3)
+  LATC-8423|Task|LATC-2711|Exploration of KV cache quantization path
+  LATC-9048|Task|LATC-2711|Research on the usability of gesture recognition under the llama.cpp multimodal model
+  LATC-9749|Task|LATC-9741|Research on Audio and Gesture Recognition of Omni Model
+## Lin Lin13 Yang | 杨琳 (3)
+  LATC-7995|Task|NONE|AIW: Implement target speaker enrollment feature for speaker diarization.
+  LATC-10491|Sub-task|NONE|Construct dev dataset suitable for target speaker enrollment
+  LATC-13181|Sub-task|NONE|Baseline development of enroll-binding pipeline
+## Longlong LL22 Liu | 刘龙龙 (3)
+  LATC-10730|Task|LATC-8292|AIW: Align dependent SO libraries with 16KB page alignment
+  LATC-12566|Defects|LATC-8292|SAD Crash occurs when SAD config file uses CRLF line‑ending format
+  LATC-13400|Task|LATC-8292|AIW: WhisperASR Refactor session lifecycle and decode pipeline; harden safe stop/finish shutdown
+## Mi Mi1 Hong (2)
+  LATC-12619|Sub-task|NONE|On AP firmware linking stage，lightweight SAD crashed with undefined reference
+  LATC-13194|Sub-task|NONE|Give support to intergration team for vad lib on Andes
+## Mike Fink (3)
+  LATC-10279|Story|LATC-8672|33.1.10 Provision cloud model-service access (Azure, AWS, or Model Factory)
+  LATC-8672|Epic|NONE|33.1 Discovery, access & gap analysis
+  LATC-8681|Story|LATC-8672|33.1.6 Draft Mitra vs Davy positioning memo (incl. PRC track options)
+## Nan Nan1 Yan (1)
+  LATC-6537|Task|LATC-1049|[Eval]Building voice model evaluation environment
+## Shengzhe SZ2 Tao (1)
+  LATC-10814|Task|LATC-6591|[QAT] Singleturn RL Training [Shengzhe]
+## Shi Shi1 Gu (1)
+  LATC-11841|Task|LATC-9909|Collect gesture recognition training data
+## Shiru SR1 Bu (1)
+  LATC-12426|Task|LATC-10229|DataAgent Pre-implementation Research
+## Sriman Donthireddi (1)
+  LATC-12534|Sub-task|NONE|Set up Uni-Docker environment with SGLang
+## Tian Tian2 Zhou (1)
+  LATC-11848|Test|LATC-8298|granite-embedding-97m-multilingual-r2 multi test 8/24-8/28
+## Tom Sheffler (4)
+  LATC-8678|Story|LATC-8672|33.1.3 Research spike: LATC value proposition for Davy
+  LATC-10276|Story|LATC-8672|33.1.9 Write Davy coding-agent evaluation, gap analysis, and recommendations in Confluence
+  LATC-8680|Story|LATC-8672|33.1.5 Assess Davy capacity & quality parity for LATC-ROW coding cohort
+  LATC-10277|Story|LATC-8674|33.3.1 Evaluate coding harnesses and LATC enhancements vs Davy, TianxiCode, and AIverse
+## Tongtong TT20 Zhang (1)
+  LATC-12431|Task|LATC-10229|DataForge 1.0: P0-P1 develop
+## Tuan anh Dang1 (1)
+  LATC-5826|Story|LATC-2711|Research absorb: ABot-World — sub-1B on-device interactive world model (feasibility read)
+## Wei Wei19 Xu (1)
+  LATC-10430|Task|NONE|Implement Pre-/Post-Processing Features in the Translation System
+## Xiao Xiao3 Ma (3)
+  LATC-4792|Task|LATC-4719|[Eval] Evaluate and Optimize Multimodal Embedding Model
+  LATC-10215|Task|LATC-9376|[Training] Design and train gesture recognition model
+  LATC-5028|Task|LATC-4719|[Training] Train Qwen3.5-0.8B using only the CLIP training set
+## Xuan Xuan3 Cao (5)
+  LATC-11813|Task|LATC-3171|Deploy Cross KD, JA Mono KD, and Total v2 Models
+  LATC-11814|Task|LATC-3171|Align Qwen3-VL-Embedding-2B, PPOCRv6, and Layout-Infer with P7 Box I/O
+  LATC-10884|Task|LATC-3171|Deploy Gemma and Harrier Distilled Models
+  LATC-12741|Task|LATC-3171|Deploy Harrier Distilled Single-Ordered Bidirectional and v2 Models
+  LATC-12720|Task|LATC-3171|Deploy Z-Image-Turbo and ERNIE-Image-Turbo
+## Xue Xue5 Xia (3)
+  LATC-12592|Task|LATC-3171|Model service for deploying Tesseract's Japanese model
+  LATC-13278|Task|LATC-3171|Deploying the NDLOCR-Lite model's model service(Python Service)
+  LATC-12859|Task|LATC-3171|Deploying the harrier-0806 quantitative model's model service
+## Yanan YN4 Wu (2)
+  LATC-13447|Sub-task|NONE|Voice data quality validation and gap analysis
+  LATC-11445|Sub-task|NONE|voice data synthesis method research
+## Yinglin YL4 Ji (4)
+  LATC-12626|Task|LATC-8292|Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635
+  LATC-13102|Defects|LATC-6591|Tool-call output formatting is inconsistent and not fully aligned with BF16 reference
+  LATC-12716|Task|LATC-6591|1st Official Evaluation of Gemma4-E2B on Qualcomm SM8750 Device
+  LATC-12623|Test|NONE|Testing of LATC_Granite-v2.2.0_quant-2.0.0.4_qnn240(non-think) on QC SM7635
+## Yuxuan YX25 Xu (1)
+  LATC-10883|Task|LATC-6591|[Eval] LATC-Gemma-4-E2B QAT model test
+## Zeyang ZY26 Yang (1)
+  LATC-12528|Task|LATC-4013|[Eval] Test P7 Image Generation Model Performance
+## Zhenhua ZH17 Liu (1)
+  LATC-8467|Story|LATC-6591|[Training] DPO
+## Zhicheng Fu (11)
+  LATC-12934|Task|LATC-6591|Prepare and Enable Gemma4-E2B 1st Official Evaluation on SM8750
+  LATC-12643|Defects|LATC-6591|Add System Prompt and Tool-Call Input Support for Mobile Gemma 4 E2B
+  LATC-11676|Task|LATC-6591|Evaluate different PTQ configurations for Gemma4-E2B and identify the best recipe for on-device deployment.
+  LATC-9374|Task|LATC-6591|9.5.42 Enable and optimize Gemma4-e2b on QC platform
+  LATC-12895|Task|LATC-6591|9.5.4 Zhicheng Fu - Mobile Quantization Placeholder 1
+  LATC-12719|Task|LATC-6591|Support and Debug Gemma4-E2B 1st Official Evaluation on Qualcomm SM8750
+  LATC-12891|Task|LATC-6591|Add Genie profile result saving support for VLM testing
+  LATC-13105|Bug|LATC-6591|Model response leaks abnormal chat template in outputs, with a 20% occurrence rate
+  LATC-13103|Bug|LATC-6591|Tool-call output formatting is inconsistent and not fully aligned with BF16 reference
+  LATC-13106|Bug|LATC-6591|Model returns no output, emitting only an [END] marker without [BEGIN], with a 14.6% occurrence rate
+  LATC-12935|Task|LATC-6591|Iterative Model Update and Debug Support for Gemma4-E2B SM8750 Evaluation
+## Zhiyao ZY58 Zhang (12)
+  LATC-7812|Task|LATC-6782|[general]run job finish notification
+  LATC-7544|Task|LATC-6782|[general]dashboard-production
+  LATC-8006|Task|LATC-6782|[general]dashboard production 
+  LATC-8005|Task|LATC-6782|[PP]pp_filter and data display
+  LATC-8003|Task|LATC-6782|[PP]pp_Add Production Type filter to Planned Order creation
+  LATC-12573|Task|LATC-6782|[DP]FE_order_check
+  LATC-12571|Task|LATC-6782|[DP]FE_sales_order_page_change
+  LATC-9632|Task|LATC-6782|[DP] Separate page permissions
+  LATC-12624|Task|LATC-6782|[DP]FE_customer_configue
+  LATC-12621|Task|LATC-6782|[DP]FE_default_display
+  LATC-12617|Task|LATC-6782|[general]FE_item
+  LATC-12615|Task|LATC-6782|[DP]FE_demand_aggeregation
+## Ziqi ZQ24 Liu (3)
+  LATC-10688|Sub-task|NONE|Organize and improve logging and log persistence for trans-sys-poc
+  LATC-12401|Sub-task|NONE|Consolidate shared functionality from the Windows and Android demos in trans-sys-poc
+  LATC-10690|Sub-task|NONE|Release the trans-sys-poc version and support the testing team
+## Zongfu ZF3 Qu (5)
+  LATC-11902|Task|LATC-8943|2 bit quantization on granite embedding using GSQ
+  LATC-10720|Task|LATC-8943|Analyze the 2.8-bit mixed-precision quantization strategy.
+  LATC-11903|Task|LATC-8943|Test 4 bit quantization on granite embedding using GSQ
+  LATC-13613|Task|LATC-8943|Infer granite on mtk low level phone using mnn
+  LATC-12672|Task|LATC-8943|Mixed groupsize on 2.9 bit

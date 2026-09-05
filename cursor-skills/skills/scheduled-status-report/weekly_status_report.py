@@ -905,9 +905,9 @@ def _run_report(prompt: str, label: str, api_key: str) -> bool:
             prompt,
             AgentOptions(
                 api_key=api_key,
-                # Configured model: Grok 4.5 (SDK id grok-4.5). Prefer this over
+                # Configured model: Grok 4.6 (SDK id grok-4.6). Prefer this over
                 # auto-smart / claude-sonnet-4-5 — the latter returned status=error.
-                model="grok-4.5",
+                model="grok-4.6",
                 local=LocalAgentOptions(
                     cwd=os.path.dirname(os.path.abspath(__file__)),
                     setting_sources=["all"],
