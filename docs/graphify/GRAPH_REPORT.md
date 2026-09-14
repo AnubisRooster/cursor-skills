@@ -1,19 +1,20 @@
-# Graph Report - cursor-skills  (2026-09-07)
+# Graph Report - cursor-skills  (2026-09-14)
 
 ## Corpus Check
 - 106 files · ~164,460 words
 - Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 6 file(s) not represented in the graph (top: .mdc 3, .xml 2, .jsonl 1)
 
 ## Summary
-- 112 nodes · 130 edges · 24 communities (15 shown, 2 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
+- 116 nodes · 138 edges · 21 communities (12 shown, 2 thin omitted)
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- gitnexus-opencode.js
-- latc_confluence_daily_digest.py
 - weekly_status_report.py
+- latc_confluence_daily_digest.py
 - infra_leadership_sync.py
+- gitnexus-opencode.js
 - _build_report.py
 - _parse_issues.py
 - discoverRepos()
@@ -22,9 +23,6 @@
 - buildEnvelope()
 - createMessagesTransformHandler()
 - bootstrap-opencode.sh script
-- infra-leadership-sync/_win_bridge_patch.
-- latc-confluence-daily-digest/_win_bridge
-- scheduled-status-report/_win_bridge_patc
 - graphify_pipeline.py
 - gitnexusCmd()
 
@@ -34,35 +32,36 @@
 3. `main()` - 4 edges
 4. `esc()` - 4 edges
 5. `normalize()` - 4 edges
-6. `_inject_date_override()` - 4 edges
-7. `isStale()` - 4 edges
-8. `discoverRepos()` - 4 edges
-9. `buildEnvelope()` - 4 edges
-10. `createMessagesTransformHandler()` - 4 edges
+6. `_run_report()` - 4 edges
+7. `_inject_date_override()` - 4 edges
+8. `isStale()` - 4 edges
+9. `discoverRepos()` - 4 edges
+10. `buildEnvelope()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- None detected - all connections are within the same source files.
+- `_log_summary_line()` --indirect_call--> `label()`  [INFERRED]
+  cursor-skills/skills/scheduled-status-report/weekly_status_report.py → cursor-skills/skills/scheduled-status-report/_build_report.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (24 total, 2 thin omitted)
+## Communities (21 total, 2 thin omitted)
 
-### Community 0 - "gitnexus-opencode.js"
-Cohesion: 0.18
-Nodes (4): createSystemTransformHandler(), extractGitDashCPath(), findGitRoot(), systemAddendumPresent()
+### Community 0 - "weekly_status_report.py"
+Cohesion: 0.14
+Nodes (13): _build_logger(), _inject_date_override(), main(), date, Logger, Weekly LATC Status Reports --------------------------- Generates weekly status…, Run a single pillar report. Returns True on success, False on failure., Prepend a date-override instruction so the agent uses the backfill date. (+5 more)
 
 ### Community 1 - "latc_confluence_daily_digest.py"
-Cohesion: 0.31
-Nodes (9): _build_logger(), build_prompt(), compute_window(), main(), date, Logger, LATC Confluence Daily Digest ---------------------------- Scrapes LATC…, Return (window_start, window_end_inclusive, window_end_exclusive). Monday:… (+1 more)
+Cohesion: 0.18
+Nodes (12): _build_logger(), build_prompt(), compute_window(), main(), date, Logger, LATC Confluence Daily Digest ---------------------------- Scrapes LATC…, Return (window_start, window_end_inclusive, window_end_exclusive). Monday:… (+4 more)
 
-### Community 2 - "weekly_status_report.py"
-Cohesion: 0.24
-Nodes (9): _build_logger(), _inject_date_override(), main(), date, Logger, Weekly LATC Status Reports --------------------------- Generates weekly status…, Run a single pillar report. Returns True on success, False on failure., Prepend a date-override instruction so the agent uses the backfill date. (+1 more)
+### Community 2 - "infra_leadership_sync.py"
+Cohesion: 0.18
+Nodes (10): _build_logger(), _inject_date_override(), main(), date, Logger, Infrastructure Leadership Sync - weekly Confluence notes…, _run_sync(), Any (+2 more)
 
-### Community 3 - "infra_leadership_sync.py"
-Cohesion: 0.32
-Nodes (7): _build_logger(), _inject_date_override(), main(), date, Logger, Infrastructure Leadership Sync - weekly Confluence notes…, _run_sync()
+### Community 3 - "gitnexus-opencode.js"
+Cohesion: 0.18
+Nodes (4): createSystemTransformHandler(), extractGitDashCPath(), findGitRoot(), systemAddendumPresent()
 
 ### Community 4 - "_build_report.py"
 Cohesion: 0.48
@@ -92,19 +91,7 @@ Nodes (5): createMessagesTransformHandler(), escapeRegex(), historyHasEnvelope()
 Cohesion: 0.83
 Nodes (3): note(), bootstrap-opencode.sh script, step()
 
-### Community 12 - "infra-leadership-sync/_win_bridge_patch."
-Cohesion: 0.50
-Nodes (3): Any, Windows compatibility shim for cursor-sdk 0.1.6. The SDK's bridge discovery…, _read_discovery_win()
-
-### Community 13 - "latc-confluence-daily-digest/_win_bridge"
-Cohesion: 0.50
-Nodes (3): Any, Windows compatibility shim for cursor-sdk 0.1.6. The SDK's bridge discovery…, _read_discovery_win()
-
-### Community 14 - "scheduled-status-report/_win_bridge_patc"
-Cohesion: 0.50
-Nodes (3): Any, Windows compatibility shim for cursor-sdk 0.1.6. The SDK's bridge discovery…, _read_discovery_win()
-
-### Community 16 - "gitnexusCmd()"
+### Community 13 - "gitnexusCmd()"
 Cohesion: 0.67
 Nodes (3): analyzeInBackground(), gitnexusCmd(), isGitNexusCliAvailable()
 
@@ -114,7 +101,9 @@ Nodes (3): analyzeInBackground(), gitnexusCmd(), isGitNexusCliAvailable()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `buildEnvelope()` connect `buildEnvelope()` to `gitnexus-opencode.js`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
-- **Why does `createHintEnvelopeState()` connect `buildEnvelope()` to `gitnexus-opencode.js`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
+- **Why does `_log_summary_line()` connect `weekly_status_report.py` to `_build_report.py`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `label()` connect `_build_report.py` to `weekly_status_report.py`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Should `weekly_status_report.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.14166666666666666 - nodes in this community are weakly interconnected._
