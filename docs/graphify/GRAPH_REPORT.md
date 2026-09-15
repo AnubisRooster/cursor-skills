@@ -1,12 +1,12 @@
-# Graph Report - cursor-skills  (2026-09-14)
+# Graph Report - cursor-skills  (2026-09-15)
 
 ## Corpus Check
-- 106 files · ~164,460 words
+- 108 files · ~165,869 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: .mdc 3, .xml 2, .jsonl 1)
 
 ## Summary
-- 116 nodes · 138 edges · 21 communities (12 shown, 2 thin omitted)
+- 118 nodes · 139 edges · 22 communities (12 shown, 2 thin omitted)
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
@@ -45,7 +45,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (21 total, 2 thin omitted)
+## Communities (22 total, 2 thin omitted)
 
 ### Community 0 - "weekly_status_report.py"
 Cohesion: 0.14
@@ -102,8 +102,8 @@ Nodes (3): analyzeInBackground(), gitnexusCmd(), isGitNexusCliAvailable()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `_log_summary_line()` connect `weekly_status_report.py` to `_build_report.py`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `label()` connect `_build_report.py` to `weekly_status_report.py`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `label()` connect `_build_report.py` to `weekly_status_report.py`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Should `weekly_status_report.py` be split into smaller, more focused modules?**
   _Cohesion score 0.14166666666666666 - nodes in this community are weakly interconnected._
