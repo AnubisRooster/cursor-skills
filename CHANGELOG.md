@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-15
+
+- Add jira-align skill (Align REST API 2.0 helper + runbook) (e9e26be)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (52dca9a)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (72f31f9)
+- chore(gitnexus): refresh architecture findings [skip ci] (6ba0c92)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (d7a6019)
+
+
 ## 2026-09-06
 
 - ci: add GitNexus/Graphify/Changelog hooks and workflows (4a2b702)
