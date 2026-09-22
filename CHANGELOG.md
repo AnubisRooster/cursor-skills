@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-22
+
+- Add exec-stakeholder-deck skill (d1a6583)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (d3ed02e)
+- chore(gitnexus): refresh architecture findings [skip ci] (a07f0e1)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (19bd57b)
+
+
 ## 2026-09-15
 
 - Add jira-align skill (Align REST API 2.0 helper + runbook) (e9e26be)
