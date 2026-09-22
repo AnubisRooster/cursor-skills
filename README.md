@@ -24,6 +24,9 @@ These skills help teams:
 - [`jira-create-issues`](cursor-skills/skills/jira-create-issues/SKILL.md)  
   Structured Jira Epic/Story/Task creation with required fields and standardized hierarchy.
 
+- [`exec-stakeholder-deck`](cursor-skills/skills/exec-stakeholder-deck/SKILL.md)  
+  Builds executive/leadership PowerPoint decks via a six-question stakeholder-analysis framework (audience, goal, priorities, motivation, objections, credibility) before drafting any slides.
+
 ### Cursor Platform Skills
 
 - [`babysit`](cursor-skills/skills-cursor/babysit/SKILL.md)
