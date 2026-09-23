@@ -565,7 +565,7 @@
       "file_type": "code",
       "norm_label": "_build_logger()",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L54"
+      "source_location": "L60"
     },
     {
       "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_build_prompt",
@@ -577,7 +577,7 @@
       "file_type": "code",
       "norm_label": "build_prompt()",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L317"
+      "source_location": "L377"
     },
     {
       "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_compute_window",
@@ -589,7 +589,7 @@
       "file_type": "code",
       "norm_label": "compute_window()",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L88"
+      "source_location": "L94"
     },
     {
       "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_main",
@@ -601,7 +601,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L406"
+      "source_location": "L466"
     },
     {
       "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_run_digest",
@@ -613,7 +613,7 @@
       "file_type": "code",
       "norm_label": "_run_digest()",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L342"
+      "source_location": "L402"
     },
     {
       "id": "cursor_skills_skills_web_crawl_crawl_spa_clean_text",
@@ -1295,7 +1295,7 @@
       "source_location": "L2"
     },
     {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_89",
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_95",
       "label": "Return (window_start, window_end_inclusive, window_end_exclusive). Monday:\u2026",
       "_origin": "ast",
       "community": 5,
@@ -1303,7 +1303,7 @@
       "file_type": "rationale",
       "norm_label": "return (window_start, window_end_inclusive, window_end_exclusive). monday:...",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L89"
+      "source_location": "L95"
     },
     {
       "id": "cursor_skills_skills_web_crawl_crawl_spa",
@@ -1848,7 +1848,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L318",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -1860,7 +1860,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L442",
+      "source_location": "L502",
       "weight": 1.0
     },
     {
@@ -1872,7 +1872,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L448",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -1884,7 +1884,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L453",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -2256,7 +2256,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L88",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -2400,7 +2400,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L29",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -2412,7 +2412,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L30",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -2424,7 +2424,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L31",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -2436,7 +2436,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L32",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -2448,7 +2448,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -2460,7 +2460,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L38",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -2844,7 +2844,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L34",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -2856,7 +2856,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L35",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -2868,7 +2868,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L41",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -3300,7 +3300,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L317",
+      "source_location": "L377",
       "weight": 1.0
     },
     {
@@ -3336,7 +3336,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L54",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -3469,7 +3469,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L317",
+      "source_location": "L377",
       "weight": 1.0
     },
     {
@@ -3480,7 +3480,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L342",
+      "source_location": "L402",
       "weight": 1.0
     },
     {
@@ -3491,7 +3491,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L406",
+      "source_location": "L466",
       "weight": 1.0
     },
     {
@@ -3502,7 +3502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L54",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -3513,7 +3513,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L88",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -4177,14 +4177,14 @@
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_89",
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_95",
       "target": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_compute_window",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L89",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -4384,5 +4384,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5c39531413bf0b1a983bef4e39f2f43365527d24"
+  "built_at_commit": "f062bb22b4bb6af05b0b55e37637eeb88fc39940"
 }
