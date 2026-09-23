@@ -100,18 +100,6 @@
       "source_location": "L899"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_weekly_status_report_run_report_log_summary_line",
-      "label": "_log_summary_line()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "infra_leadership_sync.py",
-      "file_type": "code",
-      "norm_label": "_log_summary_line()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/weekly_status_report.py",
-      "source_location": "L948"
-    },
-    {
       "id": "cursor_skills_skills_infra_leadership_sync_win_bridge_patch_read_discovery_win",
       "label": "_read_discovery_win()",
       "_callable": true,
@@ -308,7 +296,7 @@
       "label": "analyzeInBackground()",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "gitnexusCmd()",
       "file_type": "code",
       "norm_label": "analyzeinbackground()",
@@ -320,7 +308,7 @@
       "label": "gitnexusCmd()",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "gitnexusCmd()",
       "file_type": "code",
       "norm_label": "gitnexuscmd()",
@@ -332,7 +320,7 @@
       "label": "isGitNexusCliAvailable()",
       "_callable": true,
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "gitnexusCmd()",
       "file_type": "code",
       "norm_label": "isgitnexuscliavailable()",
@@ -496,71 +484,11 @@
       "source_location": "L41"
     },
     {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_build_logger",
-      "label": "_build_logger()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "_build_logger()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L50"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_build_prompt",
-      "label": "build_prompt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "build_prompt()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L259"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_compute_window",
-      "label": "compute_window()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "compute_window()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L84"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L348"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_run_digest",
-      "label": "_run_digest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "_run_digest()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L284"
-    },
-    {
       "id": "cursor_skills_skills_scheduled_status_report_build_report_chart_bar",
       "label": "chart_bar()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "chart_bar()",
@@ -572,7 +500,7 @@
       "label": "esc()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "esc()",
@@ -584,7 +512,7 @@
       "label": "label()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "label()",
@@ -596,7 +524,7 @@
       "label": "pie()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "pie()",
@@ -608,7 +536,7 @@
       "label": "ticket_li()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "ticket_li()",
@@ -616,71 +544,83 @@
       "source_location": "L218"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_load_issues",
-      "label": "load_issues()",
+      "id": "cursor_skills_skills_scheduled_status_report_weekly_status_report_run_report_log_summary_line",
+      "label": "_log_summary_line()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
+      "community": 4,
+      "community_name": "_build_report.py",
       "file_type": "code",
-      "norm_label": "load_issues()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
-      "source_location": "L42"
+      "norm_label": "_log_summary_line()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/weekly_status_report.py",
+      "source_location": "L948"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_main",
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_build_logger",
+      "label": "_build_logger()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "code",
+      "norm_label": "_build_logger()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_build_prompt",
+      "label": "build_prompt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "code",
+      "norm_label": "build_prompt()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L317"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_compute_window",
+      "label": "compute_window()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "code",
+      "norm_label": "compute_window()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L88"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_main",
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
       "file_type": "code",
       "norm_label": "main()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
-      "source_location": "L82"
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L406"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_normalize",
-      "label": "normalize()",
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_run_digest",
+      "label": "_run_digest()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
       "file_type": "code",
-      "norm_label": "normalize()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
-      "source_location": "L50"
-    },
-    {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_parse_created",
-      "label": "parse_created()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
-      "file_type": "code",
-      "norm_label": "parse_created()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
-      "source_location": "L15"
-    },
-    {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_parse_res",
-      "label": "parse_res()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
-      "file_type": "code",
-      "norm_label": "parse_res()",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
-      "source_location": "L31"
+      "norm_label": "_run_digest()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L342"
     },
     {
       "id": "cursor_skills_skills_web_crawl_crawl_spa_clean_text",
       "label": "clean_text()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "file_type": "code",
       "norm_label": "clean_text()",
@@ -692,7 +632,7 @@
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "file_type": "code",
       "norm_label": "main()",
@@ -704,12 +644,72 @@
       "label": "same_host()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "file_type": "code",
       "norm_label": "same_host()",
       "source_file": "cursor-skills/skills/web-crawl/crawl_spa.py",
       "source_location": "L16"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_load_issues",
+      "label": "load_issues()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "load_issues()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L42"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L82"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_normalize",
+      "label": "normalize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "normalize()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_parse_created",
+      "label": "parse_created()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "parse_created()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_parse_res",
+      "label": "parse_res()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "parse_res()",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L31"
     },
     {
       "id": "tools_gitnexus_opencode_discoverrepos",
@@ -1053,10 +1053,54 @@
       "source_location": "L19"
     },
     {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr",
+      "label": "run_digest_via_herdr.ps1",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "run_digest_via_herdr.ps1",
+      "file_type": "code",
+      "norm_label": "run_digest_via_herdr.ps1",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_ensure_herdrserver",
+      "label": "Ensure-HerdrServer()",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "run_digest_via_herdr.ps1",
+      "file_type": "code",
+      "norm_label": "ensure-herdrserver()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L35"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_invoke_directdigest",
+      "label": "Invoke-DirectDigest()",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "run_digest_via_herdr.ps1",
+      "file_type": "code",
+      "norm_label": "invoke-directdigest()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L54"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_log",
+      "label": "Log()",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "run_digest_via_herdr.ps1",
+      "file_type": "code",
+      "norm_label": "log()",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L29"
+    },
+    {
       "id": "cursor_skills_skills_herdr_run_run_agent_via_herdr",
       "label": "run_agent_via_herdr.ps1",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "run_agent_via_herdr.ps1",
       "file_type": "code",
       "norm_label": "run_agent_via_herdr.ps1",
@@ -1067,7 +1111,7 @@
       "id": "cursor_skills_skills_herdr_run_run_agent_via_herdr_log",
       "label": "Log()",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "run_agent_via_herdr.ps1",
       "file_type": "code",
       "norm_label": "log()",
@@ -1078,7 +1122,7 @@
       "id": "cursor_skills_skills_jira_align_scripts_align_api",
       "label": "align-api.ps1",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "community_name": "align-api.ps1",
       "file_type": "code",
       "norm_label": "align-api.ps1",
@@ -1089,34 +1133,12 @@
       "id": "cursor_skills_skills_jira_align_scripts_align_api_get_alignenv",
       "label": "Get-AlignEnv()",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "community_name": "align-api.ps1",
       "file_type": "code",
       "norm_label": "get-alignenv()",
       "source_file": "cursor-skills/skills/jira-align/scripts/align-api.ps1",
       "source_location": "L32"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr",
-      "label": "run_digest_via_herdr.ps1",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "run_digest_via_herdr.ps1",
-      "file_type": "code",
-      "norm_label": "run_digest_via_herdr.ps1",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
-      "source_location": "L1"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_log",
-      "label": "Log()",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "run_digest_via_herdr.ps1",
-      "file_type": "code",
-      "norm_label": "log()",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
-      "source_location": "L29"
     },
     {
       "id": "bootstrap_opencode_ps1_bootstrap_opencode",
@@ -1207,65 +1229,10 @@
       "source_location": "L1"
     },
     {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest",
-      "label": "latc_confluence_daily_digest.py",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "latc_confluence_daily_digest.py",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_py_date",
-      "label": "date",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "date",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_py_logger",
-      "label": "Logger",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "code",
-      "norm_label": "logger",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_2",
-      "label": "LATC Confluence Daily Digest ---------------------------- Scrapes LATC\u2026",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "rationale",
-      "norm_label": "latc confluence daily digest ---------------------------- scrapes latc...",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L2"
-    },
-    {
-      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_85",
-      "label": "Return (window_start, window_end_inclusive, window_end_exclusive). Monday:\u2026",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "latc_confluence_daily_digest.py",
-      "file_type": "rationale",
-      "norm_label": "return (window_start, window_end_inclusive, window_end_exclusive). monday:...",
-      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L85"
-    },
-    {
       "id": "cursor_skills_skills_scheduled_status_report_build_report",
       "label": "_build_report.py",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "code",
       "norm_label": "_build_report.py",
@@ -1276,7 +1243,7 @@
       "id": "cursor_skills_skills_scheduled_status_report_build_report_rationale_2",
       "label": "Build Models weekly status Confluence storage XHTML.",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "file_type": "rationale",
       "norm_label": "build models weekly status confluence storage xhtml.",
@@ -1284,32 +1251,65 @@
       "source_location": "L2"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues",
-      "label": "_parse_issues.py",
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest",
+      "label": "latc_confluence_daily_digest.py",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
       "file_type": "code",
-      "norm_label": "_parse_issues.py",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "norm_label": "latc_confluence_daily_digest.py",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
       "source_location": "L1"
     },
     {
-      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_rationale_2",
-      "label": "Parse Models weekly-status Jira pages into structured stats.",
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_py_date",
+      "label": "date",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "_parse_issues.py",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "code",
+      "norm_label": "date",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_py_logger",
+      "label": "Logger",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "code",
+      "norm_label": "logger",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_2",
+      "label": "LATC Confluence Daily Digest ---------------------------- Scrapes LATC\u2026",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
       "file_type": "rationale",
-      "norm_label": "parse models weekly-status jira pages into structured stats.",
-      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "norm_label": "latc confluence daily digest ---------------------------- scrapes latc...",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
       "source_location": "L2"
+    },
+    {
+      "id": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_89",
+      "label": "Return (window_start, window_end_inclusive, window_end_exclusive). Monday:\u2026",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "latc_confluence_daily_digest.py",
+      "file_type": "rationale",
+      "norm_label": "return (window_start, window_end_inclusive, window_end_exclusive). monday:...",
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
+      "source_location": "L89"
     },
     {
       "id": "cursor_skills_skills_web_crawl_crawl_spa",
       "label": "crawl_spa.py",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "file_type": "code",
       "norm_label": "crawl_spa.py",
@@ -1320,11 +1320,33 @@
       "id": "cursor_skills_skills_web_crawl_crawl_spa_rationale_2",
       "label": "crawl_spa.py - Render a JS SPA with Playwright, crawl same-host routes BFS,\u2026",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "file_type": "rationale",
       "norm_label": "crawl_spa.py - render a js spa with playwright, crawl same-host routes bfs,...",
       "source_file": "cursor-skills/skills/web-crawl/crawl_spa.py",
+      "source_location": "L2"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues",
+      "label": "_parse_issues.py",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "code",
+      "norm_label": "_parse_issues.py",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "cursor_skills_skills_scheduled_status_report_parse_issues_rationale_2",
+      "label": "Parse Models weekly-status Jira pages into structured stats.",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "file_type": "rationale",
+      "norm_label": "parse models weekly-status jira pages into structured stats.",
+      "source_file": "cursor-skills/skills/scheduled-status-report/_parse_issues.py",
       "source_location": "L2"
     },
     {
@@ -1390,6 +1412,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "argparse",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "datetime",
+      "label": "datetime",
+      "community": 0,
+      "community_name": "infra_leadership_sync.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "datetime",
       "source_file": "",
       "type": "external"
     },
@@ -1682,7 +1715,7 @@
     {
       "id": "collections",
       "label": "collections",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "external": true,
       "file_type": "concept",
@@ -1693,7 +1726,7 @@
     {
       "id": "html",
       "label": "html",
-      "community": 5,
+      "community": 4,
       "community_name": "_build_report.py",
       "external": true,
       "file_type": "concept",
@@ -1702,31 +1735,9 @@
       "type": "external"
     },
     {
-      "id": "datetime",
-      "label": "datetime",
-      "community": 6,
-      "community_name": "_parse_issues.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "datetime",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "statistics",
-      "label": "statistics",
-      "community": 6,
-      "community_name": "_parse_issues.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "statistics",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "playwright_sync_api",
       "label": "playwright_sync_api",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "external": true,
       "file_type": "concept",
@@ -1737,7 +1748,7 @@
     {
       "id": "re",
       "label": "re",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "external": true,
       "file_type": "concept",
@@ -1748,7 +1759,7 @@
     {
       "id": "time",
       "label": "time",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "external": true,
       "file_type": "concept",
@@ -1759,11 +1770,22 @@
     {
       "id": "urllib_parse",
       "label": "urllib_parse",
-      "community": 7,
+      "community": 6,
       "community_name": "crawl_spa.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "urllib_parse",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "statistics",
+      "label": "statistics",
+      "community": 7,
+      "community_name": "_parse_issues.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "statistics",
       "source_file": "",
       "type": "external"
     }
@@ -1826,7 +1848,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L260",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -1838,7 +1860,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L384",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -1850,7 +1872,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L390",
+      "source_location": "L448",
       "weight": 1.0
     },
     {
@@ -1862,7 +1884,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L395",
+      "source_location": "L453",
       "weight": 1.0
     },
     {
@@ -2234,7 +2256,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -2378,7 +2400,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -2390,7 +2412,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -2402,7 +2424,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -2414,7 +2436,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -2426,7 +2448,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -2438,7 +2460,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -2822,7 +2844,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L30",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -2834,7 +2856,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L31",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -2846,7 +2868,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L37",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -3278,7 +3300,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L259",
+      "source_location": "L317",
       "weight": 1.0
     },
     {
@@ -3314,7 +3336,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L50",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -3327,6 +3349,28 @@
       "context": "return_type",
       "source_file": "cursor-skills/skills/scheduled-status-report/weekly_status_report.py",
       "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_ensure_herdrserver",
+      "target": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_log",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_invoke_directdigest",
+      "target": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_log",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -3425,7 +3469,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L259",
+      "source_location": "L317",
       "weight": 1.0
     },
     {
@@ -3436,7 +3480,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L284",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -3447,7 +3491,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L348",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -3458,7 +3502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L50",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -3469,7 +3513,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -3481,6 +3525,28 @@
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
       "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr",
+      "target": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_ensure_herdrserver",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr",
+      "target": "cursor_skills_skills_latc_confluence_daily_digest_run_digest_via_herdr_invoke_directdigest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cursor-skills/skills/latc-confluence-daily-digest/run_digest_via_herdr.ps1",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -4111,14 +4177,14 @@
       "weight": 1.0
     },
     {
-      "source": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_85",
+      "source": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_rationale_89",
       "target": "cursor_skills_skills_latc_confluence_daily_digest_latc_confluence_daily_digest_compute_window",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py",
-      "source_location": "L85",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -4318,5 +4384,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d1a6583970437b45d409097d3379abbbc5f9a170"
+  "built_at_commit": "5c39531413bf0b1a983bef4e39f2f43365527d24"
 }

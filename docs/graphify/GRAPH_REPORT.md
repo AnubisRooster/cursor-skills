@@ -1,12 +1,12 @@
-# Graph Report - cursor-skills  (2026-09-22)
+# Graph Report - cursor-skills  (2026-09-23)
 
 ## Corpus Check
-- 109 files · ~172,737 words
+- 109 files · ~173,615 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: .mdc 3, .xml 2, .jsonl 1)
 
 ## Summary
-- 153 nodes · 219 edges · 22 communities (13 shown, 9 thin omitted)
+- 155 nodes · 223 edges · 22 communities (14 shown, 8 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
@@ -15,15 +15,16 @@
 - infra-leadership-sync/_win_bridge_patch.
 - gitnexus-opencode.js
 - graphify_pipeline.py
-- latc_confluence_daily_digest.py
 - _build_report.py
-- _parse_issues.py
+- latc_confluence_daily_digest.py
 - crawl_spa.py
+- _parse_issues.py
 - discoverRepos()
 - web-crawl.ps1
 - buildEnvelope()
 - createMessagesTransformHandler()
 - bootstrap-opencode.sh script
+- run_digest_via_herdr.ps1
 - gitnexusCmd()
 - createSystemTransformHandler()
 
@@ -46,7 +47,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (22 total, 9 thin omitted)
+## Communities (22 total, 8 thin omitted)
 
 ### Community 0 - "infra_leadership_sync.py"
 Cohesion: 0.12
@@ -64,21 +65,21 @@ Nodes (10): ref_child_process, ref_fs, ref_node_child_process, ref_node_fs, ref_
 Cohesion: 0.15
 Nodes (11): graphify_analyze, graphify_build, graphify_cluster, graphify_detect, graphify_export, graphify_extract, graphify_llm, graphify_report (+3 more)
 
-### Community 4 - "latc_confluence_daily_digest.py"
+### Community 4 - "_build_report.py"
+Cohesion: 0.29
+Nodes (9): collections, chart_bar(), esc(), label(), pie(), Build Models weekly status Confluence storage XHTML., ticket_li(), _log_summary_line() (+1 more)
+
+### Community 5 - "latc_confluence_daily_digest.py"
 Cohesion: 0.31
 Nodes (9): _build_logger(), build_prompt(), compute_window(), main(), date, Logger, LATC Confluence Daily Digest ---------------------------- Scrapes LATC…, Return (window_start, window_end_inclusive, window_end_exclusive). Monday:… (+1 more)
 
-### Community 5 - "_build_report.py"
-Cohesion: 0.33
-Nodes (8): collections, chart_bar(), esc(), label(), pie(), Build Models weekly status Confluence storage XHTML., ticket_li(), html
-
-### Community 6 - "_parse_issues.py"
-Cohesion: 0.33
-Nodes (8): load_issues(), main(), normalize(), parse_created(), parse_res(), Parse Models weekly-status Jira pages into structured stats., datetime, statistics
-
-### Community 7 - "crawl_spa.py"
+### Community 6 - "crawl_spa.py"
 Cohesion: 0.28
 Nodes (8): clean_text(), main(), crawl_spa.py - Render a JS SPA with Playwright, crawl same-host routes BFS,…, same_host(), playwright_sync_api, re, time, urllib_parse
+
+### Community 7 - "_parse_issues.py"
+Cohesion: 0.39
+Nodes (7): load_issues(), main(), normalize(), parse_created(), parse_res(), Parse Models weekly-status Jira pages into structured stats., statistics
 
 ### Community 8 - "discoverRepos()"
 Cohesion: 0.33
@@ -96,18 +97,24 @@ Nodes (5): createMessagesTransformHandler(), escapeRegex(), historyHasEnvelope()
 Cohesion: 0.83
 Nodes (3): note(), bootstrap-opencode.sh script, step()
 
-### Community 13 - "gitnexusCmd()"
+### Community 13 - "run_digest_via_herdr.ps1"
+Cohesion: 0.83
+Nodes (3): Ensure-HerdrServer(), Invoke-DirectDigest(), Log()
+
+### Community 14 - "gitnexusCmd()"
 Cohesion: 0.67
 Nodes (3): analyzeInBackground(), gitnexusCmd(), isGitNexusCliAvailable()
 
 ## Knowledge Gaps
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `_run_report()` connect `infra_leadership_sync.py` to `_build_report.py`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Should `infra_leadership_sync.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.11688311688311688 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12121212121212122 - nodes in this community are weakly interconnected._
 - **Should `infra-leadership-sync/_win_bridge_patch.` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
 - **Should `gitnexus-opencode.js` be split into smaller, more focused modules?**
