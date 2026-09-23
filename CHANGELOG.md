@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-23
+
+- Update latc-confluence-daily-digest: all-pillars scope + ATP section (2026-09-23). (5c39531)
+
+
 ## 2026-09-22
 
 - Add exec-stakeholder-deck skill (d1a6583)
