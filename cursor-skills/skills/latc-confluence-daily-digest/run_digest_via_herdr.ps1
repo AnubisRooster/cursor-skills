@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------
 # run_digest_via_herdr.ps1
-# Pilot: run the LATC Confluence Daily Digest inside a Herdr pane so the run
-# survives disconnects and is observable (working/blocked/done) in the Herdr
-# UI. The scheduled task calls this instead of invoking python directly.
+# Run the LATC Confluence Daily Digest inside a Herdr pane when the server is
+# available; otherwise fall back to direct python so Task Scheduler still
+# publishes. Herdr is preferred for observability, not required for success.
 #
 # - -Simulate : skips the real digest; echoes the completion sentinel to
 #               validate the Herdr plumbing end-to-end.
@@ -32,25 +32,66 @@ function Log([string]$msg) {
     Write-Output $line
 }
 
-# 1. Ensure the headless server is up (survives after this wrapper exits).
-$stat = & $Herdr status 2>$null | Out-String
-if ($stat -notmatch "running") {
+function Ensure-HerdrServer {
+    $stat = & $Herdr status 2>$null | Out-String
+    if ($stat -match "status:\s+running") {
+        return $true
+    }
     Log "herdr server not running - starting"
     Start-Process -FilePath $Herdr -ArgumentList "server" -WindowStyle Hidden
-    Start-Sleep -Seconds 8
+    for ($i = 0; $i -lt 15; $i++) {
+        Start-Sleep -Seconds 2
+        $stat = & $Herdr status 2>$null | Out-String
+        if ($stat -match "status:\s+running") {
+            Log "herdr server is running"
+            return $true
+        }
+    }
+    Log "WARN: herdr server did not come up after 30s"
+    return $false
 }
 
-# 2. Dedicated workspace + fresh pane per run (kept for later inspection on failure).
+function Invoke-DirectDigest {
+    param([string]$Reason)
+    Log "FALLBACK: running digest via direct python ($Reason)"
+    if ($Simulate) {
+        Log "Digest DONE: status=PUBLISHED (simulated direct) run_id=herdr-fallback url=https://none"
+        return 0
+    }
+    Push-Location $DigestDir
+    try {
+        & $Python $DigestPy 2>&1 | Tee-Object -FilePath $runLog -Append
+        $code = $LASTEXITCODE
+    } finally {
+        Pop-Location
+    }
+    Log "direct python exit=$code"
+    return $code
+}
+
+# 1. Prefer Herdr when the headless server is healthy.
+$herdrOk = Test-Path $Herdr
+if (-not $herdrOk) {
+    exit (Invoke-DirectDigest "herdr.exe missing")
+}
+
+if (-not (Ensure-HerdrServer)) {
+    exit (Invoke-DirectDigest "herdr server unavailable")
+}
+
+# 2. Dedicated workspace + fresh pane per run.
 $stamp2 = Get-Date -Format "yyyyMMdd-Hmm"
-$created = & $Herdr workspace create --cwd $DigestDir --label "digest-$stamp2" --no-focus 2>$null | ConvertFrom-Json
+$createdRaw = & $Herdr workspace create --cwd $DigestDir --label "digest-$stamp2" --no-focus 2>&1 | Out-String
+$created = $null
+try { $created = $createdRaw | ConvertFrom-Json } catch { $created = $null }
 if (-not $created -or -not $created.result) {
-    Log "ERROR: could not create herdr workspace: $created"
-    exit 1
+    Log "ERROR: could not create herdr workspace: $createdRaw"
+    exit (Invoke-DirectDigest "workspace create failed")
 }
 $paneId = $created.result.root_pane.pane_id
 Log "workspace=$($created.result.workspace.id) pane=$paneId"
 
-# 3. Run the digest inside the pane (survives lid close / session drop).
+# 3. Run the digest inside the pane.
 if ($Simulate) {
     & $Herdr pane run $paneId "echo 'Digest DONE: status=PUBLISHED (simulated) run_id=herdr-pilot url=https://none'"
 } else {
@@ -58,13 +99,13 @@ if ($Simulate) {
 }
 Log "digest dispatched to pane $paneId"
 
-# 4. Wait for a completion sentinel (short/robust tokens survive pane wrap).
+# 4. Wait for a completion sentinel.
 $wait = & $Herdr pane wait-output $paneId --regex $Sentinel --timeout $TimeoutMs 2>$null | ConvertFrom-Json
 if ($wait.result -and $wait.result.matched_line) {
     Log "sentinel matched: $($wait.result.matched_line)"
 } else {
-    Log "WARN: no sentinel within ${TimeoutMs}ms - pane left open for inspection"
-    exit 1
+    Log "WARN: no sentinel within ${TimeoutMs}ms - leaving pane open; trying direct fallback"
+    exit (Invoke-DirectDigest "pane wait timed out")
 }
 
 # 5. Capture the run tail into the log file.

@@ -6,6 +6,9 @@ Scrapes LATC Confluence updates for the configured window, publishes a dated
 digest under Mike Fink's personal space hub (LATC Daily Digest), and updates
 the hub Latest link.
 
+Scope (locked 2026-09-23): all pillars + dedicated ATP section — reader's
+digest of significant LATC updates, not Infrastructure-only.
+
 Cadence (America/New_York):
   Monday     -> Fri + Sat + Sun
   Tue-Friday -> prior calendar day only
@@ -18,6 +21,7 @@ Setup:
   Run setup_latc_daily_digest_task.ps1 once to register the scheduled task.
 
 Approved page style: sample pageId=684280624 (2026-09-03 | LATC Confluence Digest).
+ATP section added 2026-09-23.
 """
 
 from __future__ import annotations
@@ -101,8 +105,15 @@ This is an unattended scheduled run. Publish the page. Do not wait for human
 approval. Use the mcp-atlassian server (Jira Data Center + Confluence DC).
 
 Match the APPROVED style from reference pageId={reference}
-(2026-09-03 | LATC Confluence Digest). That page is the style source of truth.
-Also read hub pageId={hub} for cadence, filter rules, and roadmap watchlist.
+(2026-09-03 | LATC Confluence Digest). That page is the style source of truth
+for voice and section shape. Also read hub pageId={hub} for cadence and rules.
+
+**Scope (locked 2026-09-23)**
+This is a **reader's digest of significant LATC updates across ALL pillars and
+ATP**, not an Infrastructure-only brief. Cover every pillar that moved:
+Infra | Eval | Models | DCM | Runtime | R&O / HiVE | ATP (Architecture and
+Technical Prototyping). Prefer cross-project collisions and dated asks over
+any single pillar's depth.
 
 **Page contract**
 - Space: {space}  (personal space; quote as "~mfink" in CQL)
@@ -138,6 +149,14 @@ B. Created in window (new-page preference):
    type=page AND space=LATC AND created >= "{window_start}"
    AND created < "{window_end_excl}" ORDER BY created DESC
 
+C. ATP pass (required every run — do not skip even if A/B feel Infra-heavy):
+   type=page AND space=LATC AND lastModified >= "{window_start}"
+   AND lastModified < "{window_end_excl}"
+   AND (title ~ "ATP" OR title ~ "Architecture & Prototyp" OR title ~ "Plexus"
+        OR title ~ "Sphere" OR title ~ "P-Cube" OR title ~ "HiVE Bench"
+        OR title ~ "2nd-Brain" OR title ~ "Second Brain" OR title ~ "GLT")
+   ORDER BY lastModified DESC
+
 For high-signal candidates, confluence_get_page (markdown). When version jumped
 hard (roughly +3 or more in-window, or a known long page with large edit), use
 confluence_get_page_diff for from_version -> to_version and summarize WHAT
@@ -146,25 +165,42 @@ CHANGED, not the whole page.
 **Step 2 - Signal score and hard cap (required)**
 Prefer, in order:
 1. New pages
-2. Decision / architecture / evaluation / recommendation / RFC / roadmap language
+2. Decision / architecture / evaluation / proposal / RFC / roadmap / delivery-plan
+   language
 3. Substantial version diffs
 4. Jira key / Epic / Initiative mentions
-5. Parent path under known hubs (Infra, Eval, Models, Plexus, HiVE, identity)
+5. Parent path under known hubs: Infra, Eval, Models, DCM, Runtime, R&O, HiVE,
+   ATP / Architecture and Prototyping, Plexus, Sphere, P-Cube, identity
 
-Hard cap: **8-12** high-signal items. On Monday weekend packs, up to **15**.
-Cluster first. Do not emit a chronological laundry list.
+Hard cap: **8-12** high-signal theme clusters for Pulse / Clustered updates.
+On Monday weekend packs, up to **15**. Cluster first. Do not emit a
+chronological laundry list. ATP gets its **own dedicated section** (Step 6
+item 7) in addition to those clusters — ATP project rows there do not count
+against the Pulse hard cap the same way (cap ATP table at about **8-12**
+projects / proposals).
 
 Exclude / demote:
 - Empty or nearly empty folder pages
 - Cosmetic-only bumps
 - Attachment OCR, comment-thread dumps
 - Full CN->EN translation (English summary + keep Chinese title and link)
+- Vacation-only ATP weeklies with no project substance (one line in Noise)
 
-**Weekly status pages**
-Titles matching YYYYMM-Name or similar individual weekly shells must NOT be
-listed one-by-one. Collapse into **one Weekly status rollup** covering pillars:
-Infra | Eval | Models | DCM | Runtime | R&O
+**Weekly status pages (pillar shells)**
+Titles matching dated pillar weeklies (Infra / Eval / Models / DCM / Runtime /
+R&O / HiVE) must NOT be listed one-by-one. Collapse into **one Weekly status
+rollup** covering pillars:
+Infra | Eval | Models | DCM | Runtime | R&O / HiVE
 Surface blockers, decisions, and cross-pillar asks only.
+
+**ATP weekly pages (do NOT dump into Noise)**
+Titles matching "ATP Weekly Update" / "LATC ATP Weekly" / similar individual
+ATP author shells must NOT be listed one-by-one either. Collapse them into the
+**ATP projects / updates / proposals** section by **project or proposal**
+(Plexus, Sphere, HiVE / AI Forge, P-Cube, 2nd Brain, GLT, Hybrid Router,
+coding-agent / Mitra-Ceres, HiVE Bench, Ecosystem partnerships, etc.).
+One row or short bullet per live project. Name owners. Call out proposals and
+go/no-go asks.
 
 **Step 3 - Join Jira where possible**
 Extract LATC-\\d+ (and other project keys if clearly relevant) from titles,
@@ -177,6 +213,8 @@ Score implications against themes derived from high-signal content this window.
 Seed list (refresh if new clusters repeat):
 - Corporate IdP / SSO / AWS Identity Center
 - Plexus / HiVE RA / Metron dogfooding
+- ATP prototypes and reference architectures (Sphere, P-Cube, GLT, 2nd Brain,
+  coding agents, HiVE Bench)
 - Hybrid Agent Routing SDK / Model Router / cache-aware routing
 - Eval benches, golden datasets, Sphere / quality trackers
 - GPU / ClearML / capacity (when pages score high)
@@ -202,21 +240,25 @@ Confluence channel rules from the skill (enforce all of them):
 - Do not start three bullets with the same verb rhythm.
 - Concrete nouns: people, dates, teams, tickets, regions. Not vague
   "stakeholders" / "alignment."
-- Optimize for Mike's jobs: Infra leadership, roadmap collisions, cross-pillar
-  asks, identity/security, capacity. Default demote pure China weekly detail
-  unless it creates an Infra/Eval/Models/DCM/Runtime/R&O dependency.
+- Optimize for Mike as a **cross-LATC reader**: all pillars, ATP proposals,
+  roadmap collisions, identity/security, capacity. Do not default the Pulse to
+  Infra. Default demote pure China weekly detail unless it creates a dependency
+  for ROW delivery or another pillar.
 
 **Step 6 - Page body (required headings)**
 Use these sections in order:
 
 1) Meta table:
-   Window | Source | High-signal clusters | Weekly status | Jira joined
+   Window | Source | High-signal clusters | Weekly status | ATP projects | Jira joined
 
 2) Pulse
-   5-8 bullets. Cluster-first skim. What moved, who owns it, why it matters.
+   5-8 bullets. Cluster-first skim across **all** pillars and ATP. What moved,
+   who owns it, why it matters. At least one non-Infra bullet when non-Infra
+   work scored this window.
 
 3) Connect the dots
    Table: Theme | Belong together | Why it matters
+   Prefer collisions that cross pillars or ATP <-> pillar boundaries.
 
 4) Roadmap implications
    Numbered list mapped to the watchlist themes that scored this window.
@@ -224,24 +266,40 @@ Use these sections in order:
 5) Decisions / asks for you
    Table: # | Ask | Owner signal | Risk if silent
    Cap at **5** asks. Every ask needs owner signal and risk if silent.
+   Mix pillar and ATP asks when both scored; do not fill with Infra-only asks.
 
 6) Clustered updates
-   Theme subheadings with links. Not chronological.
+   Theme subheadings with links. Not chronological. All-pillar themes welcome.
 
-7) Weekly status rollup (all pillars)
+7) ATP projects / updates / proposals
+   **Required section every run.** Heading exactly:
+   ATP projects / updates / proposals
+   Intro line: Architecture and Technical Prototyping. Project-first, not
+   author-first. Individual ATP weeklies collapsed here.
+   Table columns:
+   Project / proposal | What moved | Owner | Lens | Watch / ask
+   Lens values when known: Architecture | Prototyping | Ecosystem
+   Cap about **8-12** rows. Skip empty / vacation-only shells.
+   If nothing ATP-scored this window, keep the section with one row:
+   (none this window) | — | — | — | —
+
+8) Weekly status rollup (all pillars)
    Table: Pillar | What moved | Watch
-   Rows for: Infra, Eval, Models, DCM, Runtime, R&O
+   Rows for: Infra, Eval, Models, DCM, Runtime, R&O / HiVE
    Mention weekly authors collapsed (names only), do not expand each page.
+   Do **not** put ATP author weeklies here — they belong in section 7.
 
-8) Jira map
+9) Jira map
    Table: Key | Summary | Status | Assignee | Surfaced from
-   Note any Confluence-only gaps.
+   Note any Confluence-only gaps (especially ATP proposals with no Epic).
 
-9) Noise / filter log
-   Brief: what was excluded or collapsed and why.
+10) Noise / filter log
+    Brief: what was excluded or collapsed and why. Note ATP weeklies collapsed
+    into section 7 (not discarded).
 
-10) Evidence
-    CQL window, page counts, note that format follows reference {reference}.
+11) Evidence
+    CQL window, page counts (include ATP pass C), note that format follows
+    reference {reference} with all-pillars + ATP scope locked 2026-09-23.
 
 **Step 7 - Hub pointer**
 confluence_get_page page_id={hub}. Then confluence_update_page on the hub:
