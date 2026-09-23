@@ -4,11 +4,11 @@ description: >
   Daily LATC Confluence digest for Mike Fink's personal space (~mfink). Runs as
   a Windows Scheduled Task weekdays at 8:00 AM Eastern. Uses the Cursor SDK
   (model grok-4.6) to scrape LATC Confluence updates across ALL pillars plus
-  ATP, score/cluster them, join Jira where possible, publish a dated digest
-  under the LATC Daily Digest hub in Mike Fink's writing-voice (formal
-  Confluence), and point the hub Latest link. Use when setting up,
-  troubleshooting, or changing digest format, cadence, filters, voice, ATP
-  section, or schedule.
+  ATP, with a standing Token Hub / AICS watch, score/cluster them, join Jira
+  where possible, publish a dated digest under the LATC Daily Digest hub in
+  Mike Fink's writing-voice (formal Confluence), and point the hub Latest
+  link. Use when setting up, troubleshooting, or changing digest format,
+  cadence, filters, voice, ATP section, Token Hub watch, or schedule.
 ---
 
 # latc-confluence-daily-digest
@@ -27,6 +27,7 @@ across all pillars and ATP. Not an Infrastructure-only brief.
 | Task name | `LATC Confluence Daily Digest` |
 | Model | `grok-4.6` |
 | Scope lock | 2026-09-23: all pillars + ATP section |
+| Token Hub watch | 2026-09-23: required CQL pass D + Jira join (LATC-4 / LATC-15030) |
 
 ## Cadence
 
@@ -67,6 +68,23 @@ Collapse individual `ATP Weekly Update — Name` shells into this table by
 Every run also does an **ATP CQL pass** (title ~ ATP / Plexus / Sphere /
 P-Cube / HiVE Bench / 2nd-Brain / GLT, etc.) so Infra-heavy windows cannot
 starve the section.
+
+## Token Hub watch (required)
+
+Standing priority for **Token Hub** / **TokenHub** / **AICS Token Hub** under
+SSG Delivery ([LATC-4](https://jira.xpaas.lenovo.com/browse/LATC-4)), especially
+Model Router for Token Hub ([LATC-15030](https://jira.xpaas.lenovo.com/browse/LATC-15030)).
+
+Every run does **CQL pass D** (title/text ~ Token Hub / TokenHub / AICS Token).
+Also keep Model Router pages whose body names Token Hub.
+
+Rules:
+- Never demote Token Hub substance to Noise just because it lives in an
+  SSG / xCloud / R&O weekly shell — collapse the shell, keep the lines.
+- When pass D scores, at least one Pulse bullet naming Token Hub, a
+  **Token Hub / Model Router (AICS)** cluster when material exists, and Jira
+  join for LATC-4 / LATC-15030 (and LATC-4602 / LATC-4752 when live).
+- Prefer one Asks-table slot when a Token Hub milestone or owner gap is open.
 
 ## Signal score + hard cap
 
@@ -135,7 +153,7 @@ Missing sentinel counts as failure. The runner retries once.
 
 | To change | Edit |
 |---|---|
-| Page sections / ATP / filter rules | `DIGEST_PROMPT_TEMPLATE` in `latc_confluence_daily_digest.py` |
+| Page sections / ATP / Token Hub / filter rules | `DIGEST_PROMPT_TEMPLATE` in `latc_confluence_daily_digest.py` |
 | Style reference page | `REFERENCE_PAGE_ID` (default `684280624`) |
 | Hub | `HUB_PAGE_ID` (default `684280623`) |
 | Model | `model=` in `AgentOptions` |
@@ -151,5 +169,6 @@ Missing sentinel counts as failure. The runner retries once.
 | Bridge WinError 10061 | Cursor agent bridge down; retry later |
 | WinError 10038 | Ensure `_win_bridge_patch` imports before `cursor_sdk` |
 | Digest is Infra-only | ATP pass / all-pillars scope skipped; re-run with updated prompt |
+| Token Hub missing from brief | Pass D skipped or SSG weekly demoted whole; keep Token Hub lines |
 | ATP weeklies listed as Noise | Collapse into ATP section by project |
 | Task Last Result != 0 | Read `~/.herdr-pilot/digest-*.log` and skill `logs/` |

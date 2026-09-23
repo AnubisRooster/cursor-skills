@@ -9,11 +9,17 @@ the hub Latest link.
 Scope (locked 2026-09-23): all pillars + dedicated ATP section — reader's
 digest of significant LATC updates, not Infrastructure-only.
 
+Permanent watches (every future load — do not drop):
+  - ATP CQL pass C + ATP projects section
+  - Token Hub / TokenHub / AICS Token Hub CQL pass D + Jira join
+    (LATC-4, LATC-15030; surface in Pulse/Clustered when scored)
+
 Cadence (America/New_York):
   Monday     -> Fri + Sat + Sun
   Tue-Friday -> prior calendar day only
 
 Runs via Windows Task Scheduler weekdays at 8:00 AM Eastern.
+Entry: run_digest_via_herdr.ps1 in this skill folder (not pillars/scripts).
 
 Setup:
   pip install cursor-sdk
@@ -108,12 +114,24 @@ Match the APPROVED style from reference pageId={reference}
 (2026-09-03 | LATC Confluence Digest). That page is the style source of truth
 for voice and section shape. Also read hub pageId={hub} for cadence and rules.
 
-**Scope (locked 2026-09-23)**
+**Scope (locked 2026-09-23; Token Hub watch added 2026-09-23)**
 This is a **reader's digest of significant LATC updates across ALL pillars and
 ATP**, not an Infrastructure-only brief. Cover every pillar that moved:
 Infra | Eval | Models | DCM | Runtime | R&O / HiVE | ATP (Architecture and
 Technical Prototyping). Prefer cross-project collisions and dated asks over
 any single pillar's depth.
+
+**Token Hub (required watch — SSG / AICS delivery)**
+Treat **Token Hub** / **TokenHub** / **AICS Token Hub** as a standing priority
+initiative under BU SSG Delivery ([LATC-4](https://jira.xpaas.lenovo.com/browse/LATC-4)),
+especially Model Router for Token Hub ([LATC-15030](https://jira.xpaas.lenovo.com/browse/LATC-15030),
+also LATC-4602 / LATC-4752). Any in-window Confluence page or Jira issue that
+references Token Hub (title, body, linked Epic/Initiative, dataset names,
+xCloud / AICS / SSG bi-weeklies, R&O weeklies, Model Router validation pages)
+MUST be scored and surfaced — never demote to Noise solely because it sits
+under a China/SSG weekly shell. Collapse author weeklies, but keep the Token
+Hub substance in Pulse / Connect the dots / Clustered updates / Roadmap /
+Asks / Jira map.
 
 **Page contract**
 - Space: {space}  (personal space; quote as "~mfink" in CQL)
@@ -157,6 +175,18 @@ C. ATP pass (required every run — do not skip even if A/B feel Infra-heavy):
         OR title ~ "2nd-Brain" OR title ~ "Second Brain" OR title ~ "GLT")
    ORDER BY lastModified DESC
 
+D. Token Hub pass (required every run — do not skip):
+   type=page AND space=LATC AND lastModified >= "{window_start}"
+   AND lastModified < "{window_end_excl}"
+   AND (title ~ "Token Hub" OR title ~ "TokenHub" OR title ~ "Token-Hub"
+        OR title ~ "AICS Token" OR text ~ "Token Hub" OR text ~ "TokenHub"
+        OR text ~ "AICS Token Hub")
+   ORDER BY lastModified DESC
+
+   Also run a body-aware catch for Model Router pages that name Token Hub
+   even if the title is Router-only (from A/B candidates: open markdown and
+   keep if body mentions Token Hub / TokenHub / AICS Token Hub).
+
 For high-signal candidates, confluence_get_page (markdown). When version jumped
 hard (roughly +3 or more in-window, or a known long page with large edit), use
 confluence_get_page_diff for from_version -> to_version and summarize WHAT
@@ -170,14 +200,22 @@ Prefer, in order:
 3. Substantial version diffs
 4. Jira key / Epic / Initiative mentions
 5. Parent path under known hubs: Infra, Eval, Models, DCM, Runtime, R&O, HiVE,
-   ATP / Architecture and Prototyping, Plexus, Sphere, P-Cube, identity
+   ATP / Architecture and Prototyping, Plexus, Sphere, P-Cube, identity,
+   SSG / xCloud / AICS / Token Hub
+6. **Token Hub boost (mandatory):** any page from pass D, or any A/B page whose
+   body references Token Hub / TokenHub / AICS Token Hub / LATC-15030 /
+   LATC-4 Token Hub delivery, scores at least as high as a decision page.
+   Prefer a dedicated **Token Hub / Model Router (AICS)** cluster when material
+   exists. Do not bury Token Hub only inside a generic China weekly rollup.
 
 Hard cap: **8-12** high-signal theme clusters for Pulse / Clustered updates.
 On Monday weekend packs, up to **15**. Cluster first. Do not emit a
 chronological laundry list. ATP gets its **own dedicated section** (Step 6
 item 7) in addition to those clusters — ATP project rows there do not count
 against the Pulse hard cap the same way (cap ATP table at about **8-12**
-projects / proposals).
+projects / proposals). Token Hub hits count toward Pulse / Clustered /
+Roadmap (they do not get a separate table), but they are **not optional**
+when pass D returns substance.
 
 Exclude / demote:
 - Empty or nearly empty folder pages
@@ -185,6 +223,8 @@ Exclude / demote:
 - Attachment OCR, comment-thread dumps
 - Full CN->EN translation (English summary + keep Chinese title and link)
 - Vacation-only ATP weeklies with no project substance (one line in Noise)
+- Do **NOT** demote Token Hub substance when collapsing SSG / xCloud / R&O
+  weeklies — extract the Token Hub / Model Router lines into the brief
 
 **Weekly status pages (pillar shells)**
 Titles matching dated pillar weeklies (Infra / Eval / Models / DCM / Runtime /
@@ -208,6 +248,14 @@ bodies, and links. Resolve with jira_get_issue or jira_search:
 fields summary,status,assignee,issuetype,updated,priority
 Flag Confluence-only proposals with no Jira as a governance gap.
 
+**Token Hub Jira (required when pass D or body hits score):**
+Always resolve and consider for the Jira map / Asks when in play:
+- LATC-4 — Initiative 4.0 BU: SSG Delivery (Token Hub / Model Orchestrator)
+- LATC-15030 — Epic [xCloud] Model Router 1.5 for Token Hub
+- LATC-4602 / LATC-4752 — Model Router v1.5 / v2.0 for AICS when updated
+Also jira_search: text ~ "Token Hub" OR text ~ "TokenHub" updated in window
+(or recently touching the digest window) and join any live Epics/Stories.
+
 **Step 4 - Roadmap watchlist**
 Score implications against themes derived from high-signal content this window.
 Seed list (refresh if new clusters repeat):
@@ -215,6 +263,8 @@ Seed list (refresh if new clusters repeat):
 - Plexus / HiVE RA / Metron dogfooding
 - ATP prototypes and reference architectures (Sphere, P-Cube, GLT, 2nd Brain,
   coding agents, HiVE Bench)
+- **Token Hub / AICS xCloud Model Router** (LATC-4, LATC-15030; v1.5 / v2.0,
+  BG pools, Leda, TokenHub datasets, mid-Oct / release milestones)
 - Hybrid Agent Routing SDK / Model Router / cache-aware routing
 - Eval benches, golden datasets, Sphere / quality trackers
 - GPU / ClearML / capacity (when pages score high)
@@ -241,9 +291,10 @@ Confluence channel rules from the skill (enforce all of them):
 - Concrete nouns: people, dates, teams, tickets, regions. Not vague
   "stakeholders" / "alignment."
 - Optimize for Mike as a **cross-LATC reader**: all pillars, ATP proposals,
-  roadmap collisions, identity/security, capacity. Do not default the Pulse to
-  Infra. Default demote pure China weekly detail unless it creates a dependency
-  for ROW delivery or another pillar.
+  Token Hub / SSG AICS delivery, roadmap collisions, identity/security,
+  capacity. Do not default the Pulse to Infra. Default demote pure China
+  weekly detail unless it creates a dependency for ROW delivery, another
+  pillar, or **Token Hub / Model Router** (those Token Hub lines stay).
 
 **Step 6 - Page body (required headings)**
 Use these sections in order:
@@ -254,11 +305,14 @@ Use these sections in order:
 2) Pulse
    5-8 bullets. Cluster-first skim across **all** pillars and ATP. What moved,
    who owns it, why it matters. At least one non-Infra bullet when non-Infra
-   work scored this window.
+   work scored this window. **If Token Hub / TokenHub scored this window,
+   include at least one Pulse bullet naming Token Hub** (owner + milestone
+   or ask), even when the source was an SSG/xCloud/R&O weekly shell.
 
 3) Connect the dots
    Table: Theme | Belong together | Why it matters
-   Prefer collisions that cross pillars or ATP <-> pillar boundaries.
+   Prefer collisions that cross pillars, ATP <-> pillar, or **Token Hub <->
+   Model Router / Runtime / R&O** boundaries.
 
 4) Roadmap implications
    Numbered list mapped to the watchlist themes that scored this window.
@@ -267,9 +321,13 @@ Use these sections in order:
    Table: # | Ask | Owner signal | Risk if silent
    Cap at **5** asks. Every ask needs owner signal and risk if silent.
    Mix pillar and ATP asks when both scored; do not fill with Infra-only asks.
+   When Token Hub scored with an open milestone or owner gap, reserve one ask
+   slot for it (TPM YanXia Chen / Xiaoping / R&O as signaled).
 
 6) Clustered updates
    Theme subheadings with links. Not chronological. All-pillar themes welcome.
+   When Token Hub scored, use a theme heading such as
+   **Token Hub / Model Router (AICS)** and link the contributing pages.
 
 7) ATP projects / updates / proposals
    **Required section every run.** Heading exactly:
@@ -295,11 +353,13 @@ Use these sections in order:
 
 10) Noise / filter log
     Brief: what was excluded or collapsed and why. Note ATP weeklies collapsed
-    into section 7 (not discarded).
+    into section 7 (not discarded). Note SSG/xCloud/R&O shells collapsed while
+    Token Hub lines were kept (not discarded).
 
 11) Evidence
-    CQL window, page counts (include ATP pass C), note that format follows
-    reference {reference} with all-pillars + ATP scope locked 2026-09-23.
+    CQL window, page counts (include ATP pass C and Token Hub pass D), note
+    that format follows reference {reference} with all-pillars + ATP scope
+    locked 2026-09-23 and Token Hub watch added 2026-09-23.
 
 **Step 7 - Hub pointer**
 confluence_get_page page_id={hub}. Then confluence_update_page on the hub:
