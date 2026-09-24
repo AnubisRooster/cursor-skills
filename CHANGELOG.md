@@ -2,6 +2,12 @@
 
 ## 2026-09-24
 
+- Update confluence skills: require writing-voice for Confluence page prose. (0db2580)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (cb5a8c6)
+
+
+## 2026-09-24
+
 - Update confluence skills: require writing-voice for Confluence page prose. (c3dc92a)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (fa70ac3)
 
