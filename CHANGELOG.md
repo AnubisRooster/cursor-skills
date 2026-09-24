@@ -2,6 +2,14 @@
 
 ## 2026-09-24
 
+- Update confluence skills: require writing-voice for Confluence page prose. (e62c298)
+- Merge branch 'main' of https://github.com/AnubisRooster/cursor-skills (a486e6b)
+- feat: add Glean setup skill with complete SSO, connectors, RBAC, and security guide (23bdad5)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (5cfaed0)
+
+
+## 2026-09-24
+
 - feat: add Glean setup skill with complete SSO, connectors, RBAC, and security guide (443f7d3)
 - chore(gitnexus): refresh architecture findings [skip ci] (79e744e)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (e669de0)
