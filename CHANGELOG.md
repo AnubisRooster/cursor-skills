@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-24
+
+- feat: add Glean setup skill with complete SSO, connectors, RBAC, and security guide (443f7d3)
+- chore(gitnexus): refresh architecture findings [skip ci] (79e744e)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (e669de0)
+
+
 ## 2026-09-23
 
 - Update latc-confluence-daily-digest: standing Token Hub / AICS watch. (f062bb2)
