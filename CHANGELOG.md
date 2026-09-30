@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-30
+
+- feat(skills): add Plannotator plan/code review skills (plannotator, annotate, last, review) (4acec48)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (b41c8cc)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (174dc5f)
+
+
 ## 2026-09-24
 
 - Update confluence skills: require writing-voice for Confluence page prose. (0db2580)
