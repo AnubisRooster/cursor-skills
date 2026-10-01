@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-01
+
+- docs(readme): refresh skills directory — add Plannotator skills and list all operational skills (0fd1417)
+- chore(gitnexus): refresh architecture findings [skip ci] (f63e668)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (8f30824)
+
+
 ## 2026-09-30
 
 - feat(skills): add Plannotator plan/code review skills (plannotator, annotate, last, review) (4acec48)
