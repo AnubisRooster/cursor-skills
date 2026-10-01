@@ -19,7 +19,11 @@ $Python     = "C:\Users\mfink\AppData\Local\Programs\Python\Python312\python.exe
 $DigestDir  = "C:\Users\mfink\.claude\skills\latc-confluence-daily-digest"
 $DigestPy   = Join-Path $DigestDir "latc_confluence_daily_digest.py"
 $LogDir     = "C:\Users\mfink\.herdr-pilot"
-$Sentinel   = "published SUCCESSFULLY|Digest DONE|Digest FAILED|completed with ERRORS"
+# Terminal markers only. Do NOT match "Agent run completed with ERRORS" —
+# that line fires before Python's internal retry and was aborting the
+# scheduled task mid-run (2026-09-24). Final failure is "Digest FAILED"
+# or "Run finished with FAILURE" from latc_confluence_daily_digest.py.
+$Sentinel   = "published SUCCESSFULLY|Digest DONE|Digest FAILED|Run finished with FAILURE"
 $TimeoutMs  = 2700000   # 45 min cap (digest has internal retries)
 
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
@@ -114,10 +118,11 @@ $tail = & $Herdr pane read $paneId --lines 40 2>$null | Out-String
 $tail | Out-File -FilePath $runLog -Append -Encoding utf8
 
 # 6. Close the pane on success to keep the herd tidy (failure panes stay open).
-$ok = ($wait.result.matched_line -match "SUCCESSFULLY|Digest DONE") -and ($wait.result.matched_line -notmatch "FAILED|ERRORS")
+$matched = [string]$wait.result.matched_line
+$ok = ($matched -match "SUCCESSFULLY|Digest DONE") -and ($matched -notmatch "Digest FAILED|Run finished with FAILURE")
 if ($ok -and -not $Simulate) {
     & $Herdr pane close $paneId 2>$null | Out-Null
     Log "pane closed"
 }
-Log "run finished ok=$ok"
+Log "run finished ok=$ok matched=$matched"
 exit $(if ($ok) { 0 } else { 1 })

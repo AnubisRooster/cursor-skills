@@ -44,7 +44,13 @@ from logging.handlers import RotatingFileHandler
 import _win_bridge_patch  # noqa: F401
 
 try:
-    from cursor_sdk import Agent, AgentOptions, LocalAgentOptions, CursorAgentError
+    from cursor_sdk import (
+        Agent,
+        AgentOptions,
+        LocalAgentOptions,
+        CursorAgentError,
+        ModelSelection,
+    )
 except ImportError:
     print("ERROR: cursor-sdk not installed. Run: pip install cursor-sdk", file=sys.stderr)
     sys.exit(1)
@@ -399,26 +405,59 @@ def build_prompt(run_date: date) -> str:
     )
 
 
-def _run_digest(prompt: str, api_key: str) -> bool:
+# Fixed cost-efficient model. auto-smart (Router Cost) dropped from the
+# API-key catalog on 2026-09-25; pin gpt-5.6-sol until Router returns.
+DIGEST_MODEL = ModelSelection(id="gpt-5.6-sol")
+DIGEST_MAX_ATTEMPTS = 2
+
+
+def _model_label(model: ModelSelection) -> str:
+    params = ",".join(f"{p.id}={p.value}" for p in (model.params or ()))
+    return f"{model.id}[{params}]" if params else model.id
+
+
+class _BudgetBlocked(Exception):
+    """Cursor team spend cap. Retrying will not succeed."""
+
+
+def _is_budget_block(text: str) -> bool:
+    low = (text or "").lower()
+    return "budget" in low or "spending limit" in low
+
+
+def _run_digest(prompt: str, api_key: str, model: ModelSelection) -> bool:
     LOG.info("-" * 60)
-    LOG.info("Starting LATC Confluence Daily Digest")
+    LOG.info("Starting LATC Confluence Daily Digest (model=%s)", _model_label(model))
+    # Prefer create+stream over Agent.prompt so ERROR status messages
+    # (e.g. team budget limit) land in the log instead of an empty result.
+    status_messages: list[str] = []
     try:
-        result = Agent.prompt(
-            prompt,
+        with Agent.create(
             AgentOptions(
                 api_key=api_key,
-                model="grok-4.6",
+                model=model,
                 local=LocalAgentOptions(
                     cwd=os.path.dirname(os.path.abspath(__file__)),
                     setting_sources=["all"],
                 ),
             ),
-        )
+        ) as agent:
+            run = agent.send(prompt)
+            for event in run.stream():
+                if getattr(event, "type", None) == "status":
+                    msg = (getattr(event, "message", None) or "").strip()
+                    st = getattr(event, "status", "")
+                    if msg:
+                        status_messages.append(f"{st}: {msg}")
+                        LOG.info("Agent status %s: %s", st, msg)
+            result = run.wait()
     except CursorAgentError as err:
         LOG.error(
             "Agent FAILED to start: %s (retryable=%s)",
             err.message, err.is_retryable,
         )
+        if _is_budget_block(err.message):
+            raise _BudgetBlocked(err.message) from err
         return False
     except Exception as err:  # noqa: BLE001
         LOG.exception("Unexpected error launching agent: %s", err)
@@ -427,11 +466,20 @@ def _run_digest(prompt: str, api_key: str) -> bool:
     summary = (result.result or "").strip()
 
     if result.status == "error":
-        detail = summary[-500:] if summary else "(no result text returned)"
+        detail = summary[-500:] if summary else (
+            status_messages[-1] if status_messages else "(no result text returned)"
+        )
         LOG.error(
             "Agent run completed with ERRORS. Run ID: %s  detail: %s",
             result.id, detail,
         )
+        if any(_is_budget_block(m) for m in status_messages) or _is_budget_block(summary):
+            LOG.error(
+                "Team spend/budget limit is blocking Cursor SDK agents. "
+                "Ask an org admin to raise the team budget before the next "
+                "scheduled digest; model pin alone will not help."
+            )
+            raise _BudgetBlocked(detail)
         return False
     if summary:
         tail = summary if len(summary) <= 500 else summary[-500:]
@@ -508,18 +556,29 @@ def main() -> None:
     prompt = build_prompt(run_date)
 
     ok = False
-    max_attempts = 2
-    for attempt in range(1, max_attempts + 1):
-        ok = _run_digest(prompt, api_key)
+    for attempt in range(1, DIGEST_MAX_ATTEMPTS + 1):
+        try:
+            ok = _run_digest(prompt, api_key, model=DIGEST_MODEL)
+        except _BudgetBlocked:
+            LOG.error(
+                "Digest FAILED: Run finished with FAILURE (team budget; not retrying)"
+            )
+            sys.exit(2)
         if ok:
             break
-        if attempt < max_attempts:
-            LOG.warning("Retrying - attempt %d/%d failed", attempt, max_attempts)
+        if attempt < DIGEST_MAX_ATTEMPTS:
+            LOG.warning(
+                "Retrying - attempt %d/%d failed (model=%s)",
+                attempt,
+                DIGEST_MAX_ATTEMPTS,
+                _model_label(DIGEST_MODEL),
+            )
             time.sleep(15)
 
     LOG.info("=" * 70)
     if not ok:
-        LOG.error("Run finished with FAILURE")
+        # Terminal sentinel for Herdr wait-output (must not appear on retry paths).
+        LOG.error("Digest FAILED: Run finished with FAILURE")
         sys.exit(2)
 
     LOG.info("LATC Confluence Daily Digest published SUCCESSFULLY.")

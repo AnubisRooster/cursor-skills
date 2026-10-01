@@ -3,12 +3,12 @@ name: latc-confluence-daily-digest
 description: >
   Daily LATC Confluence digest for Mike Fink's personal space (~mfink). Runs as
   a Windows Scheduled Task weekdays at 8:00 AM Eastern. Uses the Cursor SDK
-  (model grok-4.6) to scrape LATC Confluence updates across ALL pillars plus
-  ATP, with a standing Token Hub / AICS watch, score/cluster them, join Jira
-  where possible, publish a dated digest under the LATC Daily Digest hub in
-  Mike Fink's writing-voice (formal Confluence), and point the hub Latest
-  link. Use when setting up, troubleshooting, or changing digest format,
-  cadence, filters, voice, ATP section, Token Hub watch, or schedule.
+  (gpt-5.6-sol) to scrape LATC Confluence updates
+  across ALL pillars plus ATP, with a standing Token Hub / AICS watch, score/
+  cluster them, join Jira where possible, publish a dated digest under the LATC
+  Daily Digest hub in Mike Fink's writing-voice (formal Confluence), and point
+  the hub Latest link. Use when setting up, troubleshooting, or changing digest
+  format, cadence, filters, voice, ATP section, Token Hub watch, or schedule.
 ---
 
 # latc-confluence-daily-digest
@@ -25,7 +25,7 @@ across all pillars and ATP. Not an Infrastructure-only brief.
 | Source space | `LATC` |
 | Schedule | Mon–Fri 8:00 AM Eastern |
 | Task name | `LATC Confluence Daily Digest` |
-| Model | `grok-4.6` |
+| Model | `gpt-5.6-sol` (cost-efficient fixed pin) |
 | Scope lock | 2026-09-23: all pillars + ATP section |
 | Token Hub watch | 2026-09-23: required CQL pass D + Jira join (LATC-4 / LATC-15030) |
 
@@ -133,7 +133,7 @@ python latc_confluence_daily_digest.py --date YYYY-MM-DD   # backfill
 Windows Task Scheduler (Mon-Fri 08:00 Eastern)
   └── run_digest_via_herdr.ps1
         └── latc_confluence_daily_digest.py
-              └── Agent.prompt(..., model="grok-4.6")
+              └── Agent.prompt(..., model=gpt-5.6-sol)
                     ├── confluence_search (LATC window + ATP pass)
                     ├── confluence_get_page / get_page_diff
                     ├── jira_get_issue / jira_search
@@ -156,7 +156,7 @@ Missing sentinel counts as failure. The runner retries once.
 | Page sections / ATP / Token Hub / filter rules | `DIGEST_PROMPT_TEMPLATE` in `latc_confluence_daily_digest.py` |
 | Style reference page | `REFERENCE_PAGE_ID` (default `684280624`) |
 | Hub | `HUB_PAGE_ID` (default `684280623`) |
-| Model | `model=` in `AgentOptions` |
+| Model | `DIGEST_MODEL` in `latc_confluence_daily_digest.py` (`gpt-5.6-sol`) |
 | Schedule | Task Scheduler action / `setup_latc_daily_digest_task.ps1` |
 
 ## Troubleshooting
@@ -164,7 +164,7 @@ Missing sentinel counts as failure. The runner retries once.
 | Symptom | Fix |
 |---|---|
 | DNS / xpaas unreachable | Connect Lenovo VPN; re-run |
-| Agent status=error empty result | Confirm `grok-4.6` still works; try direct python |
+| Agent status=error empty result | Check Herdr pane / digest log for status message. Common cause 2026-09-25: **team spend/budget limit**. Model pin will not help until an org admin raises the budget. Also confirm `cursor-sdk>=1.0.32` and `gpt-5.6-sol` still list for the API key. |
 | Herdr workspace create fails | Wrapper falls back to direct python; start `herdr server` |
 | Bridge WinError 10061 | Cursor agent bridge down; retry later |
 | WinError 10038 | Ensure `_win_bridge_patch` imports before `cursor_sdk` |
@@ -172,3 +172,4 @@ Missing sentinel counts as failure. The runner retries once.
 | Token Hub missing from brief | Pass D skipped or SSG weekly demoted whole; keep Token Hub lines |
 | ATP weeklies listed as Noise | Collapse into ATP section by project |
 | Task Last Result != 0 | Read `~/.herdr-pilot/digest-*.log` and skill `logs/` |
+| Task exits after first agent ERRORS | Wrapper matched intermediate `completed with ERRORS`; sentinel is terminal-only (`Digest DONE` / `published SUCCESSFULLY` / `Digest FAILED`) as of 2026-09-24 |
