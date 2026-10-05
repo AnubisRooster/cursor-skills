@@ -2,6 +2,13 @@
 
 ## 2026-10-05
 
+- feat(skills): add herdr-board skill (kanban CLI contract for agent runs) (11b250f)
+- chore(gitnexus): refresh architecture findings [skip ci] (61059bc)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (f270e0a)
+
+
+## 2026-10-05
+
 - feat(skills): add read-pdf skill (PDF text extraction for non-PDF models) (b70150a)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (e359dee)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (92cef8b)
