@@ -6,7 +6,7 @@ _Auto-generated from the GitNexus knowledge graph on every push to `main`. Do no
 
 | nodes | edges |
 | ----- | ----- |
-| 1982 | 2259 |
+| 2050 | 2338 |
 
 ## God nodes (highest out-degree, tests excluded)
 
@@ -20,5 +20,5 @@ _Auto-generated from the GitNexus knowledge graph on every push to `main`. Do no
 | update.md | cursor-skills/skills/graphify/references/update.md | 33 |
 | Jira: Create Epics, Features, and Sprint Issues (mcp-atlassian) | cursor-skills/skills/jira-create-issues/SKILL.md | 33 |
 | Spec to Backlog | cursor-skills/plugins-cache/cursor-public/atlassian/5d300c892a43513c4c5d3ecb534bf9c78b6d6389/skills/spec-to-backlog/SKILL.md | 23 |
+| skills | cursor-skills/skills | 22 |
 | graphify_pipeline.py | scripts/graphify_pipeline.py | 22 |
-| latc_confluence_daily_digest.py | cursor-skills/skills/latc-confluence-daily-digest/latc_confluence_daily_digest.py | 21 |
