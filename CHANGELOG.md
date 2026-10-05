@@ -2,6 +2,13 @@
 
 ## 2026-10-05
 
+- feat(skills): add read-pdf skill (PDF text extraction for non-PDF models) (b70150a)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (e359dee)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (92cef8b)
+
+
+## 2026-10-05
+
 - feat(skills): add cursor-administration skill (93527ad)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (3f12dfa)
 
