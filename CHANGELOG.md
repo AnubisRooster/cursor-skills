@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-05
+
+- feat(skills): add cursor-administration skill (0036fb5)
+- chore(gitnexus): refresh architecture findings [skip ci] (eb56179)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (21269ff)
+
+
 ## 2026-10-01
 
 - Update latc-confluence-daily-digest skill (gpt-5.6-sol + Herdr runner). (b591b77)
