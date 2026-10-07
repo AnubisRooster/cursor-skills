@@ -75,6 +75,9 @@ def read_meta(z):
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     if len(sys.argv) < 2:
         print("usage: python read_docx.py <file.docx>", file=sys.stderr)
         sys.exit(2)
