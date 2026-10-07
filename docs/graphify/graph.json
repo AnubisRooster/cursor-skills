@@ -2392,7 +2392,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L101",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
@@ -2404,7 +2404,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L103",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -2416,7 +2416,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L80",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -2428,7 +2428,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L83",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -2440,7 +2440,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L90",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -2452,7 +2452,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "cursor-skills/skills/read-docx/scripts/read_docx.py",
-      "source_location": "L92",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -5546,5 +5546,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "af6b7523827c1d29f2c79a704de909ce5fc25b52"
+  "built_at_commit": "2ba8eb319f709e4a0d7ac15e68c4f7f62b446349"
 }

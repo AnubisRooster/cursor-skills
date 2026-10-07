@@ -1,7 +1,7 @@
 # Graph Report - cursor-skills  (2026-10-07)
 
 ## Corpus Check
-- 125 files · ~197,166 words
+- 125 files · ~198,811 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: .mdc 3, .xml 2, .jsonl 1)
 
