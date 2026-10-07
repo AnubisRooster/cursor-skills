@@ -2,6 +2,12 @@
 
 ## 2026-10-07
 
+- fix(read-docx): force UTF-8 stdout so Unicode Word content does not crash extraction (2ba8eb3)
+- chore(gitnexus): refresh architecture findings [skip ci] (2087f2b)
+
+
+## 2026-10-07
+
 - feat(skills): add read-docx skill (extract text/headings/tables from .docx) (af6b752)
 
 
