@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07
+
+- feat(skills): add read-docx skill (extract text/headings/tables from .docx) (af6b752)
+
+
 ## 2026-10-05
 
 - feat(skills): add herdr-board skill (kanban CLI contract for agent runs) (11b250f)
