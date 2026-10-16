@@ -2,6 +2,12 @@
 
 ## 2026-10-16
 
+- feat(skills): add superdesign, better-design, and design-taste collections (26 skills) (2630280)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (e00c9f0)
+
+
+## 2026-10-16
+
 - fix(jira-create-issues): set Story Points (10002) with Estimate (10816) (a232d78)
 - chore(graphify): refresh knowledge graph artifacts [skip ci] (6b6f6f7)
 - chore(gitnexus): refresh architecture findings [skip ci] (90ab15c)
