@@ -6,7 +6,7 @@ _Auto-generated from the GitNexus knowledge graph on every push to `main`. Do no
 
 | nodes | edges |
 | ----- | ----- |
-| 2092 | 2399 |
+| 2453 | 2793 |
 
 ## God nodes (highest out-degree, tests excluded)
 
@@ -14,11 +14,11 @@ _Auto-generated from the GitNexus knowledge graph on every push to `main`. Do no
 | --- | --- | --- |
 | gitnexus-opencode.js | tools/gitnexus-opencode.js | 82 |
 | SKILL.md | cursor-skills/skills/graphify/SKILL.md | 53 |
+| skills | cursor-skills/skills | 50 |
 | _build_report.py | cursor-skills/skills/scheduled-status-report/_build_report.py | 46 |
 | Jira: Create Epics, Features, and Sprint Issues (mcp-atlassian) | latc-skills/skills/jira-create-issues/SKILL.md | 40 |
 | README.md | README.md | 35 |
-| update.md | cursor-skills/skills/graphify/references/update.md | 33 |
 | Jira: Create Epics, Features, and Sprint Issues (mcp-atlassian) | cursor-skills/skills/jira-create-issues/SKILL.md | 33 |
-| skills | cursor-skills/skills | 24 |
+| update.md | cursor-skills/skills/graphify/references/update.md | 33 |
 | Spec to Backlog | cursor-skills/plugins-cache/cursor-public/atlassian/5d300c892a43513c4c5d3ecb534bf9c78b6d6389/skills/spec-to-backlog/SKILL.md | 23 |
-| graphify_pipeline.py | scripts/graphify_pipeline.py | 22 |
+| SUPERDESIGN.md | cursor-skills/skills/superdesign/references/SUPERDESIGN.md | 22 |
