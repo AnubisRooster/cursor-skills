@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-16
+
+- fix(jira-create-issues): set Story Points (10002) with Estimate (10816) (a232d78)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (6b6f6f7)
+- chore(gitnexus): refresh architecture findings [skip ci] (90ab15c)
+- chore(graphify): refresh knowledge graph artifacts [skip ci] (364d875)
+
+
 ## 2026-10-07
 
 - fix(read-docx): force UTF-8 stdout so Unicode Word content does not crash extraction (2ba8eb3)
