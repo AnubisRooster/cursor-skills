@@ -26,7 +26,7 @@ Use these **instead of** the DC field IDs and WBS/governance contract when creat
 |---|---|---|
 | MCP namespace | `user-mcp-atlassian` | `user-mcp-atlassian-cloud` |
 | Story parent | `epic_link` / `customfield_10006` | `parent` = epic key |
-| Story points | `customfield_10816` as a **string** (`"3"`) | `customfield_10016` as a **number** (`3`) |
+| Story points | **Both** `customfield_10002` (**number** `3`) + `customfield_10816` (**string** `"3"`) | `customfield_10016` as a **number** (`3`) |
 | Start date | Portfolio `customfield_12914` | `customfield_10015` (`YYYY-MM-DD`) |
 | Due date | `duedate` | `duedate` |
 | WBS prefixes | Mandatory | Do **not** apply unless the user asks |
@@ -199,6 +199,8 @@ BU projects that span multiple pillars by design:
 
 **Every issue created by this skill MUST include ALL of the following fields, regardless of whether Jira marks them as required.** Never skip these. If the user hasn't provided content for one of them, generate sensible defaults or ask the user — do NOT create issues with blank mandatory fields.
 
+> **Correction (2026-10-16):** Scrum boards estimate with the numeric **Story Points** field (`customfield_10002`), not the text **Estimate** field (`customfield_10816`). Setting only `10816` leaves the board showing 0 points (confirmed Sprint 7 / Coding Agent board). Always set **both**: `customfield_10002` as a **number** and `customfield_10816` as a **string** with the same value. If `10002` is rejected at create, immediately set it via `jira_update_issue`.
+>
 > **Correction (2026-07-16/17):** Business Value/AC/DoR/DoD used to be required in *both* the custom field and the description body for every issue type. That was wrong — for **Story/Task/Test/Defect/Sub-task**, these four now live **only** in their dedicated custom fields; do not add matching headings to the description (it's redundant duplication, not a compliance requirement). This was applied retroactively to 112 pre-existing sprint-level Infra issues on 2026-07-17.
 >
 > **Correction (2026-07-22):** Epics/Initiatives now follow the **same custom-field-only rule** — do not embed `## Business Value`, `## Acceptance Criteria`, `## Definition of Ready`, or `## Definition of Done` headings in Epic/Initiative descriptions either. This reverses the earlier belief that these fields were "untested/unconfirmed on the Epic screen" — all 4 custom fields (`customfield_11491`, `customfield_10515`, `customfield_16516`, `customfield_16544`) were confirmed settable via `jira_update_issue` across 36 real Infra Epics/Initiatives (e.g. `LATC-5803`, `LATC-5101`), including successfully backfilling a previously-empty Business Value field on a live Epic. Description bodies for Epic/Initiative keep their narrative sections (Problem/Opportunity, Outcomes, Scope, Out of scope, Stakeholders) but never the four governance-field headings. This was applied retroactively to 36 pre-existing Infra Epics/Initiatives on 2026-07-22.
@@ -219,7 +221,8 @@ BU projects that span multiple pillars by design:
 | Summary | string | `summary` (system) | Must start with WBS number |
 | Description | markdown | `description` (system) | **Dedicated-field-only policy, with one platform-forced exception**: no `## Context` / `## Goal` / `## Approach` — lead with a condensed 1–3 sentence summary (no heading), then keep any remaining sections with no dedicated field (`## Out of scope`, `## Links`, `## Outcomes (value unlocked)`). No `## Business Value`, `## Acceptance Criteria`, `## Definition of Ready`, `## Definition of Done` headings **except** on Task (Business Value has no screen field there) or Sub-task (none of the 4 fields have a screen field there) — see [Screen availability](#screen-availability--where-fields-are-accepted-by-jira). This same rule now also applies to Epic/Initiative (see below) |
 | Parent (Epic/Feature) | issue key | `customfield_10006` via `additional_fields.epic_link` | Links sprint issue to its Epic/Feature |
-| Estimate (Story Points) | number | `customfield_10816` via `additional_fields` | e.g. "3", "5", "8" |
+| Story Points | number | `customfield_10002` via `additional_fields` | **Board field (required).** Pass as a **number** (e.g. `3`, `5`, `8`). This is what Scrum boards / burndown use. |
+| Estimate (text mirror) | string | `customfield_10816` via `additional_fields` | **Also required.** Pass as a **string** (e.g. `"3"`). Keep in sync with Story Points. Alone it does **not** populate the board. |
 | Component/s | comma-separated string | `components` (dedicated tool param) | One or more from 8-pillar list |
 | Labels | array | `labels` in `additional_fields` | At least one `team:*` label required |
 | Function area | string (pillar name) | `customfield_16400` via `additional_fields` | Auto-derived from Components (see [Function area mapping](#function-area-mapping)) |
@@ -272,7 +275,7 @@ Features are peers of Epics under an Initiative and follow the same approval/wor
 
 **Epic Link** (`epicKey` or `customfield_10006`): Only on stories/tasks — set to the epic key. Not used on the epic itself.
 
-**Estimate** (`customfield_10816`): Story points. **Always pass this as a string** (e.g. `"0.5"`, `"1"`, `"3"`, `"5"`, `"8"`, `"13"`) — this Jira DC rejects a numeric value at create/update time with `Operation value must be a string`. If the user doesn't provide estimates, ask or make reasonable suggestions based on apparent complexity.
+**Story Points + Estimate (both required on DC):** Scrum boards read **Story Points** (`customfield_10002`, float). Always pass it as a **number** (e.g. `3`, `5`, `8`). Also set the text **Estimate** field (`customfield_10816`) to the **same value as a string** (e.g. `"3"`) — `10816` rejects numeric input with `Operation value must be a string`. Never set only `10816`: the board will show 0 points (2026-10-16). If `customfield_10002` is rejected at create, immediately call `jira_update_issue` with just that field. If the user doesn't provide estimates, ask or make reasonable suggestions based on apparent complexity.
 
 **Component/s**: The Jira component(s) this issue belongs to — must be from the 8-pillar list. Use `jira_get_project_components` to verify valid component names if needed.
 
@@ -587,7 +590,7 @@ Use `jira_create_issue` with:
 - `issue_type`: one of `"Story"`, `"Task"`, `"Test"`, `"Defect"`
 - `summary` with WBS prefix
 - `epic_link` in `additional_fields` set to the Epic key
-- All mandatory fields (estimate, components, labels, Business Value, AC, DoR, DoD)
+- All mandatory fields (Story Points `customfield_10002` as number + Estimate `customfield_10816` as string, components, labels, Business Value, AC, DoR, DoD)
 - AC (`customfield_10515`), DoR (`customfield_16516`), and DoD (`customfield_16544`) set via `additional_fields` **only** — all three confirmed accepted on Story/Task screens; do **not** add matching headings to the description. Business Value (`customfield_11491`) also attempted via `additional_fields`; confirmed rejected on the *create* screen but accepted on *edit* — if the create call rejects it, immediately call `jira_update_issue` right after to set it. Never fall back to putting it in the description.
 - Description is short: a 1–3 sentence summary (no heading) of what the work is/enables, plus any of `## Out of scope`, `## Links`, `## Outcomes (value unlocked)` that apply. No `## Context`, `## Goal`, `## Approach`, `## Business Value`, `## Acceptance Criteria`, `## Definition of Ready`, or `## Definition of Done` headings.
 
@@ -626,7 +629,7 @@ Example payload for a Story:
   "issue_type": "Story",
   "description": "Automates the currently-manual JIRAFlow dashboard refresh so stakeholders always see current data without operator intervention.\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"customfield_16516\":\"- Requirements are clearly defined\\n- Dependencies are identified\",\"customfield_16544\":\"- Code merged and CI green\\n- AC verified by reviewer\",\"customfield_11491\":\"Removes recurring manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10002\":3,\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then fresh data lands within 5 min.\",\"customfield_16516\":\"- Requirements are clearly defined\\n- Dependencies are identified\",\"customfield_16544\":\"- Code merged and CI green\\n- AC verified by reviewer\",\"customfield_11491\":\"Removes recurring manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -767,7 +770,7 @@ WBS work:
   "issue_type": "Story",
   "description": "Replaces the currently-manual JIRAFlow dashboard refresh with a systemd timer on the shared VM that refreshes the dataset hourly and alerts on failure, reducing operator toil and keeping stakeholder data current.\n\n## Out of scope\n- Power BI report layout changes\n\n## Links\n- TBD: link to runbook",
   "components": "Operations & Infrastructure",
-  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"customfield_16516\":\"- [ ] AC reviewed by assignee\\n- [ ] VM access and credentials confirmed\\n- [ ] Effort estimated; risks captured\",\"customfield_16544\":\"- [ ] Timer deployed and green for 24 h\\n- [ ] Runbook updated\\n- [ ] AC verified by reviewer\\n- [ ] Stakeholders notified\",\"customfield_11491\":\"Removes manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
+  "additional_fields": "{\"epic_link\":\"LATC-1304\",\"customfield_10002\":3,\"customfield_10816\":\"3\",\"customfield_16400\":\"Infrastructure\",\"customfield_10515\":\"- [ ] Given the VM is healthy, when the timer fires, then a fresh dataset lands in the target store within 5 minutes.\\n- [ ] A failure surfaces an alert in the operational dashboard within 10 minutes.\",\"customfield_16516\":\"- [ ] AC reviewed by assignee\\n- [ ] VM access and credentials confirmed\\n- [ ] Effort estimated; risks captured\",\"customfield_16544\":\"- [ ] Timer deployed and green for 24 h\\n- [ ] Runbook updated\\n- [ ] AC verified by reviewer\\n- [ ] Stakeholders notified\",\"customfield_11491\":\"Removes manual refresh toil and prevents stale data reaching stakeholder dashboards.\",\"labels\":[\"team:infra-row\"],\"priority\":{\"name\":\"Medium\"}}"
 }
 ```
 
@@ -830,7 +833,7 @@ After the core Epic + Stories are created, offer the user these options:
 - **Don't add `## Business Value`, `## Acceptance Criteria`, `## Definition of Ready`, or `## Definition of Done` headings to any issue's description** (Epic/Initiative included). That duplicates the dedicated custom fields — corrected 2026-07-16/17 for sprint-level issues after finding this pattern across 12 new + 112 pre-existing Infra tickets, and extended to Epic/Initiative on 2026-07-22 after retroactively cleaning 36 real Infra Epics/Initiatives.
 - **Don't add separate `## Context` / `## Goal` / `## Approach` headings to a Story/Task/Test/Defect/Sub-task description.** Use one condensed 1–3 sentence summary at the top instead (no heading).
 - **Don't pass JSON objects to `additional_fields`.** It must be a JSON **string**.
-- **Don't pass Story Points as a number.** `customfield_10816` must be a **string** (`"0.5"`, `"3"`); a numeric value is rejected with `Operation value must be a string`.
+- **Don't set only Estimate (`customfield_10816`) and skip Story Points (`customfield_10002`).** Boards estimate with `10002` (number). Always set both to the same value: `10002` as a **number**, `10816` as a **string**. Passing a number to `10816` is rejected with `Operation value must be a string`.
 - **Don't set the Sprint at create time.** `customfield_10004` cannot be set via `jira_create_issue` on this DC (same `Operation value must be a string` error). Add issues to the sprint afterward with `jira_add_issues_to_sprint`.
 - **Don't set Epic Link on an Epic.** Use Epic Name (`customfield_10005`) on Epics; Epic Link on children. For Epics, also set Parent Link (`customfield_12913`) and create the GANTT hierarchy link.
 - **Don't skip the WBS scan.** Never invent the next number — always re-run the JQL scan right before showing the draft.
@@ -864,7 +867,8 @@ After the core Epic + Stories are created, offer the user these options:
 
 | Field | Custom field ID |
 |---|---|
-| Story Points / Estimate | `customfield_10816` |
+| Story Points (Scrum board) | `customfield_10002` — **number** (e.g. `3`). Required for board estimates. |
+| Estimate (text mirror) | `customfield_10816` — **string** (e.g. `"3"`). Keep in sync with Story Points. |
 | Sprint | `customfield_10004` |
 | Epic Name | `customfield_10005` |
 | Epic Link | `customfield_10006` |
@@ -883,7 +887,7 @@ After the core Epic + Stories are created, offer the user these options:
 - Use non-delivery resolutions (for example `Won't Fix`, `Duplicate`, `Cannot Reproduce`, `Rejected`) only when the issue is intentionally closed without delivery.
 - On reopen transitions, clear Resolution back to unresolved.
 
-**Field-type quirks (this DC):** pass Story Points (`customfield_10816`) as a **string** (e.g. `"0.5"`); the Sprint field (`customfield_10004`) **cannot** be set at create time — use `jira_add_issues_to_sprint` after creating. Both quirks surface as the error `Operation value must be a string`.
+**Field-type quirks (this DC):** set **both** Story Points (`customfield_10002` as a **number**, e.g. `3`) and Estimate (`customfield_10816` as a **string**, e.g. `"3"`). Passing a number to `10816` is rejected with `Operation value must be a string`. The Sprint field (`customfield_10004`) **cannot** be set at create time — use `jira_add_issues_to_sprint` after creating.
 
 If a future project surfaces different IDs for AC/DoR/DoD/Business Value, confirm with `jira_search_fields` before creating.
 
